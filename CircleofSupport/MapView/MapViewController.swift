@@ -15,14 +15,20 @@ class MapViewController: UIViewController {
     @IBOutlet weak var adress: UILabel!
     @IBOutlet weak var latitude: UILabel!
     @IBOutlet weak var longitude: UILabel!
+    private let mapViewPresenter = MapViewPresenter()
     
     // MARK: - Program Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        self.mapViewPresenter.mapView = self
     }
     
     @IBAction func segmentChanged(_ sender: UISegmentedControl) {
     }
+    
+}
+
+extension MapViewController: MapViewDelegate {
     
 }
