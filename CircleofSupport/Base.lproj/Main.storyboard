@@ -58,7 +58,7 @@
         <!--Item 2-->
         <scene sceneID="gUg-nQ-mTv">
             <objects>
-                <viewController id="ySy-uj-xij" sceneMemberID="viewController">
+                <viewController id="ySy-uj-xij" customClass="AskForHelpViewController" customModule="CircleofSupport" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="BVc-cE-iKr">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -74,7 +74,7 @@
         <!--Item 1-->
         <scene sceneID="N4a-aV-LKT">
             <objects>
-                <viewController id="I0V-dk-XJz" sceneMemberID="viewController">
+                <viewController id="I0V-dk-XJz" customClass="MapViewController" customModule="CircleofSupport" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hj4-Rf-kdN">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
