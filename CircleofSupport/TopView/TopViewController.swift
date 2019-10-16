@@ -11,6 +11,9 @@ import UIKit
 class TopViewController: UIViewController {
 
     // MARK: - vars & lets
+    @IBOutlet weak var textView: UITextView!
+    @IBOutlet weak var actionButton: UIButton!
+    
     private let topViewPresenter = TopViewPresenter()
 
     // MARK: - Program Lifecycle
@@ -18,9 +21,8 @@ class TopViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         self.topViewPresenter.topView = self
+        self.topViewPresenter.viewDidLoad()
     }
-
-
 }
 
 // MARK: - TopViewDelegate

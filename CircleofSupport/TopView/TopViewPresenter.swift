@@ -13,4 +13,8 @@ class TopViewPresenter {
     // MARK: - vars & lets
     weak var topView: TopViewDelegate?
 
+    // MARK: - Program Lifecycle
+    func viewDidLoad() {
+    }
+
 }
