@@ -55,7 +55,7 @@
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="81.696428571428569"/>
         </scene>
-        <!--Item 2-->
+        <!--AskHelp-->
         <scene sceneID="gUg-nQ-mTv">
             <objects>
                 <viewController id="ySy-uj-xij" customClass="AskForHelpViewController" customModule="CircleofSupport" customModuleProvider="target" sceneMemberID="viewController">
@@ -65,13 +65,13 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="df0-zi-tXP"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="dA4-cm-G6o"/>
+                    <tabBarItem key="tabBarItem" title="AskHelp" id="dA4-cm-G6o"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xiq-iI-fMQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2148" y="465"/>
         </scene>
-        <!--Item 1-->
+        <!--Map-->
         <scene sceneID="N4a-aV-LKT">
             <objects>
                 <viewController id="I0V-dk-XJz" customClass="MapViewController" customModule="CircleofSupport" customModuleProvider="target" sceneMemberID="viewController">
@@ -81,7 +81,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="a57-GF-bno"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 1" id="BIg-0B-Tfa"/>
+                    <tabBarItem key="tabBarItem" title="Map" id="BIg-0B-Tfa"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pWm-VE-53b" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
