@@ -8,13 +8,23 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class TopViewController: UIViewController {
 
+    // MARK: - vars & lets
+    private let topViewPresenter = TopViewPresenter()
+
+    // MARK: - Program Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        self.topViewPresenter.topView = self
     }
 
 
+}
+
+// MARK: - TopViewDelegate
+extension TopViewController: TopViewDelegate {
+    
 }
 
