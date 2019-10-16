@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		1F6F472F04D1DAD5D49285B9 /* Pods_CircleofSupportTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 679C159C24759657EF5A2D8B /* Pods_CircleofSupportTests.framework */; };
+		63137D432357A03A007FB666 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63137D422357A03A007FB666 /* MapViewController.swift */; };
+		63137D452357A04B007FB666 /* AskForHelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63137D442357A04B007FB666 /* AskForHelpViewController.swift */; };
 		635FAB78235785230039B341 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635FAB77235785230039B341 /* AppDelegate.swift */; };
 		635FAB7A235785230039B341 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635FAB79235785230039B341 /* SceneDelegate.swift */; };
 		635FAB7C235785230039B341 /* TopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635FAB7B235785230039B341 /* TopViewController.swift */; };
@@ -45,6 +47,8 @@
 		1AC1C93440B3021497097EC6 /* Pods-CircleofSupportTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CircleofSupportTests.release.xcconfig"; path = "Target Support Files/Pods-CircleofSupportTests/Pods-CircleofSupportTests.release.xcconfig"; sourceTree = "<group>"; };
 		32CBBCFB845B74CF2707F80F /* Pods-CircleofSupportTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CircleofSupportTests.debug.xcconfig"; path = "Target Support Files/Pods-CircleofSupportTests/Pods-CircleofSupportTests.debug.xcconfig"; sourceTree = "<group>"; };
 		4ECCD5770F53C6579E57B9E2 /* Pods-CircleofSupport-CircleofSupportUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CircleofSupport-CircleofSupportUITests.debug.xcconfig"; path = "Target Support Files/Pods-CircleofSupport-CircleofSupportUITests/Pods-CircleofSupport-CircleofSupportUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		63137D422357A03A007FB666 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		63137D442357A04B007FB666 /* AskForHelpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AskForHelpViewController.swift; sourceTree = "<group>"; };
 		635FAB74235785230039B341 /* CircleofSupport.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CircleofSupport.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		635FAB77235785230039B341 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		635FAB79235785230039B341 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -107,6 +111,22 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		63137D4023579FFB007FB666 /* MapView */ = {
+			isa = PBXGroup;
+			children = (
+				63137D422357A03A007FB666 /* MapViewController.swift */,
+			);
+			path = MapView;
+			sourceTree = "<group>";
+		};
+		63137D412357A013007FB666 /* AFRView */ = {
+			isa = PBXGroup;
+			children = (
+				63137D442357A04B007FB666 /* AskForHelpViewController.swift */,
+			);
+			path = AFRView;
+			sourceTree = "<group>";
+		};
 		635FAB6B235785230039B341 = {
 			isa = PBXGroup;
 			children = (
@@ -135,6 +155,8 @@
 				635FAB77235785230039B341 /* AppDelegate.swift */,
 				635FAB79235785230039B341 /* SceneDelegate.swift */,
 				635FABB523579A1C0039B341 /* TopView */,
+				63137D4023579FFB007FB666 /* MapView */,
+				63137D412357A013007FB666 /* AFRView */,
 				635FAB82235785250039B341 /* LaunchScreen.storyboard */,
 				635FAB7D235785230039B341 /* Main.storyboard */,
 				635FAB80235785250039B341 /* Assets.xcassets */,
@@ -426,6 +448,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				635FAB7C235785230039B341 /* TopViewController.swift in Sources */,
+				63137D432357A03A007FB666 /* MapViewController.swift in Sources */,
+				63137D452357A04B007FB666 /* AskForHelpViewController.swift in Sources */,
 				635FAB78235785230039B341 /* AppDelegate.swift in Sources */,
 				635FABB423579A150039B341 /* TopViewDelegate.swift in Sources */,
 				635FAB7A235785230039B341 /* SceneDelegate.swift in Sources */,

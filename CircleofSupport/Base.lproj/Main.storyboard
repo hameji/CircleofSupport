@@ -55,6 +55,56 @@
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="81.696428571428569"/>
         </scene>
+        <!--AskHelp-->
+        <scene sceneID="gUg-nQ-mTv">
+            <objects>
+                <viewController id="ySy-uj-xij" customClass="AskForHelpViewController" customModule="CircleofSupport" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="BVc-cE-iKr">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="df0-zi-tXP"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="AskHelp" id="dA4-cm-G6o"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xiq-iI-fMQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2148" y="465"/>
+        </scene>
+        <!--Map-->
+        <scene sceneID="N4a-aV-LKT">
+            <objects>
+                <viewController id="I0V-dk-XJz" customClass="MapViewController" customModule="CircleofSupport" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hj4-Rf-kdN">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="a57-GF-bno"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Map" id="BIg-0B-Tfa"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pWm-VE-53b" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2148" y="-396"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="WMI-47-ZU7">
+            <objects>
+                <tabBarController id="yEA-Vy-ePc" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="0yG-jz-kFT">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="I0V-dk-XJz" kind="relationship" relationship="viewControllers" id="iVA-K9-a6R"/>
+                        <segue destination="ySy-uj-xij" kind="relationship" relationship="viewControllers" id="P2t-me-gxZ"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0Mo-03-nC4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1084" y="82"/>
+        </scene>
     </scenes>
     <resources>
         <image name="logo" width="200" height="200"/>
