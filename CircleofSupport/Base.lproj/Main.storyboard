@@ -49,6 +49,7 @@
                     <connections>
                         <outlet property="actionButton" destination="W1q-br-2Gi" id="yz9-pX-ymh"/>
                         <outlet property="textView" destination="kK0-3E-2nP" id="7zk-jE-71v"/>
+                        <segue destination="yEA-Vy-ePc" kind="show" identifier="toMain" id="kPT-sh-dDW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -60,7 +61,7 @@
             <objects>
                 <viewController id="ySy-uj-xij" customClass="AskForHelpViewController" customModule="CircleofSupport" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="BVc-cE-iKr">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="df0-zi-tXP"/>
@@ -76,7 +77,7 @@
             <objects>
                 <viewController id="I0V-dk-XJz" customClass="MapViewController" customModule="CircleofSupport" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hj4-Rf-kdN">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="a57-GF-bno"/>
@@ -91,6 +92,7 @@
         <scene sceneID="WMI-47-ZU7">
             <objects>
                 <tabBarController id="yEA-Vy-ePc" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="g1F-Bt-zPo"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="0yG-jz-kFT">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>

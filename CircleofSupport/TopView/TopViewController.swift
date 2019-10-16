@@ -15,18 +15,24 @@ class TopViewController: UIViewController {
     @IBOutlet weak var actionButton: UIButton!
     
     private let topViewPresenter = TopViewPresenter()
+    private static let segueMainView = "toMain"
 
     // MARK: - Program Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         self.topViewPresenter.topView = self
-        self.topViewPresenter.viewDidLoad()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        self.topViewPresenter.viewDidAppear()
     }
 }
 
 // MARK: - TopViewDelegate
 extension TopViewController: TopViewDelegate {
-    
+    func segueToMain() {
+        self.performSegue(withIdentifier: TopViewController.segueMainView, sender: nil)
+    }
 }
 

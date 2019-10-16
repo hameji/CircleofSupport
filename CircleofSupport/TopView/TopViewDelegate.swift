@@ -7,5 +7,5 @@
 //
 
 protocol TopViewDelegate : class {
-
+    func segueToMain()
 }

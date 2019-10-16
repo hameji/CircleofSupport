@@ -14,7 +14,8 @@ class TopViewPresenter {
     weak var topView: TopViewDelegate?
 
     // MARK: - Program Lifecycle
-    func viewDidLoad() {
+    func viewDidAppear() {
+        self.topView?.segueToMain()
     }
 
 }
