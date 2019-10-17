@@ -22,11 +22,9 @@ class TopViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         self.topViewPresenter.topView = self
+        self.topViewPresenter.viewDidLoad()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        self.topViewPresenter.viewDidAppear()
-    }
 }
 
 // MARK: - TopViewDelegate

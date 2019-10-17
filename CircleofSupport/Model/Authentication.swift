@@ -10,5 +10,17 @@ import Firebase
 
 class Authentication {
     
-    
+    func loginAnonymously(completion: @escaping (Result<User, Error>) ->()) {
+        Auth.auth().signInAnonymously() { authResult, error in
+            if let error = error {
+                print(error)
+                completion(.failure(error))
+                return
+            }
+            print(" ... successfully logedin anonymously.")
+            let user = authResult!.user
+            completion(.success(user))
+        }
+    }
+
 }
