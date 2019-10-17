@@ -7,6 +7,7 @@ target 'CircleofSupport' do
 
   # Pods for CircleofSupport
   pod 'Firebase/Analytics'
+  pod 'Firebase/Auth'
 
   target 'CircleofSupportTests' do
     inherit! :search_paths
