@@ -25,6 +25,9 @@ class TopViewController: UIViewController {
         self.topViewPresenter.viewDidLoad()
     }
     
+    @IBAction func actionButtonPressed(_ sender: UIButton) {
+        self.topViewPresenter.actionButtonPressed()
+    }
 }
 
 // MARK: - TopViewDelegate

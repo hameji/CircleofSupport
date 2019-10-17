@@ -31,4 +31,10 @@ class TopViewPresenter {
         }
     }
 
+    func actionButtonPressed() {
+        if authentication.getCurrentUser() != nil {
+            self.topView?.segueToMain()
+        }
+        self.initializer()
+    }
 }
