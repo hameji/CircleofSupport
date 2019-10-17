@@ -8,4 +8,5 @@
 
 protocol TopViewDelegate : class {
     func segueToMain()
+    func alertLoginFailed()
 }
