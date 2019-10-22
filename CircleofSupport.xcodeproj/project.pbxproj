@@ -230,8 +230,16 @@
 				636D3B01235F7CA200AB0A1C /* PostStatusViewController.swift */,
 				636D3B03235F7CAF00AB0A1C /* PostStatusPresenter.swift */,
 				636D3B05235F7CBD00AB0A1C /* PostStatusDelegate.swift */,
+				636D3B09235F7E5500AB0A1C /* Custom Cell */,
 			);
 			path = PostStatusView;
+			sourceTree = "<group>";
+		};
+		636D3B09235F7E5500AB0A1C /* Custom Cell */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Custom Cell";
 			sourceTree = "<group>";
 		};
 		6B8CBA1367D1075EFD8ED915 /* Pods */ = {

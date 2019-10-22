@@ -196,7 +196,7 @@
         <!--現状をお選び下さい-->
         <scene sceneID="3KY-k4-94K">
             <objects>
-                <viewController id="wRI-d1-W3k" sceneMemberID="viewController">
+                <viewController id="wRI-d1-W3k" customClass="PostStatusViewController" customModule="CircleofSupport" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rTt-cb-6Jc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -407,6 +407,9 @@
                         <barButtonItem key="leftBarButtonItem" id="OeP-qS-d3a"/>
                         <barButtonItem key="rightBarButtonItem" title="投稿" id="VIO-Yg-aY6"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="collectionView" destination="Qzh-nq-RrW" id="gB7-lb-lvO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h41-Le-zVB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

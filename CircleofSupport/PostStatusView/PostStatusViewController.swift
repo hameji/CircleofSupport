@@ -11,6 +11,8 @@ import UIKit
 
 class PostStatusViewController: UIViewController {
 
+    @IBOutlet weak var collectionView: UICollectionView!
+    
     private let postStatusPresenter = PostStatusPresenter()
     
     // MARK: - Program Lifecycle
@@ -21,6 +23,22 @@ class PostStatusViewController: UIViewController {
     }
 
 }
+
+extension PostStatusViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    }
+    
+    
+}
+
+extension PostStatusViewController: UICollectionViewDelegate {
+    
+}
+
+
 
 // MARK: - TopViewDelegate
 extension PostStatusViewController: PostStatusDelegate {
