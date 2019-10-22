@@ -185,11 +185,28 @@
                         <outlet property="latitude" destination="q7n-HJ-jmf" id="vh7-en-aLL"/>
                         <outlet property="longitude" destination="q7n-HJ-jmf" id="K5f-Q0-MkI"/>
                         <outlet property="mapView" destination="RGz-gH-3tD" id="gfZ-Bp-TWr"/>
+                        <segue destination="wRI-d1-W3k" kind="show" identifier="postStatus" id="vz3-iF-bkV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pWm-VE-53b" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3057.971014492754" y="-396.42857142857139"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="3KY-k4-94K">
+            <objects>
+                <viewController id="wRI-d1-W3k" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="rTt-cb-6Jc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="nrw-lf-vWM"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Igj-HX-Lzk"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="h41-Le-zVB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4020" y="-396"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="WMI-47-ZU7">
