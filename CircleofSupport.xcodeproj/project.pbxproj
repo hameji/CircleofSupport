@@ -24,6 +24,8 @@
 		635FABA82357856A0039B341 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 635FABA72357856A0039B341 /* GoogleService-Info.plist */; };
 		635FABB223579A050039B341 /* TopViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635FABB123579A050039B341 /* TopViewPresenter.swift */; };
 		635FABB423579A150039B341 /* TopViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635FABB323579A150039B341 /* TopViewDelegate.swift */; };
+		636D3AFD235F662100AB0A1C /* FirestoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636D3AFC235F662100AB0A1C /* FirestoreManager.swift */; };
+		636D3AFF235F665000AB0A1C /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636D3AFE235F665000AB0A1C /* Document.swift */; };
 		83F279D8932727634C4AFF19 /* Pods_CircleofSupport_CircleofSupportUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F08BBBE5C84AC5C299F1AF06 /* Pods_CircleofSupport_CircleofSupportUITests.framework */; };
 		8BD965B858F02897B5A300F7 /* Pods_CircleofSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7D49BAE345F969C1C228D1D /* Pods_CircleofSupport.framework */; };
 /* End PBXBuildFile section */
@@ -72,6 +74,8 @@
 		635FABA72357856A0039B341 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		635FABB123579A050039B341 /* TopViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopViewPresenter.swift; sourceTree = "<group>"; };
 		635FABB323579A150039B341 /* TopViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopViewDelegate.swift; sourceTree = "<group>"; };
+		636D3AFC235F662100AB0A1C /* FirestoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreManager.swift; sourceTree = "<group>"; };
+		636D3AFE235F665000AB0A1C /* Document.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Document.swift; sourceTree = "<group>"; };
 		679C159C24759657EF5A2D8B /* Pods_CircleofSupportTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CircleofSupportTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		70B5DD837BD5A10C6449A180 /* Pods-CircleofSupport.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CircleofSupport.release.xcconfig"; path = "Target Support Files/Pods-CircleofSupport/Pods-CircleofSupport.release.xcconfig"; sourceTree = "<group>"; };
 		8CB9006B2AD72BDA6B1F1E2A /* Pods-CircleofSupport-CircleofSupportUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CircleofSupport-CircleofSupportUITests.release.xcconfig"; path = "Target Support Files/Pods-CircleofSupport-CircleofSupportUITests/Pods-CircleofSupport-CircleofSupportUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -139,6 +143,8 @@
 			isa = PBXGroup;
 			children = (
 				63137D5123586200007FB666 /* Authentication.swift */,
+				636D3AFC235F662100AB0A1C /* FirestoreManager.swift */,
+				636D3AFE235F665000AB0A1C /* Document.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -472,8 +478,10 @@
 				63137D452357A04B007FB666 /* AskForHelpViewController.swift in Sources */,
 				635FAB78235785230039B341 /* AppDelegate.swift in Sources */,
 				635FABB423579A150039B341 /* TopViewDelegate.swift in Sources */,
+				636D3AFF235F665000AB0A1C /* Document.swift in Sources */,
 				635FAB7A235785230039B341 /* SceneDelegate.swift in Sources */,
 				635FABB223579A050039B341 /* TopViewPresenter.swift in Sources */,
+				636D3AFD235F662100AB0A1C /* FirestoreManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

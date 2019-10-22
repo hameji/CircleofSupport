@@ -7,6 +7,7 @@ target 'CircleofSupport' do
 
   # Pods for CircleofSupport
   pod 'Firebase/Analytics'
+  pod 'Firebase/Firestore'
   pod 'Firebase/Auth'
 
   target 'CircleofSupportTests' do
