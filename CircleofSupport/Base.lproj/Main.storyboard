@@ -193,7 +193,7 @@
             </objects>
             <point key="canvasLocation" x="3057.971014492754" y="-396.42857142857139"/>
         </scene>
-        <!--View Controller-->
+        <!--現状をお選び下さい-->
         <scene sceneID="3KY-k4-94K">
             <objects>
                 <viewController id="wRI-d1-W3k" sceneMemberID="viewController">
@@ -403,7 +403,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="nrw-lf-vWM"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Igj-HX-Lzk"/>
+                    <navigationItem key="navigationItem" title="現状をお選び下さい" id="Igj-HX-Lzk">
+                        <barButtonItem key="leftBarButtonItem" id="OeP-qS-d3a"/>
+                        <barButtonItem key="rightBarButtonItem" title="投稿" id="VIO-Yg-aY6"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h41-Le-zVB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
