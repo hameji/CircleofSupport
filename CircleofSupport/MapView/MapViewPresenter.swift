@@ -17,4 +17,8 @@ class MapViewPresenter {
     func viewDidLoad() {
     }
 
+    func postButtonPressed() {
+        self.mapView?.performPostSegue()
+    }
+
 }
