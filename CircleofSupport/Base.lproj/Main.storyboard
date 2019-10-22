@@ -188,7 +188,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="WMI-47-ZU7">
             <objects>
-                <tabBarController id="yEA-Vy-ePc" sceneMemberID="viewController">
+                <tabBarController modalPresentationStyle="fullScreen" id="yEA-Vy-ePc" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="g1F-Bt-zPo"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="0yG-jz-kFT">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
