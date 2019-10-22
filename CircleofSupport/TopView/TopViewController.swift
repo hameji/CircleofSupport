@@ -22,10 +22,11 @@ class TopViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         self.topViewPresenter.topView = self
+        self.topViewPresenter.viewDidLoad()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        self.topViewPresenter.viewDidAppear()
+    @IBAction func actionButtonPressed(_ sender: UIButton) {
+        self.topViewPresenter.actionButtonPressed()
     }
 }
 
@@ -33,6 +34,15 @@ class TopViewController: UIViewController {
 extension TopViewController: TopViewDelegate {
     func segueToMain() {
         self.performSegue(withIdentifier: TopViewController.segueMainView, sender: nil)
+    }
+    
+    func alertLoginFailed() {
+        let alert = UIAlertController(title: "ログインに失敗しました。\nしばらくしてから再度試みてください。", message: nil, preferredStyle: .alert)
+        let yesAction = UIAlertAction(title: "はい", style: .default, handler: { _ in
+            self.actionButton.alpha = 1.0
+        })
+        alert.addAction(yesAction)
+        self.present(alert, animated: true, completion: nil)
     }
 }
 

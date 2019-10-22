@@ -11,11 +11,30 @@ import UIKit
 class TopViewPresenter {
 
     // MARK: - vars & lets
+    private let authentication = Authentication()
     weak var topView: TopViewDelegate?
-
-    // MARK: - Program Lifecycle
-    func viewDidAppear() {
-        self.topView?.segueToMain()
+    
+    func viewDidLoad() {
+        self.initializer()
     }
 
+    private func initializer() {
+        authentication.loginAnonymously() { result in
+            guard case .success(let _) = result else {
+                print("login failed")
+                self.topView?.alertLoginFailed()
+                return
+            }
+            print("login succeeded")
+            self.topView?.segueToMain()
+            return
+        }
+    }
+
+    func actionButtonPressed() {
+        if authentication.getCurrentUser() != nil {
+            self.topView?.segueToMain()
+        }
+        self.initializer()
+    }
 }
