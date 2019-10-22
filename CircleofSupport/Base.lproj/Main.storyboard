@@ -173,7 +173,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="a57-GF-bno"/>
                     </view>
-                    <navigationItem key="navigationItem" id="lee-Ck-f49"/>
+                    <navigationItem key="navigationItem" id="lee-Ck-f49">
+                        <barButtonItem key="rightBarButtonItem" title="投稿" id="2D3-hS-tZ7">
+                            <connections>
+                                <action selector="postButtonPressed:" destination="I0V-dk-XJz" id="PF2-SP-iWM"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="adress" destination="3Pe-V6-y8q" id="nx6-lb-cN4"/>
                         <outlet property="latitude" destination="q7n-HJ-jmf" id="vh7-en-aLL"/>

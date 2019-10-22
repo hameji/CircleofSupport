@@ -24,6 +24,11 @@ class MapViewController: UIViewController {
         self.mapViewPresenter.mapView = self
     }
     
+    
+    @IBAction func postButtonPressed(_ sender: UIBarButtonItem) {
+    }
+    
+    
     @IBAction func segmentChanged(_ sender: UISegmentedControl) {
     }
     
