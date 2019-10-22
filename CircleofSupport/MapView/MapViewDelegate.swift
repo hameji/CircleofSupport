@@ -7,5 +7,6 @@
 //
 
 protocol MapViewDelegate : class {
+    func performPostSegue()
 
 }

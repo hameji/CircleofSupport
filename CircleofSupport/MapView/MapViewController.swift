@@ -17,6 +17,8 @@ class MapViewController: UIViewController {
     @IBOutlet weak var longitude: UILabel!
     private let mapViewPresenter = MapViewPresenter()
     
+    private static let seguePostStatus = "postStatus"
+    
     // MARK: - Program Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +28,7 @@ class MapViewController: UIViewController {
     
     
     @IBAction func postButtonPressed(_ sender: UIBarButtonItem) {
+        self.mapViewPresenter.postButtonPressed()
     }
     
     
@@ -35,5 +38,8 @@ class MapViewController: UIViewController {
 }
 
 extension MapViewController: MapViewDelegate {
-    
+    func performPostSegue() {
+        self.performSegue(withIdentifier: MapViewController.seguePostStatus, sender: nil)
+    }
+
 }
