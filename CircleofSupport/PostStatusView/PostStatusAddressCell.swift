@@ -6,4 +6,8 @@
 //  Copyright © 2019 Hajime Taniguchi. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+class PostStatusAddressCell: UICollectionViewCell {
+    
+}
