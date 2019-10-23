@@ -31,4 +31,7 @@ class PostStatusPresenter {
         return self.cells.count
     }
 
+    func cellForItemAt(intexPath: IndexPath) -> PostStatusPresentCell {
+        return self.cells[intexPath.row]
+    }
 }
