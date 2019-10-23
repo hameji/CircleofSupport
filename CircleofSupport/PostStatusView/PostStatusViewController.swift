@@ -24,13 +24,22 @@ class PostStatusViewController: UIViewController {
 
 }
 
+// MARK: - UICollectionViewDelegateFlowLayout
+extension PostStatusViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return postStatusPresenter.sizeForItemAt(viewWidth: self.view.bounds.width, indexPath: indexPath)
+    }
+    
+}
+
+
 extension PostStatusViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.postStatusPresenter.numberOfItemsInSection()
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cellType = self.postStatusPresenter.cellForItemAt(intexPath: indexPath)
+        let cellType = self.postStatusPresenter.cellForItemAt(indexPath: indexPath)
         switch cellType {
         case .dateCell:
             let dateCell = collectionView.dequeueReusableCell(withReuseIdentifier: "dateCell", for: indexPath)

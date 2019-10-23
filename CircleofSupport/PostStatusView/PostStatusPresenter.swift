@@ -27,11 +27,26 @@ class PostStatusPresenter {
     func viewDidLoad() {
     }
     
+    // MARK: - UICollectionView DelegateFlowLayout
+    func sizeForItemAt(viewWidth: CGFloat, indexPath: IndexPath) -> CGSize {
+        var eachHeight: Int = 0
+        let celltype = cellForItemAt(indexPath: indexPath)
+        switch celltype {
+        case .dateCell:
+            eachHeight = 40
+        case .addressCell( _):
+            eachHeight = 60
+        default:
+            eachHeight = 100
+        }
+        return CGSize(width: viewWidth, height: CGFloat(eachHeight))
+    }
+
     func numberOfItemsInSection() -> Int {
         return self.cells.count
     }
 
-    func cellForItemAt(intexPath: IndexPath) -> PostStatusPresentCell {
-        return self.cells[intexPath.row]
+    func cellForItemAt(indexPath: IndexPath) -> PostStatusPresentCell {
+        return self.cells[indexPath.row]
     }
 }
