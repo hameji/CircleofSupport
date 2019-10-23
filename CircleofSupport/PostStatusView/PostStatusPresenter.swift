@@ -26,5 +26,9 @@ class PostStatusPresenter {
     // MARK: - Program Lifecycle
     func viewDidLoad() {
     }
+    
+    func numberOfItemsInSection() -> Int {
+        return self.cells.count
+    }
 
 }
