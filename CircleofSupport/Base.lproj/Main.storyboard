@@ -211,7 +211,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="KT2-QZ-fJB">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="dateCell" id="KT2-QZ-fJB" customClass="PostStatusDateCell" customModule="CircleofSupport" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="64"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Dzk-8f-xQn">
@@ -240,7 +240,7 @@
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="414" height="64"/>
                                     </collectionViewCell>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="XGa-Bg-C4T">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="addressCell" id="XGa-Bg-C4T" customClass="PostStatusAddressCell" customModule="CircleofSupport" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="64" width="414" height="106"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="PQg-Zr-Qmz">
@@ -282,7 +282,7 @@
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="414" height="106"/>
                                     </collectionViewCell>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="O12-NA-6Bv">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="lightCell" id="O12-NA-6Bv" customClass="PostStatusLightCell" customModule="CircleofSupport" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="170" width="414" height="191"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="7FL-Xn-Q7Y">
@@ -317,7 +317,7 @@
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="414" height="191"/>
                                     </collectionViewCell>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="XVA-7W-YOf">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="gassCell" id="XVA-7W-YOf" customClass="PostStatusGassCell" customModule="CircleofSupport" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="361" width="414" height="182"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="1LF-Kh-fdJ">
@@ -352,7 +352,7 @@
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="414" height="182"/>
                                     </collectionViewCell>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="r1S-pa-cXf">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="waterCell" id="r1S-pa-cXf" customClass="PostStatusWaterCell" customModule="CircleofSupport" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="543" width="414" height="185"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="7wT-7L-2Pr">

@@ -9,10 +9,20 @@
 import UIKit
 
 class PostStatusPresenter {
+    
+    private let cells:[PostStatusPresentCell]
 
     // MARK: - vars & lets
     weak var postStatusView: PostStatusDelegate?
 
+    init() {
+        self.cells = [.dateCell,
+                      .addressCell(PostStatusAddressData(address: "")),
+                      .lightCell,
+                      .gassCell,
+                      .waterCell]
+    }
+    
     // MARK: - Program Lifecycle
     func viewDidLoad() {
     }
