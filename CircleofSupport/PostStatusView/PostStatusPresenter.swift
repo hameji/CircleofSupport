@@ -35,9 +35,9 @@ class PostStatusPresenter {
         case .dateCell:
             eachHeight = 40
         case .addressCell( _):
-            eachHeight = 60
+            eachHeight = 90
         default:
-            eachHeight = 100
+            eachHeight = 200
         }
         return CGSize(width: viewWidth, height: CGFloat(eachHeight))
     }
