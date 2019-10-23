@@ -29,6 +29,7 @@
 		636D3B02235F7CA200AB0A1C /* PostStatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636D3B01235F7CA200AB0A1C /* PostStatusViewController.swift */; };
 		636D3B04235F7CAF00AB0A1C /* PostStatusPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636D3B03235F7CAF00AB0A1C /* PostStatusPresenter.swift */; };
 		636D3B06235F7CBD00AB0A1C /* PostStatusDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636D3B05235F7CBD00AB0A1C /* PostStatusDelegate.swift */; };
+		636D3B1F236018C700AB0A1C /* PostStatusAddressData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636D3B1E236018C700AB0A1C /* PostStatusAddressData.swift */; };
 		83F279D8932727634C4AFF19 /* Pods_CircleofSupport_CircleofSupportUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F08BBBE5C84AC5C299F1AF06 /* Pods_CircleofSupport_CircleofSupportUITests.framework */; };
 		8BD965B858F02897B5A300F7 /* Pods_CircleofSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7D49BAE345F969C1C228D1D /* Pods_CircleofSupport.framework */; };
 /* End PBXBuildFile section */
@@ -82,6 +83,7 @@
 		636D3B01235F7CA200AB0A1C /* PostStatusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostStatusViewController.swift; sourceTree = "<group>"; };
 		636D3B03235F7CAF00AB0A1C /* PostStatusPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostStatusPresenter.swift; sourceTree = "<group>"; };
 		636D3B05235F7CBD00AB0A1C /* PostStatusDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostStatusDelegate.swift; sourceTree = "<group>"; };
+		636D3B1E236018C700AB0A1C /* PostStatusAddressData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostStatusAddressData.swift; sourceTree = "<group>"; };
 		679C159C24759657EF5A2D8B /* Pods_CircleofSupportTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CircleofSupportTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		70B5DD837BD5A10C6449A180 /* Pods-CircleofSupport.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CircleofSupport.release.xcconfig"; path = "Target Support Files/Pods-CircleofSupport/Pods-CircleofSupport.release.xcconfig"; sourceTree = "<group>"; };
 		8CB9006B2AD72BDA6B1F1E2A /* Pods-CircleofSupport-CircleofSupportUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CircleofSupport-CircleofSupportUITests.release.xcconfig"; path = "Target Support Files/Pods-CircleofSupport-CircleofSupportUITests/Pods-CircleofSupport-CircleofSupportUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -230,6 +232,7 @@
 				636D3B01235F7CA200AB0A1C /* PostStatusViewController.swift */,
 				636D3B03235F7CAF00AB0A1C /* PostStatusPresenter.swift */,
 				636D3B05235F7CBD00AB0A1C /* PostStatusDelegate.swift */,
+				636D3B1D236018AC00AB0A1C /* Cell Data */,
 				636D3B09235F7E5500AB0A1C /* Custom Cell */,
 			);
 			path = PostStatusView;
@@ -240,6 +243,14 @@
 			children = (
 			);
 			path = "Custom Cell";
+			sourceTree = "<group>";
+		};
+		636D3B1D236018AC00AB0A1C /* Cell Data */ = {
+			isa = PBXGroup;
+			children = (
+				636D3B1E236018C700AB0A1C /* PostStatusAddressData.swift */,
+			);
+			path = "Cell Data";
 			sourceTree = "<group>";
 		};
 		6B8CBA1367D1075EFD8ED915 /* Pods */ = {
@@ -495,6 +506,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				636D3B1F236018C700AB0A1C /* PostStatusAddressData.swift in Sources */,
 				63137D492357A884007FB666 /* MapViewDelegate.swift in Sources */,
 				635FAB7C235785230039B341 /* TopViewController.swift in Sources */,
 				63137D432357A03A007FB666 /* MapViewController.swift in Sources */,
