@@ -186,7 +186,7 @@
                         <outlet property="latitude" destination="q7n-HJ-jmf" id="vh7-en-aLL"/>
                         <outlet property="longitude" destination="q7n-HJ-jmf" id="K5f-Q0-MkI"/>
                         <outlet property="mapView" destination="RGz-gH-3tD" id="gfZ-Bp-TWr"/>
-                        <segue destination="wRI-d1-W3k" kind="show" identifier="postStatus" id="vz3-iF-bkV"/>
+                        <segue destination="wRI-d1-W3k" kind="presentation" identifier="postStatus" id="vz3-iF-bkV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pWm-VE-53b" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -202,7 +202,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Qzh-nq-RrW">
-                                <rect key="frame" x="0.0" y="56" width="414" height="703"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="NqU-e1-dzn">
                                     <size key="itemSize" width="414" height="50"/>
@@ -408,7 +408,11 @@
                     </view>
                     <navigationItem key="navigationItem" title="現状をお選び下さい" id="Igj-HX-Lzk">
                         <barButtonItem key="leftBarButtonItem" id="OeP-qS-d3a"/>
-                        <barButtonItem key="rightBarButtonItem" title="投稿" id="VIO-Yg-aY6"/>
+                        <barButtonItem key="rightBarButtonItem" title="投稿" id="VIO-Yg-aY6">
+                            <connections>
+                                <action selector="postButtonPressed:" destination="wRI-d1-W3k" id="69g-fF-8yi"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="Qzh-nq-RrW" id="gB7-lb-lvO"/>

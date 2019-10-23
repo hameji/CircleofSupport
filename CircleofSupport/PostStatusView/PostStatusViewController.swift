@@ -22,6 +22,9 @@ class PostStatusViewController: UIViewController {
         self.postStatusPresenter.postStatusView = self
     }
 
+    @IBAction func postButtonPressed(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
 }
 
 // MARK: - UICollectionViewDelegateFlowLayout
