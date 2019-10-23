@@ -175,7 +175,7 @@
                         <viewLayoutGuide key="safeArea" id="a57-GF-bno"/>
                     </view>
                     <navigationItem key="navigationItem" id="lee-Ck-f49">
-                        <barButtonItem key="rightBarButtonItem" title="投稿" id="2D3-hS-tZ7">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="2D3-hS-tZ7">
                             <connections>
                                 <action selector="postButtonPressed:" destination="I0V-dk-XJz" id="PF2-SP-iWM"/>
                             </connections>
@@ -201,8 +201,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ctK-b7-bhF">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                                <items>
+                                    <navigationItem title="Title" id="onE-ik-MRp">
+                                        <barButtonItem key="rightBarButtonItem" title="報告" id="olX-kX-9Qo"/>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Qzh-nq-RrW">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                                <rect key="frame" x="0.0" y="56" width="414" height="752"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="NqU-e1-dzn">
                                     <size key="itemSize" width="414" height="50"/>
@@ -399,10 +407,13 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="ctK-b7-bhF" firstAttribute="trailing" secondItem="nrw-lf-vWM" secondAttribute="trailing" id="2IQ-DW-WvF"/>
+                            <constraint firstItem="ctK-b7-bhF" firstAttribute="leading" secondItem="nrw-lf-vWM" secondAttribute="leading" id="Dow-vs-Zw4"/>
                             <constraint firstItem="nrw-lf-vWM" firstAttribute="bottom" secondItem="Qzh-nq-RrW" secondAttribute="bottom" id="NAW-Ld-Dxb"/>
+                            <constraint firstItem="Qzh-nq-RrW" firstAttribute="top" secondItem="ctK-b7-bhF" secondAttribute="bottom" id="RUu-pH-0qh"/>
                             <constraint firstItem="nrw-lf-vWM" firstAttribute="trailing" secondItem="Qzh-nq-RrW" secondAttribute="trailing" id="Xrt-fZ-cMP"/>
-                            <constraint firstItem="Qzh-nq-RrW" firstAttribute="top" secondItem="nrw-lf-vWM" secondAttribute="top" id="dBD-4p-eDU"/>
                             <constraint firstItem="Qzh-nq-RrW" firstAttribute="leading" secondItem="nrw-lf-vWM" secondAttribute="leading" id="fHk-aV-4U4"/>
+                            <constraint firstItem="ctK-b7-bhF" firstAttribute="top" secondItem="nrw-lf-vWM" secondAttribute="top" id="lJp-4s-Tmo"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="nrw-lf-vWM"/>
                     </view>
