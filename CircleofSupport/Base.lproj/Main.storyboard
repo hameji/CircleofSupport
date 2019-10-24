@@ -205,7 +205,11 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
                                 <items>
                                     <navigationItem title="Title" id="onE-ik-MRp">
-                                        <barButtonItem key="rightBarButtonItem" title="報告" id="olX-kX-9Qo"/>
+                                        <barButtonItem key="rightBarButtonItem" title="報告" id="olX-kX-9Qo">
+                                            <connections>
+                                                <action selector="postButtonPressed:" destination="wRI-d1-W3k" id="kRW-QJ-w2l"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -419,11 +423,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="現状をお選び下さい" id="Igj-HX-Lzk">
                         <barButtonItem key="leftBarButtonItem" id="OeP-qS-d3a"/>
-                        <barButtonItem key="rightBarButtonItem" title="投稿" id="VIO-Yg-aY6">
-                            <connections>
-                                <action selector="postButtonPressed:" destination="wRI-d1-W3k" id="69g-fF-8yi"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="投稿" id="VIO-Yg-aY6"/>
                     </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="Qzh-nq-RrW" id="gB7-lb-lvO"/>
