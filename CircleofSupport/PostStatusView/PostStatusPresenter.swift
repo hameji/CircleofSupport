@@ -62,11 +62,12 @@ class PostStatusPresenter {
     func startGPS() {
         locationManager.startUpdatingLocation { result in
             guard case .success(let locations) = result else {
+                print(" ... failed to get location")
                 self.postStatusView?.alertGPSfailed()
                 return
             }
             guard let location = locations.first else {
-                print(" ... location is nil")
+                print(" ... location is nil(invalid)")
                 self.postStatusView?.alertInvalidGPS()
                 return
             }
@@ -101,21 +102,18 @@ class PostStatusPresenter {
     func didSelectItemAt(indexPath: IndexPath) {
         switch indexPath.row {
         case 2:
-            print("pressed 2")
             if lightSelected {
                 lightSelected = false
             } else {
                 lightSelected = true
             }
         case 3:
-            print("pressed 3")
             if gassSelected {
                 gassSelected = false
             } else {
                 gassSelected = true
             }
         case 4:
-            print("pressed 4")
             if waterSelected {
                 waterSelected = false
             } else {
