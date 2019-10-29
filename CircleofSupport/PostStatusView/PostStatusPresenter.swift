@@ -60,7 +60,17 @@ class PostStatusPresenter {
     }
     
     func startGPS() {
-        
+        locationManager.startUpdatingLocation { result in
+            guard case .success(let locations) = result else {
+                return
+            }
+            guard let location = locations.first else {
+                print(" ... location is nil")
+                return
+            }
+            
+            self.locationManager.stopUpdatingLocation()
+        }
     }
     
     // MARK: - UICollectionView DelegateFlowLayout

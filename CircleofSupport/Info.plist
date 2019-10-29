@@ -2,6 +2,12 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSLocationUsageDescription</key>
+	<string>このアプリを正しく利用するためにはGPS機能をONに設定する必要があります。</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>このアプリを正しく利用するためにはGPS機能をONに設定する必要があります。</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>このアプリを正しく利用するためにはGPS機能をONに設定する必要があります。</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
 	<string>このアプリを正しく利用するためにはGPS機能をONに設定する必要があります。</string>
 	<key>CFBundleDevelopmentRegion</key>
