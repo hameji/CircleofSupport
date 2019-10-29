@@ -11,11 +11,25 @@ import UIKit
 class MapViewPresenter {
     
     // MARK: - vars & lets
+    private let userDefaultsManager = UserDefaultsManager()
+
     let locationManager = LocationManager()
     weak var mapView: MapViewDelegate?
 
     // MARK: - Program Lifecycle
     func viewDidLoad() {
+        initializer()
+    }
+    
+    func initializer() {
+        initUserDefaults()
+    }
+    
+    func initUserDefaults() {
+        if userDefaultsManager.getInstallDay() == Date(timeIntervalSince1970: 0.0) {
+            userDefaultsManager.set(installDay: Date())
+            userDefaultsManager.set(mapDistance: 5000)
+        }
     }
     
     func viewWillAppear() {
