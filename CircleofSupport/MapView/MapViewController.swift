@@ -24,6 +24,7 @@ class MapViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         self.mapViewPresenter.mapView = self
+        self.mapViewPresenter.viewDidLoad()
     }
     
     override func viewWillAppear(_ animated: Bool) {
