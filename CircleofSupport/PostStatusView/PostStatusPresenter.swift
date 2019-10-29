@@ -10,6 +10,7 @@ import UIKit
 
 class PostStatusPresenter {
     
+    let locationManager = LocationManager()
     private var cells:[PostStatusPresentCell] = []
     var lastPost: Date? =  nil
     var address: String? = nil
@@ -34,6 +35,18 @@ class PostStatusPresenter {
     // MARK: - Program Lifecycle
     func viewDidLoad() {
         setCells()
+    }
+    
+    func viewWillAppear() {
+        startGPS()
+    }
+    
+    func viewWillDisappear() {
+        locationManager.stopUpdatingLocation()
+    }
+    
+    func startGPS() {
+        
     }
     
     // MARK: - UICollectionView DelegateFlowLayout

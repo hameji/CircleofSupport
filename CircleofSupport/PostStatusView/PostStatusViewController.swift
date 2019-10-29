@@ -22,7 +22,15 @@ class PostStatusViewController: UIViewController {
         self.postStatusPresenter.postStatusView = self
         self.postStatusPresenter.viewDidLoad()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.postStatusPresenter.viewWillAppear()
+    }
 
+    override func viewWillDisappear(_ animated: Bool) {
+        self.postStatusPresenter.viewWillDisappear()
+    }
+    
     @IBAction func postButtonPressed(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
