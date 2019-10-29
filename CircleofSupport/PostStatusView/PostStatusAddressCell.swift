@@ -10,4 +10,14 @@ import UIKit
 
 class PostStatusAddressCell: UICollectionViewCell {
     
+    @IBOutlet weak var address: UILabel!
+    @IBOutlet weak var placeSegment: UISegmentedControl!
+    
+    func bind(data: PostStatusAddressData) {
+        self.address.text = data.address
+    }
+    
+    @IBAction func segmentChanged(_ sender: UISegmentedControl) {
+    }
+    
 }

@@ -10,4 +10,9 @@ import UIKit
 
 class PostStatusDateCell: UICollectionViewCell {
     
+    @IBOutlet weak var date: UILabel!
+    
+    func bind(data: PostStatusDateData) {
+        self.date.text = data.date    
+    }
 }

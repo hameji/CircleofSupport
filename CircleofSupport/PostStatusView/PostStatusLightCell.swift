@@ -9,5 +9,8 @@
 import UIKit
 
 class PostStatusLightCell: UICollectionViewCell {
+ 
+    @IBOutlet weak var lightImageView: UIImageView!
+    @IBOutlet weak var lightDescription: UILabel!
     
 }

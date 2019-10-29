@@ -10,4 +10,7 @@ import UIKit
 
 class PostStatusWaterCell: UICollectionViewCell {
     
+    @IBOutlet weak var waterImageView: UIImageView!
+    @IBOutlet weak var waterDescription: UILabel!
+    
 }

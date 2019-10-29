@@ -10,4 +10,7 @@ import UIKit
 
 class PostStatusGassCell: UICollectionViewCell {
     
+    @IBOutlet weak var gassImageView: UIImageView!
+    @IBOutlet weak var gassDescription: UILabel!
+    
 }

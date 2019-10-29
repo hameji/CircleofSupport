@@ -252,6 +252,9 @@
                                         </collectionViewCellContentView>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <size key="customSize" width="414" height="64"/>
+                                        <connections>
+                                            <outlet property="date" destination="YB8-dl-Kvd" id="nOF-xk-62W"/>
+                                        </connections>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="addressCell" id="XGa-Bg-C4T" customClass="PostStatusAddressCell" customModule="CircleofSupport" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="64" width="414" height="106"/>
@@ -279,6 +282,9 @@
                                                         <segment title="避難所"/>
                                                         <segment title="その他"/>
                                                     </segments>
+                                                    <connections>
+                                                        <action selector="segmentChanged:" destination="XGa-Bg-C4T" eventType="valueChanged" id="YMp-Dt-k2f"/>
+                                                    </connections>
                                                 </segmentedControl>
                                             </subviews>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -293,6 +299,10 @@
                                         </collectionViewCellContentView>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <size key="customSize" width="414" height="106"/>
+                                        <connections>
+                                            <outlet property="address" destination="bD6-89-6dZ" id="lYc-rl-hdE"/>
+                                            <outlet property="placeSegment" destination="tru-R4-2k4" id="IpN-Er-1Xd"/>
+                                        </connections>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="lightCell" id="O12-NA-6Bv" customClass="PostStatusLightCell" customModule="CircleofSupport" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="170" width="414" height="298"/>
@@ -328,6 +338,10 @@
                                         </collectionViewCellContentView>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <size key="customSize" width="414" height="298"/>
+                                        <connections>
+                                            <outlet property="lightDescription" destination="CV4-gV-a3z" id="inG-RU-kCv"/>
+                                            <outlet property="lightImageView" destination="Yi8-CF-wff" id="vlP-gL-CiU"/>
+                                        </connections>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="gassCell" id="XVA-7W-YOf" customClass="PostStatusGassCell" customModule="CircleofSupport" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="468" width="414" height="319"/>
@@ -363,6 +377,10 @@
                                         </collectionViewCellContentView>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <size key="customSize" width="414" height="319"/>
+                                        <connections>
+                                            <outlet property="gassDescription" destination="xxX-hx-7zD" id="0if-yX-M7r"/>
+                                            <outlet property="gassImageView" destination="r3c-CY-dV9" id="IAl-di-dxV"/>
+                                        </connections>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="waterCell" id="r1S-pa-cXf" customClass="PostStatusWaterCell" customModule="CircleofSupport" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="787" width="414" height="324"/>
@@ -398,6 +416,10 @@
                                         </collectionViewCellContentView>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <size key="customSize" width="414" height="324"/>
+                                        <connections>
+                                            <outlet property="waterDescription" destination="CKG-Qq-ORx" id="mMg-vR-YR9"/>
+                                            <outlet property="waterImageView" destination="61N-Hn-aJJ" id="ZJ7-pq-WJM"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                                 <connections>
