@@ -174,3 +174,9 @@ extension PostStatusViewController: PostStatusDelegate {
         self.present(alert, animated: true, completion: nil)
     }
 }
+
+extension PostStatusViewController: PostStatusAddressDelegate {
+    func segmentChanged(index: Int) {
+        self.postStatusPresenter.segmentChanged(index: index)
+    }
+}
