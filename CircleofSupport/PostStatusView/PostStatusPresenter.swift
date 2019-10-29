@@ -86,6 +86,7 @@ class PostStatusPresenter {
                 }
                 self.address = cAddress
                 self.setCells()
+                self.postStatusView?.changeToPostMode()
                 self.postStatusView?.reloadCollectionView()
                 self.locationManager.stopUpdatingLocation()
             }

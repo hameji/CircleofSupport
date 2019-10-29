@@ -12,4 +12,5 @@ protocol PostStatusDelegate : class {
     func alertGPSfailed()
     func alertInvalidGPS()
     func alertAddressConversionFailed()
+    func changeToPostMode()
 }

@@ -152,5 +152,8 @@ extension PostStatusViewController: PostStatusDelegate {
         alert.addAction(yesAction)
         self.present(alert, animated: true, completion: nil)
     }
-
+    
+    func changeToPostMode() {
+        self.actionMode = 1
+    }
 }
