@@ -42,7 +42,7 @@ class PostStatusPresenter {
         case .addressCell( _):
             eachHeight = 90
         default:
-            eachHeight = 200
+            eachHeight = 260
         }
         return CGSize(width: viewWidth, height: CGFloat(eachHeight))
     }
