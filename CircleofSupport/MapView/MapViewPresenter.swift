@@ -12,10 +12,15 @@ class MapViewPresenter {
     
     // MARK: - vars & lets
     let locationManager = LocationManager()
+    private let authentication = Authentication()
+    private let lifelineFirestoreDao = LifelineFirestoreDao()
+
     weak var mapView: MapViewDelegate?
+    var lifelineData: [Lifeline] = []
 
     // MARK: - Program Lifecycle
     func viewDidLoad() {
+        downloadData()
     }
     
     func viewWillAppear() {
@@ -59,11 +64,22 @@ class MapViewPresenter {
                 guard case .success(let placemark) = result else {
                     return
                 }
-                guard let cPlacemark = placemark, let cAddress = cPlacemark.address else {
+                guard let cPlacemark = placemark, let _ = cPlacemark.address else {
                     return
                 }
                 self.mapView?.setAddressCoordinate(placemark: cPlacemark)
             }
+        }
+    }
+    
+    func downloadData() {
+        let date = Date().addingTimeInterval(-60*60*24*10)
+        lifelineFirestoreDao.fetch(withlastDLDate: date, limit: 10) { result in
+            guard case .success(let data) = result else {
+                return
+            }
+            self.lifelineData = data
+            // setAnnotations
         }
     }
 
