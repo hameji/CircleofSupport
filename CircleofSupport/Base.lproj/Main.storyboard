@@ -86,6 +86,9 @@
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="RGz-gH-3tD">
                                 <rect key="frame" x="0.0" y="56" width="414" height="603"/>
+                                <connections>
+                                    <outlet property="delegate" destination="I0V-dk-XJz" id="xb4-8g-WrT"/>
+                                </connections>
                             </mapView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="hOJ-Sy-F83">
                                 <rect key="frame" x="57" y="96" width="300" height="32"/>
