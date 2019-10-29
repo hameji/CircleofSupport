@@ -11,16 +11,21 @@ import UIKit
 class PostStatusPresenter {
     
     private let cells:[PostStatusPresentCell]
-
+    var lastPost: Date? =  nil
+    var address: String? = nil
+    var lightSelected: Bool = false
+    var gassSelected: Bool = false
+    var waterSelected: Bool = false
+    
     // MARK: - vars & lets
     weak var postStatusView: PostStatusDelegate?
 
     init() {
-        self.cells = [.dateCell,
-                      .addressCell(PostStatusAddressData(address: "")),
-                      .lightCell,
-                      .gassCell,
-                      .waterCell]
+        self.cells = [.dateCell(PostStatusDateData(date: lastPost)),
+                      .addressCell(PostStatusAddressData(address: address)),
+                      .lightCell(PostStatusSelectedData(isSelected: lightSelected)),
+                      .gassCell(PostStatusSelectedData(isSelected: lightSelected)),
+                      .waterCell(PostStatusSelectedData(isSelected: lightSelected))]
     }
     
     // MARK: - Program Lifecycle

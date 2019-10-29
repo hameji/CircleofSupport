@@ -6,7 +6,6 @@
 //  Copyright © 2019 Hajime Taniguchi. All rights reserved.
 //
 
-struct PostStatusLifeLineData {
+struct PostStatusSelectedData {
     let isSelected: Bool
-    let description: String
 }

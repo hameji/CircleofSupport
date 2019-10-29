@@ -9,7 +9,7 @@
 enum PostStatusPresentCell {
     case dateCell(PostStatusDateData)
     case addressCell(PostStatusAddressData)
-    case lightCell(PostStatusLifeLineData)
-    case gassCell(PostStatusLifeLineData)
-    case waterCell(PostStatusLifeLineData)
+    case lightCell(PostStatusSelectedData)
+    case gassCell(PostStatusSelectedData)
+    case waterCell(PostStatusSelectedData)
 }

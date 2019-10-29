@@ -6,6 +6,8 @@
 //  Copyright © 2019 Hajime Taniguchi. All rights reserved.
 //
 
+import Foundation
+
 struct PostStatusDateData {
-    let date: Double
+    let date: Date?
 }

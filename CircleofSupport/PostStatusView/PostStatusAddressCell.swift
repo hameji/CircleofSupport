@@ -14,7 +14,12 @@ class PostStatusAddressCell: UICollectionViewCell {
     @IBOutlet weak var placeSegment: UISegmentedControl!
     
     func bind(data: PostStatusAddressData) {
-        self.address.text = data.address
+        if let address = data.address {
+            self.address.text = address
+        } else {
+            self.address.text = "現住所を特定できません。"
+            placeSegment.selectedSegmentIndex = 0
+        }
     }
     
     @IBAction func segmentChanged(_ sender: UISegmentedControl) {
