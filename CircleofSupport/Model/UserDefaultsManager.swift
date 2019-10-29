@@ -14,13 +14,12 @@ class UserDefaultsManager {
     // MARK: -- keys
     private let keyLastUpdate = "lastUpdate"
     private let keyInstallDay = "installDay"
-    private let keyMapDistance = "mapDistance"
+    private let keyMapDelta = "mapDelta"
 
     // MARK: -- get
-    func getMapDistance() -> Double {
-        return ud.double(forKey: keyMapDistance)
+    func getMapDelta() -> Double {
+        return ud.double(forKey: keyMapDelta)
     }
-    
     
     func getLastUpdate() -> Date {
         let date = Date(timeIntervalSince1970: ud.double(forKey: keyLastUpdate))
@@ -33,8 +32,9 @@ class UserDefaultsManager {
     }
     
     // MARK: -- set
-    func set(mapDistance: Double) {
-        ud.set(mapDistance, forKey: keyMapDistance)
+    func set(mapDelta: Double) {
+        print("mapdata", mapDelta)
+        ud.set(mapDelta, forKey: keyMapDelta)
     }
     
     func set(lastUpdate: Date) {

@@ -9,4 +9,5 @@
 protocol MapViewDelegate : class {
     func performPostSegue()
     func setAddressCoordinate(placemark: Placemark)
+    func setMapCenter(placemark: Placemark, delta: Double)
 }

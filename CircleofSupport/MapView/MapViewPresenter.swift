@@ -28,7 +28,7 @@ class MapViewPresenter {
     func initUserDefaults() {
         if userDefaultsManager.getInstallDay() == Date(timeIntervalSince1970: 0.0) {
             userDefaultsManager.set(installDay: Date())
-            userDefaultsManager.set(mapDistance: 5000)
+            userDefaultsManager.set(mapDelta: 0.2)
         }
     }
     
@@ -76,6 +76,8 @@ class MapViewPresenter {
                 guard let cPlacemark = placemark, let _ = cPlacemark.address else {
                     return
                 }
+                let mapDelta = self.userDefaultsManager.getMapDelta()
+                self.mapView?.setMapCenter(placemark: cPlacemark, delta: mapDelta)
                 self.mapView?.setAddressCoordinate(placemark: cPlacemark)
             }
         }
