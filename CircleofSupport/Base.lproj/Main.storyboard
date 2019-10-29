@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -204,8 +204,8 @@
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ctK-b7-bhF">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
                                 <items>
-                                    <navigationItem title="Title" id="onE-ik-MRp">
-                                        <barButtonItem key="rightBarButtonItem" title="報告" id="olX-kX-9Qo">
+                                    <navigationItem title="現状を報告する" id="onE-ik-MRp">
+                                        <barButtonItem key="rightBarButtonItem" title="送信" id="olX-kX-9Qo">
                                             <connections>
                                                 <action selector="postButtonPressed:" destination="wRI-d1-W3k" id="kRW-QJ-w2l"/>
                                             </connections>
@@ -230,14 +230,14 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="64"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="日時" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pkh-xI-4T6">
-                                                    <rect key="frame" x="20" y="21.5" width="35" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="前回送信日時" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pkh-xI-4T6">
+                                                    <rect key="frame" x="20" y="21.5" width="104" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="現在の日時" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YB8-dl-Kvd">
-                                                    <rect key="frame" x="307" y="21.5" width="87" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="日時" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YB8-dl-Kvd">
+                                                    <rect key="frame" x="359" y="21.5" width="35" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
@@ -272,25 +272,22 @@
                                                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="vxL-CW-yjF">
-                                                    <rect key="frame" x="345" y="61" width="51" height="31"/>
-                                                </switch>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="自宅" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OEO-PX-Luu">
-                                                    <rect key="frame" x="290" y="66" width="35" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="tru-R4-2k4">
+                                                    <rect key="frame" x="218" y="57" width="176" height="32"/>
+                                                    <segments>
+                                                        <segment title="自宅"/>
+                                                        <segment title="避難所"/>
+                                                        <segment title="その他"/>
+                                                    </segments>
+                                                </segmentedControl>
                                             </subviews>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="bD6-89-6dZ" secondAttribute="trailing" constant="20" id="2xV-Bq-9Dx"/>
-                                                <constraint firstItem="vxL-CW-yjF" firstAttribute="centerY" secondItem="OEO-PX-Luu" secondAttribute="centerY" id="9Pw-a0-lRU"/>
-                                                <constraint firstAttribute="trailing" secondItem="vxL-CW-yjF" secondAttribute="trailing" constant="20" id="dRl-8r-uez"/>
+                                                <constraint firstItem="tru-R4-2k4" firstAttribute="top" secondItem="bD6-89-6dZ" secondAttribute="bottom" constant="16" id="B0c-g8-DQq"/>
+                                                <constraint firstAttribute="trailing" secondItem="tru-R4-2k4" secondAttribute="trailing" constant="20" id="E5V-8F-75t"/>
                                                 <constraint firstItem="iZk-wU-g4d" firstAttribute="leading" secondItem="PQg-Zr-Qmz" secondAttribute="leading" constant="20" id="nTi-QX-y0V"/>
-                                                <constraint firstItem="vxL-CW-yjF" firstAttribute="top" secondItem="bD6-89-6dZ" secondAttribute="bottom" constant="20" id="q4y-af-dWV"/>
                                                 <constraint firstItem="iZk-wU-g4d" firstAttribute="top" secondItem="PQg-Zr-Qmz" secondAttribute="top" constant="20" id="v7a-ZF-SOw"/>
-                                                <constraint firstItem="vxL-CW-yjF" firstAttribute="leading" secondItem="OEO-PX-Luu" secondAttribute="trailing" constant="20" id="vf4-ug-T0u"/>
                                                 <constraint firstItem="bD6-89-6dZ" firstAttribute="top" secondItem="PQg-Zr-Qmz" secondAttribute="top" constant="20" id="xnE-ie-XdQ"/>
                                             </constraints>
                                         </collectionViewCellContentView>
