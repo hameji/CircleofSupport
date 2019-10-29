@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Firebase
 
 class LifelineFirestoreDao {
     
@@ -33,6 +34,7 @@ class LifelineFirestoreDao {
                 completion(.failure(result as! Error))
                 return
             }
+            print(documents)
             let lifelines = documents.map {
                 Lifeline(lifelineID: $0.documentID,
                          prefecture: $0.data[self.keyPrefecture] as! String,
@@ -42,7 +44,7 @@ class LifelineFirestoreDao {
                          light: $0.data[self.keyLight] as! Bool,
                          gass: $0.data[self.keyGass] as! Bool,
                          water: $0.data[self.keyWater] as! Bool,
-                         registerDate: $0.data[self.keyRegisterDate] as! Date,
+                         registerDate: ($0.data[self.keyRegisterDate] as! Timestamp).dateValue(),
                          registerUsr: $0.data[self.keyRegisterUsr] as! String,
                          verified: $0.data[self.keyVerified] as! Bool)
             }
