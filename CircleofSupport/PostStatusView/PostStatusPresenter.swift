@@ -64,15 +64,27 @@ class PostStatusPresenter {
             guard case .success(let locations) = result else {
                 print(" ... failed to get location")
                 self.postStatusView?.alertGPSfailed()
+                self.locationManager.stopUpdatingLocation()
                 return
             }
             guard let location = locations.first else {
                 print(" ... location is nil(invalid)")
                 self.postStatusView?.alertInvalidGPS()
+                self.locationManager.stopUpdatingLocation()
                 return
             }
-            
-            self.locationManager.stopUpdatingLocation()
+            self.locationManager.gpsToAddress(location: location) { result in
+                guard case .success(let location) = result else {
+                    return
+                }
+                guard let cLocation = location, let cAddress = cLocation.address else {
+                    return
+                }
+                self.address = cAddress
+                self.setCells()
+                self.postStatusView?.reloadCollectionView()
+                self.locationManager.stopUpdatingLocation()
+            }
         }
     }
     
