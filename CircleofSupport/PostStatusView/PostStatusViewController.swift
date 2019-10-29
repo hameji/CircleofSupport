@@ -143,4 +143,14 @@ extension PostStatusViewController: PostStatusDelegate {
         self.present(alert, animated: true, completion: nil)
     }
 
+    func alertAddressConversionFailed() {
+        let alert = UIAlertController(title: "住所の取得に失敗しました。", message: nil, preferredStyle: .alert)
+        let yesAction = UIAlertAction(title: "はい", style: .default, handler: { Void in
+            self.actionMode = 0
+            self.changeButtonName()
+        })
+        alert.addAction(yesAction)
+        self.present(alert, animated: true, completion: nil)
+    }
+
 }

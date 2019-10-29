@@ -75,9 +75,13 @@ class PostStatusPresenter {
             }
             self.locationManager.gpsToAddress(location: location) { result in
                 guard case .success(let location) = result else {
+                    self.postStatusView?.alertAddressConversionFailed()
+                    self.locationManager.stopUpdatingLocation()
                     return
                 }
                 guard let cLocation = location, let cAddress = cLocation.address else {
+                    self.postStatusView?.alertAddressConversionFailed()
+                    self.locationManager.stopUpdatingLocation()
                     return
                 }
                 self.address = cAddress
