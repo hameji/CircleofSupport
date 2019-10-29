@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import MapKit
 
 struct Lifeline {
     let lifelineID: String
@@ -20,4 +21,10 @@ struct Lifeline {
     let registerDate: Date
     let registerUsr: String
     let verified: Bool
+    
+    var coordinate: CLLocationCoordinate2D {
+        get {
+            return CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+            }
+    }
 }
