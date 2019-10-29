@@ -62,6 +62,7 @@ class PostStatusPresenter {
     func startGPS() {
         locationManager.startUpdatingLocation { result in
             guard case .success(let locations) = result else {
+                self.postStatusView?.alertGPSfailed()
                 return
             }
             guard let location = locations.first else {

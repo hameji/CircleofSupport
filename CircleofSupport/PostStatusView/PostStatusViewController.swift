@@ -106,4 +106,12 @@ extension PostStatusViewController: PostStatusDelegate {
         alert.addAction(dismissAction)
         self.present(alert, animated: true, completion: nil)
     }
+    
+    func alertGPSfailed() {
+        let alert = UIAlertController(title: "GPSを取得できませんでした。\n時間を置いて再度試して下さい。", message: nil, preferredStyle: .alert)
+        let yesAction = UIAlertAction(title: "はい", style: .default, handler: { Void in
+        })
+        alert.addAction(yesAction)
+        self.present(alert, animated: true, completion: nil)
+    }
 }
