@@ -36,6 +36,8 @@
 		636D3B2723601A4F00AB0A1C /* PostStatusLightCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636D3B2623601A4F00AB0A1C /* PostStatusLightCell.swift */; };
 		636D3B2923601A5F00AB0A1C /* PostStatusGassCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636D3B2823601A5F00AB0A1C /* PostStatusGassCell.swift */; };
 		636D3B2B23601A6F00AB0A1C /* PostStatusWaterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636D3B2A23601A6F00AB0A1C /* PostStatusWaterCell.swift */; };
+		63DAD34B236804450027B165 /* PostStatusDateData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DAD34A236804450027B165 /* PostStatusDateData.swift */; };
+		63DAD351236804DB0027B165 /* PostStatusLifeLineData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DAD350236804DB0027B165 /* PostStatusLifeLineData.swift */; };
 		83F279D8932727634C4AFF19 /* Pods_CircleofSupport_CircleofSupportUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F08BBBE5C84AC5C299F1AF06 /* Pods_CircleofSupport_CircleofSupportUITests.framework */; };
 		8BD965B858F02897B5A300F7 /* Pods_CircleofSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7D49BAE345F969C1C228D1D /* Pods_CircleofSupport.framework */; };
 /* End PBXBuildFile section */
@@ -96,6 +98,8 @@
 		636D3B2623601A4F00AB0A1C /* PostStatusLightCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PostStatusLightCell.swift; path = CircleofSupport/PostStatusView/PostStatusLightCell.swift; sourceTree = SOURCE_ROOT; };
 		636D3B2823601A5F00AB0A1C /* PostStatusGassCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PostStatusGassCell.swift; path = CircleofSupport/PostStatusView/PostStatusGassCell.swift; sourceTree = SOURCE_ROOT; };
 		636D3B2A23601A6F00AB0A1C /* PostStatusWaterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PostStatusWaterCell.swift; path = CircleofSupport/PostStatusView/PostStatusWaterCell.swift; sourceTree = SOURCE_ROOT; };
+		63DAD34A236804450027B165 /* PostStatusDateData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostStatusDateData.swift; sourceTree = "<group>"; };
+		63DAD350236804DB0027B165 /* PostStatusLifeLineData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostStatusLifeLineData.swift; sourceTree = "<group>"; };
 		679C159C24759657EF5A2D8B /* Pods_CircleofSupportTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CircleofSupportTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		70B5DD837BD5A10C6449A180 /* Pods-CircleofSupport.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CircleofSupport.release.xcconfig"; path = "Target Support Files/Pods-CircleofSupport/Pods-CircleofSupport.release.xcconfig"; sourceTree = "<group>"; };
 		8CB9006B2AD72BDA6B1F1E2A /* Pods-CircleofSupport-CircleofSupportUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CircleofSupport-CircleofSupportUITests.release.xcconfig"; path = "Target Support Files/Pods-CircleofSupport-CircleofSupportUITests/Pods-CircleofSupport-CircleofSupportUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -266,7 +270,9 @@
 		636D3B1D236018AC00AB0A1C /* Cell Data */ = {
 			isa = PBXGroup;
 			children = (
+				63DAD34A236804450027B165 /* PostStatusDateData.swift */,
 				636D3B1E236018C700AB0A1C /* PostStatusAddressData.swift */,
+				63DAD350236804DB0027B165 /* PostStatusLifeLineData.swift */,
 			);
 			path = "Cell Data";
 			sourceTree = "<group>";
@@ -532,6 +538,7 @@
 				636D3B2B23601A6F00AB0A1C /* PostStatusWaterCell.swift in Sources */,
 				636D3B212360193B00AB0A1C /* PostStatusPresentCell.swift in Sources */,
 				63137D432357A03A007FB666 /* MapViewController.swift in Sources */,
+				63DAD351236804DB0027B165 /* PostStatusLifeLineData.swift in Sources */,
 				63137D5223586200007FB666 /* Authentication.swift in Sources */,
 				63137D472357A873007FB666 /* MapViewPresenter.swift in Sources */,
 				63137D452357A04B007FB666 /* AskForHelpViewController.swift in Sources */,
@@ -544,6 +551,7 @@
 				636D3B02235F7CA200AB0A1C /* PostStatusViewController.swift in Sources */,
 				635FAB7A235785230039B341 /* SceneDelegate.swift in Sources */,
 				635FABB223579A050039B341 /* TopViewPresenter.swift in Sources */,
+				63DAD34B236804450027B165 /* PostStatusDateData.swift in Sources */,
 				636D3AFD235F662100AB0A1C /* FirestoreManager.swift in Sources */,
 				636D3B2323601A2F00AB0A1C /* PostStatusDateCell.swift in Sources */,
 			);
