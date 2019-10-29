@@ -12,7 +12,7 @@ import MapKit
 class MapViewController: UIViewController {
 
     @IBOutlet weak var mapView: MKMapView!
-    @IBOutlet weak var adress: UILabel!
+    @IBOutlet weak var address: UILabel!
     @IBOutlet weak var latitude: UILabel!
     @IBOutlet weak var longitude: UILabel!
     private let mapViewPresenter = MapViewPresenter()
@@ -26,7 +26,14 @@ class MapViewController: UIViewController {
         self.mapViewPresenter.mapView = self
     }
     
-    
+    override func viewWillAppear(_ animated: Bool) {
+        self.mapViewPresenter.viewWillAppear()
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        self.mapViewPresenter.viewWillDisappear()
+    }
+
     @IBAction func postButtonPressed(_ sender: UIBarButtonItem) {
         self.mapViewPresenter.postButtonPressed()
     }
@@ -42,4 +49,9 @@ extension MapViewController: MapViewDelegate {
         self.performSegue(withIdentifier: MapViewController.seguePostStatus, sender: nil)
     }
 
+    func setAddressCoordinate(placemark: Placemark) {
+        self.address.text = placemark.address
+        self.latitude.text = String(format: "%.7f", placemark.location!.coordinate.latitude)
+        self.longitude.text = String(format: "%.7f", placemark.location!.coordinate.longitude)
+    }
 }

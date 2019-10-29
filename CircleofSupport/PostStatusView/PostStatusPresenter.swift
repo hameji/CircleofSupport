@@ -34,9 +34,6 @@ class PostStatusPresenter {
                       .waterCell(PostStatusSelectedData(isSelected: waterSelected))]
     }
     
-    func checkAddress() {
-    }
-    
     // MARK: - Program Lifecycle
     func viewDidLoad() {
         setCells()

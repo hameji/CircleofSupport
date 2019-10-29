@@ -113,7 +113,7 @@
 		63DAD35A236842ED0027B165 /* Placemark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Placemark.swift; sourceTree = "<group>"; };
 		63DAD35C2368624E0027B165 /* LifelineFirestoreDao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LifelineFirestoreDao.swift; sourceTree = "<group>"; };
 		63DAD35E236865940027B165 /* Lifeline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lifeline.swift; sourceTree = "<group>"; };
-		63DAD3642368812D0027B165 /* PostStatusAddressDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PostStatusAddressDelegate.swift; path = "CircleofSupport/PostStatusView/Cell Data/PostStatusAddressDelegate.swift"; sourceTree = SOURCE_ROOT; };
+		63DAD3642368812D0027B165 /* PostStatusAddressDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PostStatusAddressDelegate.swift; path = "CircleofSupport/PostStatusView/Cell Delegate/PostStatusAddressDelegate.swift"; sourceTree = SOURCE_ROOT; };
 		679C159C24759657EF5A2D8B /* Pods_CircleofSupportTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CircleofSupportTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		70B5DD837BD5A10C6449A180 /* Pods-CircleofSupport.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CircleofSupport.release.xcconfig"; path = "Target Support Files/Pods-CircleofSupport/Pods-CircleofSupport.release.xcconfig"; sourceTree = "<group>"; };
 		8CB9006B2AD72BDA6B1F1E2A /* Pods-CircleofSupport-CircleofSupportUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CircleofSupport-CircleofSupportUITests.release.xcconfig"; path = "Target Support Files/Pods-CircleofSupport-CircleofSupportUITests/Pods-CircleofSupport-CircleofSupportUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -268,9 +268,10 @@
 				636D3B01235F7CA200AB0A1C /* PostStatusViewController.swift */,
 				636D3B03235F7CAF00AB0A1C /* PostStatusPresenter.swift */,
 				636D3B05235F7CBD00AB0A1C /* PostStatusDelegate.swift */,
+				636D3B202360193B00AB0A1C /* PostStatusPresentCell.swift */,
 				636D3B1D236018AC00AB0A1C /* Cell Data */,
 				636D3B09235F7E5500AB0A1C /* Custom Cell */,
-				636D3B202360193B00AB0A1C /* PostStatusPresentCell.swift */,
+				63DAD366236886B90027B165 /* Cell Delegate */,
 			);
 			path = PostStatusView;
 			sourceTree = "<group>";
@@ -280,7 +281,6 @@
 			children = (
 				636D3B2223601A2F00AB0A1C /* PostStatusDateCell.swift */,
 				636D3B2423601A3E00AB0A1C /* PostStatusAddressCell.swift */,
-				63DAD3642368812D0027B165 /* PostStatusAddressDelegate.swift */,
 				636D3B2623601A4F00AB0A1C /* PostStatusLightCell.swift */,
 				636D3B2823601A5F00AB0A1C /* PostStatusGassCell.swift */,
 				636D3B2A23601A6F00AB0A1C /* PostStatusWaterCell.swift */,
@@ -296,6 +296,14 @@
 				63DAD350236804DB0027B165 /* PostStatusSelectedData.swift */,
 			);
 			path = "Cell Data";
+			sourceTree = "<group>";
+		};
+		63DAD366236886B90027B165 /* Cell Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				63DAD3642368812D0027B165 /* PostStatusAddressDelegate.swift */,
+			);
+			path = "Cell Delegate";
 			sourceTree = "<group>";
 		};
 		6B8CBA1367D1075EFD8ED915 /* Pods */ = {
