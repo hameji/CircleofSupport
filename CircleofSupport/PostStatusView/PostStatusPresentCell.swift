@@ -7,9 +7,9 @@
 //
 
 enum PostStatusPresentCell {
-    case dateCell
+    case dateCell(PostStatusDateData)
     case addressCell(PostStatusAddressData)
-    case lightCell
-    case gassCell
-    case waterCell
+    case lightCell(PostStatusLifeLineData)
+    case gassCell(PostStatusLifeLineData)
+    case waterCell(PostStatusLifeLineData)
 }
