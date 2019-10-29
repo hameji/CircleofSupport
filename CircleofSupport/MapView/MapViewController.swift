@@ -54,4 +54,16 @@ extension MapViewController: MapViewDelegate {
         self.latitude.text = String(format: "%.7f", placemark.location!.coordinate.latitude)
         self.longitude.text = String(format: "%.7f", placemark.location!.coordinate.longitude)
     }
+    
+    func setMapCenter(placemark: Placemark, delta: Double) {
+        print("delta:", delta)
+        self.mapView.showsUserLocation = true
+        var region:MKCoordinateRegion = mapView.region
+        region.center = CLLocationCoordinate2D(latitude: placemark.location!.coordinate.latitude,
+        longitude: placemark.location!.coordinate.longitude)
+        // todo: ここuserdefaultsからうまく設定できない。
+        region.span.latitudeDelta = 0.02
+        region.span.longitudeDelta = 0.02
+        self.mapView.setRegion(region,animated:true)
+    }
 }
