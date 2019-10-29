@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Firebase
 
 class LifelineFirestoreDao {
     
@@ -42,7 +43,7 @@ class LifelineFirestoreDao {
                          light: $0.data[self.keyLight] as! Bool,
                          gass: $0.data[self.keyGass] as! Bool,
                          water: $0.data[self.keyWater] as! Bool,
-                         registerDate: $0.data[self.keyRegisterDate] as! Date,
+                         registerDate: ($0.data[self.keyRegisterDate] as! Timestamp).dateValue(),
                          registerUsr: $0.data[self.keyRegisterUsr] as! String,
                          verified: $0.data[self.keyVerified] as! Bool)
             }
@@ -62,7 +63,7 @@ class LifelineFirestoreDao {
         lifelineJson[self.keyLight] = light
         lifelineJson[self.keyGass] = gass
         lifelineJson[self.keyWater] = water
-        lifelineJson[self.keyRegisterDate] = Date()
+        lifelineJson[self.keyRegisterDate] = placemark.location?.timestamp
         lifelineJson[self.keyRegisterUsr] = uid
         lifelineJson[self.keyVerified] = false
         
