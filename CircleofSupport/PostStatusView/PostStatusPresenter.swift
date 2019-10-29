@@ -64,13 +64,16 @@ class PostStatusPresenter {
     
     func postStatus() {
         guard let user = authentication.getCurrentUser() else {
+            self.postStatusView?.alertUnLoggedIn()
             return
         }
         guard let cPlacemark = placemark else {
+            self.postStatusView?.alertAddressConversionFailed()
             return
         }
         lifelineFirestoreDao.store(user.uid, placemark: cPlacemark, place: place, light: lightSelected, gass: gassSelected, water: waterSelected) { result in
             guard case .success( _) = result else {
+                self.postStatusView?.alertUpdateFailed()
                 return
             }
             self.postStatusView?.dismissView()
