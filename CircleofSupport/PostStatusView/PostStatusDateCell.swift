@@ -10,4 +10,17 @@ import UIKit
 
 class PostStatusDateCell: UICollectionViewCell {
     
+    @IBOutlet weak var date: UILabel!
+    
+    func bind(data: PostStatusDateData) {
+        if let date = data.date {
+            let df = DateFormatter()
+            df.locale = Locale(identifier: "en_US_POSIX")
+            df.dateStyle = .medium
+            df.timeStyle = .none
+            self.date.text = df.string(from: date)
+        } else {
+            self.date.text = "送信記録なし"
+        }
+    }
 }

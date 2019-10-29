@@ -10,21 +10,30 @@ import UIKit
 
 class PostStatusPresenter {
     
-    private let cells:[PostStatusPresentCell]
-
+    private var cells:[PostStatusPresentCell] = []
+    var lastPost: Date? =  nil
+    var address: String? = nil
+    var lightSelected: Bool = true
+    var gassSelected: Bool = true
+    var waterSelected: Bool = true
+    
     // MARK: - vars & lets
     weak var postStatusView: PostStatusDelegate?
 
-    init() {
-        self.cells = [.dateCell,
-                      .addressCell(PostStatusAddressData(address: "")),
-                      .lightCell,
-                      .gassCell,
-                      .waterCell]
+    func setCells() {
+        self.cells = [.dateCell(PostStatusDateData(date: lastPost)),
+                      .addressCell(PostStatusAddressData(address: address)),
+                      .lightCell(PostStatusSelectedData(isSelected: lightSelected)),
+                      .gassCell(PostStatusSelectedData(isSelected: gassSelected)),
+                      .waterCell(PostStatusSelectedData(isSelected: waterSelected))]
+    }
+    
+    func checkAddress() {
     }
     
     // MARK: - Program Lifecycle
     func viewDidLoad() {
+        setCells()
     }
     
     // MARK: - UICollectionView DelegateFlowLayout
@@ -37,7 +46,7 @@ class PostStatusPresenter {
         case .addressCell( _):
             eachHeight = 90
         default:
-            eachHeight = 200
+            eachHeight = 260
         }
         return CGSize(width: viewWidth, height: CGFloat(eachHeight))
     }
@@ -48,5 +57,34 @@ class PostStatusPresenter {
 
     func cellForItemAt(indexPath: IndexPath) -> PostStatusPresentCell {
         return self.cells[indexPath.row]
+    }
+    
+    func didSelectItemAt(indexPath: IndexPath) {
+        switch indexPath.row {
+        case 2:
+            print("pressed 2")
+            if lightSelected {
+                lightSelected = false
+            } else {
+                lightSelected = true
+            }
+        case 3:
+            print("pressed 3")
+            if gassSelected {
+                gassSelected = false
+            } else {
+                gassSelected = true
+            }
+        case 4:
+            print("pressed 4")
+            if waterSelected {
+                waterSelected = false
+            } else {
+                waterSelected = true
+            }
+        default: break
+        }
+        setCells()
+        self.postStatusView?.reloadCollectionView()
     }
 }

@@ -7,5 +7,5 @@
 //
 
 struct PostStatusAddressData {
-    let address: String
+    let address: String?
 }

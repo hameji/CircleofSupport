@@ -9,5 +9,17 @@
 import UIKit
 
 class PostStatusLightCell: UICollectionViewCell {
+ 
+    @IBOutlet weak var lightImageView: UIImageView!
+    @IBOutlet weak var lightDescription: UILabel!
     
+    func bind(data: PostStatusSelectedData) {
+        if data.isSelected {
+            self.lightImageView.image = UIImage(named: "lightOn.png")
+            self.lightDescription.text = "電気は開通しています。"
+        } else {
+            self.lightImageView.image = UIImage(named: "lightOff.png")
+            self.lightDescription.text = "電気は不通です。"
+        }
+    }
 }

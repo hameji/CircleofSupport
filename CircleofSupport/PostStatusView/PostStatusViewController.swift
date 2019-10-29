@@ -20,6 +20,7 @@ class PostStatusViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         self.postStatusPresenter.postStatusView = self
+        self.postStatusPresenter.viewDidLoad()
     }
 
     @IBAction func postButtonPressed(_ sender: Any) {
@@ -44,20 +45,25 @@ extension PostStatusViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cellType = self.postStatusPresenter.cellForItemAt(indexPath: indexPath)
         switch cellType {
-        case .dateCell:
-            let dateCell = collectionView.dequeueReusableCell(withReuseIdentifier: "dateCell", for: indexPath)
+        case .dateCell(let data):
+            let dateCell = collectionView.dequeueReusableCell(withReuseIdentifier: "dateCell", for: indexPath) as! PostStatusDateCell
+            dateCell.bind(data: data)
             return dateCell
         case .addressCell(let data):
-            let addressCell = collectionView.dequeueReusableCell(withReuseIdentifier: "addressCell", for: indexPath)
+            let addressCell = collectionView.dequeueReusableCell(withReuseIdentifier: "addressCell", for: indexPath) as! PostStatusAddressCell
+            addressCell.bind(data: data)
             return addressCell
-        case .lightCell:
-            let lightCell = collectionView.dequeueReusableCell(withReuseIdentifier: "lightCell", for: indexPath)
+        case .lightCell(let data):
+            let lightCell = collectionView.dequeueReusableCell(withReuseIdentifier: "lightCell", for: indexPath) as! PostStatusLightCell
+            lightCell.bind(data: data)
             return lightCell
-        case .gassCell:
-            let gassCell = collectionView.dequeueReusableCell(withReuseIdentifier: "gassCell", for: indexPath)
+        case .gassCell(let data):
+            let gassCell = collectionView.dequeueReusableCell(withReuseIdentifier: "gassCell", for: indexPath) as! PostStatusGassCell
+            gassCell.bind(data: data)
             return gassCell
-        case .waterCell:
-            let waterCell = collectionView.dequeueReusableCell(withReuseIdentifier: "waterCell", for: indexPath)
+        case .waterCell(let data):
+            let waterCell = collectionView.dequeueReusableCell(withReuseIdentifier: "waterCell", for: indexPath) as! PostStatusWaterCell
+            waterCell.bind(data: data)
             return waterCell
         }
     }
@@ -66,12 +72,17 @@ extension PostStatusViewController: UICollectionViewDataSource {
 }
 
 extension PostStatusViewController: UICollectionViewDelegate {
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print("selected:", indexPath)
+        self.postStatusPresenter.didSelectItemAt(indexPath: indexPath)
+    }
 }
 
 
 
 // MARK: - TopViewDelegate
 extension PostStatusViewController: PostStatusDelegate {
-
+    func reloadCollectionView() {
+        self.collectionView.reloadData()
+    }
 }
