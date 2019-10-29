@@ -10,12 +10,10 @@
 import UIKit
 
 class PostStatusViewController: UIViewController {
-
-    
-    
     
     @IBOutlet weak var actionButton: UIBarButtonItem!
     @IBOutlet weak var collectionView: UICollectionView!
+    var actionMode = 0  // 0: post, 1: gpsStart
     
     private let postStatusPresenter = PostStatusPresenter()
     
@@ -36,11 +34,25 @@ class PostStatusViewController: UIViewController {
     }
     
     @IBAction func actionButtonPressed(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
+        if actionMode == 0 {
+            self.postStatusPresenter.startGPS()
+        } else if actionMode == 1 {
+            // データをアップロード
+        }
     }
     
     private func dismissView() {
         self.dismiss(animated: true, completion: nil)
+    }
+    
+    private func changeButtonName() {
+        switch actionMode {
+        case 0:
+            self.actionButton.title = "GPS取得"
+        case 1:
+            self.actionButton.title = "送信"
+        default: break
+        }
     }
 }
 
@@ -114,6 +126,8 @@ extension PostStatusViewController: PostStatusDelegate {
     func alertGPSfailed() {
         let alert = UIAlertController(title: "GPSを取得できませんでした。\n時間を置いて再度試して下さい。", message: nil, preferredStyle: .alert)
         let yesAction = UIAlertAction(title: "はい", style: .default, handler: { Void in
+            self.actionMode = 0
+            self.changeButtonName()
         })
         alert.addAction(yesAction)
         self.present(alert, animated: true, completion: nil)
@@ -122,6 +136,8 @@ extension PostStatusViewController: PostStatusDelegate {
     func alertInvalidGPS() {
         let alert = UIAlertController(title: "有効なGPSを取得できませんでした。\n時間を置いて再度試して下さい。", message: nil, preferredStyle: .alert)
         let yesAction = UIAlertAction(title: "はい", style: .default, handler: { Void in
+            self.actionMode = 0
+            self.changeButtonName()
         })
         alert.addAction(yesAction)
         self.present(alert, animated: true, completion: nil)
