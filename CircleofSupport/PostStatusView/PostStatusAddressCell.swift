@@ -13,6 +13,8 @@ class PostStatusAddressCell: UICollectionViewCell {
     @IBOutlet weak var address: UILabel!
     @IBOutlet weak var placeSegment: UISegmentedControl!
     
+    var delegate: PostStatusAddressDelegate?
+    
     func bind(data: PostStatusAddressData) {
         if let address = data.address {
             self.address.text = address
@@ -23,6 +25,7 @@ class PostStatusAddressCell: UICollectionViewCell {
     }
     
     @IBAction func segmentChanged(_ sender: UISegmentedControl) {
+        self.delegate?.segmentChanged(index: sender.selectedSegmentIndex)
     }
     
 }
