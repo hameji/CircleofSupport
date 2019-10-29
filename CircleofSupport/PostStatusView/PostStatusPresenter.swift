@@ -16,7 +16,7 @@ class PostStatusPresenter {
     
     private var cells:[PostStatusPresentCell] = []
     var placemark: Placemark? = nil
-    var place: String = ""
+    var place: String = "自宅"
     var lastPost: Date? =  nil
     var address: String? = nil
     var lightSelected: Bool = true
@@ -176,5 +176,14 @@ class PostStatusPresenter {
         }
         setCells()
         self.postStatusView?.reloadCollectionView()
+    }
+    
+    func segmentChanged(index: Int) {
+        switch index {
+        case 0: place = "自宅"
+        case 1: place = "職場"
+        case 2: place = "その他"
+        default: break
+        }
     }
 }
