@@ -184,9 +184,9 @@
 				63DAD3582368181F0027B165 /* GpsAuthorization.swift */,
 				63DAD3562368167C0027B165 /* Location.swift */,
 				636D3AFC235F662100AB0A1C /* FirestoreManager.swift */,
+				636D3AFE235F665000AB0A1C /* Document.swift */,
 				63DAD35C2368624E0027B165 /* LifelineFirestoreDao.swift */,
 				63DAD35E236865940027B165 /* Lifeline.swift */,
-				636D3AFE235F665000AB0A1C /* Document.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
