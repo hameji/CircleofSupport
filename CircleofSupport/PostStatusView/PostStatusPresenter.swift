@@ -38,11 +38,25 @@ class PostStatusPresenter {
     }
     
     func viewWillAppear() {
-        startGPS()
+        checkGPSStatus()
     }
     
     func viewWillDisappear() {
         locationManager.stopUpdatingLocation()
+    }
+    
+    func checkGPSStatus() {
+        let status = locationManager.checkAuthorization()
+        switch status {
+        case .always:
+            fallthrough
+        case .whenInUse:
+            startGPS()
+        case .denied, .restricted:
+            break
+        case .notDetermined:
+            locationManager.askAuthorization()
+        }
     }
     
     func startGPS() {
