@@ -34,6 +34,10 @@ class PostStatusViewController: UIViewController {
     @IBAction func postButtonPressed(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
+    
+    private func dismissView() {
+        self.dismiss(animated: true, completion: nil)
+    }
 }
 
 // MARK: - UICollectionViewDelegateFlowLayout
@@ -92,5 +96,14 @@ extension PostStatusViewController: UICollectionViewDelegate {
 extension PostStatusViewController: PostStatusDelegate {
     func reloadCollectionView() {
         self.collectionView.reloadData()
+    }
+    
+    func alertGPSdisabled() {
+        let alert = UIAlertController(title: "GPS機能がOFFになっています。\nこのアプリを利用するにはONにして下さい。", message: nil, preferredStyle: .alert)
+        let dismissAction = UIAlertAction(title: "はい", style: .default, handler: { Void in
+            self.dismissView()
+        })
+        alert.addAction(dismissAction)
+        self.present(alert, animated: true, completion: nil)
     }
 }

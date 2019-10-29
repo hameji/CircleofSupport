@@ -53,6 +53,7 @@ class PostStatusPresenter {
         case .whenInUse:
             startGPS()
         case .denied, .restricted:
+            self.postStatusView?.alertGPSdisabled()
             break
         case .notDetermined:
             locationManager.askAuthorization()
