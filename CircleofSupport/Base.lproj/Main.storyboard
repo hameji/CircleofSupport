@@ -207,7 +207,7 @@
                                     <navigationItem title="現状を報告する" id="onE-ik-MRp">
                                         <barButtonItem key="rightBarButtonItem" title="送信" id="olX-kX-9Qo">
                                             <connections>
-                                                <action selector="postButtonPressed:" destination="wRI-d1-W3k" id="kRW-QJ-w2l"/>
+                                                <action selector="actionButtonPressed:" destination="wRI-d1-W3k" id="rIu-PK-RwP"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -445,6 +445,7 @@
                         <barButtonItem key="rightBarButtonItem" title="投稿" id="VIO-Yg-aY6"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="actionButton" destination="olX-kX-9Qo" id="lsh-XP-eo7"/>
                         <outlet property="collectionView" destination="Qzh-nq-RrW" id="gB7-lb-lvO"/>
                     </connections>
                 </viewController>

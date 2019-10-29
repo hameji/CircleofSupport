@@ -11,6 +11,10 @@ import UIKit
 
 class PostStatusViewController: UIViewController {
 
+    
+    
+    
+    @IBOutlet weak var actionButton: UIBarButtonItem!
     @IBOutlet weak var collectionView: UICollectionView!
     
     private let postStatusPresenter = PostStatusPresenter()
@@ -31,7 +35,7 @@ class PostStatusViewController: UIViewController {
         self.postStatusPresenter.viewWillDisappear()
     }
     
-    @IBAction func postButtonPressed(_ sender: Any) {
+    @IBAction func actionButtonPressed(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
     
