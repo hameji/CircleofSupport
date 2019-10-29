@@ -8,5 +8,5 @@
 
 protocol MapViewDelegate : class {
     func performPostSegue()
-
+    func setAddressCoordinate(placemark: Placemark)
 }
