@@ -10,6 +10,7 @@ import UIKit
 
 class PostStatusPresenter {
     
+    let locationManager = LocationManager()
     private var cells:[PostStatusPresentCell] = []
     var lastPost: Date? =  nil
     var address: String? = nil
@@ -34,6 +35,45 @@ class PostStatusPresenter {
     // MARK: - Program Lifecycle
     func viewDidLoad() {
         setCells()
+    }
+    
+    func viewWillAppear() {
+        checkGPSStatus()
+    }
+    
+    func viewWillDisappear() {
+        locationManager.stopUpdatingLocation()
+    }
+    
+    func checkGPSStatus() {
+        let status = locationManager.checkAuthorization()
+        switch status {
+        case .always:
+            fallthrough
+        case .whenInUse:
+            startGPS()
+        case .denied, .restricted:
+            self.postStatusView?.alertGPSdisabled()
+        case .notDetermined:
+            locationManager.askAuthorization()
+        }
+    }
+    
+    func startGPS() {
+        locationManager.startUpdatingLocation { result in
+            guard case .success(let locations) = result else {
+                print(" ... failed to get location")
+                self.postStatusView?.alertGPSfailed()
+                return
+            }
+            guard let location = locations.first else {
+                print(" ... location is nil(invalid)")
+                self.postStatusView?.alertInvalidGPS()
+                return
+            }
+            
+            self.locationManager.stopUpdatingLocation()
+        }
     }
     
     // MARK: - UICollectionView DelegateFlowLayout
@@ -62,21 +102,18 @@ class PostStatusPresenter {
     func didSelectItemAt(indexPath: IndexPath) {
         switch indexPath.row {
         case 2:
-            print("pressed 2")
             if lightSelected {
                 lightSelected = false
             } else {
                 lightSelected = true
             }
         case 3:
-            print("pressed 3")
             if gassSelected {
                 gassSelected = false
             } else {
                 gassSelected = true
             }
         case 4:
-            print("pressed 4")
             if waterSelected {
                 waterSelected = false
             } else {
