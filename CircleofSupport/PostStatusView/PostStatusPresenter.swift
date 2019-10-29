@@ -45,6 +45,22 @@ class PostStatusPresenter {
         locationManager.stopUpdatingLocation()
     }
     
+    func dismissButtonPressed() {
+        self.postStatusView?.dismissView()
+    }
+    
+    func actionButtonPressed(mode: Int) {
+        switch mode {
+        case 0: startGPS()
+        case 1: postStatus()
+        default: break
+        }
+    }
+    
+    func postStatus() {
+        
+    }
+    
     func checkGPSStatus() {
         let status = locationManager.checkAuthorization()
         switch status {
@@ -64,15 +80,32 @@ class PostStatusPresenter {
             guard case .success(let locations) = result else {
                 print(" ... failed to get location")
                 self.postStatusView?.alertGPSfailed()
+                self.locationManager.stopUpdatingLocation()
                 return
             }
             guard let location = locations.first else {
                 print(" ... location is nil(invalid)")
                 self.postStatusView?.alertInvalidGPS()
+                self.locationManager.stopUpdatingLocation()
                 return
             }
-            
-            self.locationManager.stopUpdatingLocation()
+            self.locationManager.gpsToAddress(location: location) { result in
+                guard case .success(let location) = result else {
+                    self.postStatusView?.alertAddressConversionFailed()
+                    self.locationManager.stopUpdatingLocation()
+                    return
+                }
+                guard let cLocation = location, let cAddress = cLocation.address else {
+                    self.postStatusView?.alertAddressConversionFailed()
+                    self.locationManager.stopUpdatingLocation()
+                    return
+                }
+                self.address = cAddress
+                self.setCells()
+                self.postStatusView?.changeToPostMode()
+                self.postStatusView?.reloadCollectionView()
+                self.locationManager.stopUpdatingLocation()
+            }
         }
     }
     

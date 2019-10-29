@@ -8,7 +8,10 @@
 
 protocol PostStatusDelegate : class {
     func reloadCollectionView()
+    func dismissView()
     func alertGPSdisabled()
     func alertGPSfailed()
     func alertInvalidGPS()
+    func alertAddressConversionFailed()
+    func changeToPostMode()
 }

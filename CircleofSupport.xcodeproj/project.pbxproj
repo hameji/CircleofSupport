@@ -41,6 +41,7 @@
 		63DAD3552368164D0027B165 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DAD3542368164D0027B165 /* LocationManager.swift */; };
 		63DAD3572368167C0027B165 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DAD3562368167C0027B165 /* Location.swift */; };
 		63DAD3592368181F0027B165 /* GpsAuthorization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DAD3582368181F0027B165 /* GpsAuthorization.swift */; };
+		63DAD35B236842ED0027B165 /* Placemark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DAD35A236842ED0027B165 /* Placemark.swift */; };
 		83F279D8932727634C4AFF19 /* Pods_CircleofSupport_CircleofSupportUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F08BBBE5C84AC5C299F1AF06 /* Pods_CircleofSupport_CircleofSupportUITests.framework */; };
 		8BD965B858F02897B5A300F7 /* Pods_CircleofSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7D49BAE345F969C1C228D1D /* Pods_CircleofSupport.framework */; };
 /* End PBXBuildFile section */
@@ -106,6 +107,7 @@
 		63DAD3542368164D0027B165 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		63DAD3562368167C0027B165 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		63DAD3582368181F0027B165 /* GpsAuthorization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GpsAuthorization.swift; sourceTree = "<group>"; };
+		63DAD35A236842ED0027B165 /* Placemark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Placemark.swift; sourceTree = "<group>"; };
 		679C159C24759657EF5A2D8B /* Pods_CircleofSupportTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CircleofSupportTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		70B5DD837BD5A10C6449A180 /* Pods-CircleofSupport.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CircleofSupport.release.xcconfig"; path = "Target Support Files/Pods-CircleofSupport/Pods-CircleofSupport.release.xcconfig"; sourceTree = "<group>"; };
 		8CB9006B2AD72BDA6B1F1E2A /* Pods-CircleofSupport-CircleofSupportUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CircleofSupport-CircleofSupportUITests.release.xcconfig"; path = "Target Support Files/Pods-CircleofSupport-CircleofSupportUITests/Pods-CircleofSupport-CircleofSupportUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -174,6 +176,7 @@
 			children = (
 				63137D5123586200007FB666 /* Authentication.swift */,
 				63DAD3542368164D0027B165 /* LocationManager.swift */,
+				63DAD35A236842ED0027B165 /* Placemark.swift */,
 				63DAD3582368181F0027B165 /* GpsAuthorization.swift */,
 				63DAD3562368167C0027B165 /* Location.swift */,
 				636D3AFC235F662100AB0A1C /* FirestoreManager.swift */,
@@ -541,6 +544,7 @@
 			files = (
 				636D3B1F236018C700AB0A1C /* PostStatusAddressData.swift in Sources */,
 				63137D492357A884007FB666 /* MapViewDelegate.swift in Sources */,
+				63DAD35B236842ED0027B165 /* Placemark.swift in Sources */,
 				63DAD3552368164D0027B165 /* LocationManager.swift in Sources */,
 				636D3B2723601A4F00AB0A1C /* PostStatusLightCell.swift in Sources */,
 				636D3B2523601A3E00AB0A1C /* PostStatusAddressCell.swift in Sources */,

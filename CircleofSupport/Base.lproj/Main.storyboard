@@ -205,7 +205,12 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
                                 <items>
                                     <navigationItem title="現状を報告する" id="onE-ik-MRp">
-                                        <barButtonItem key="rightBarButtonItem" title="送信" id="olX-kX-9Qo">
+                                        <barButtonItem key="leftBarButtonItem" title="✖️" id="kga-xf-41d">
+                                            <connections>
+                                                <action selector="dismissButtonPressed:" destination="wRI-d1-W3k" id="3hX-8i-2TH"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="GPS取得" id="olX-kX-9Qo">
                                             <connections>
                                                 <action selector="actionButtonPressed:" destination="wRI-d1-W3k" id="rIu-PK-RwP"/>
                                             </connections>
