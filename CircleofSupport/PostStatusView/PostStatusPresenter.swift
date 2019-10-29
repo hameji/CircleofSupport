@@ -93,27 +93,24 @@ class PostStatusPresenter {
     
     func startGPS() {
         locationManager.startUpdatingLocation { result in
+            self.locationManager.stopUpdatingLocation()
             guard case .success(let locations) = result else {
                 print(" ... failed to get location")
                 self.postStatusView?.alertGPSfailed()
-                self.locationManager.stopUpdatingLocation()
                 return
             }
             guard let location = locations.first else {
                 print(" ... location is nil(invalid)")
                 self.postStatusView?.alertInvalidGPS()
-                self.locationManager.stopUpdatingLocation()
                 return
             }
             self.locationManager.gpsToAddress(location: location) { result in
                 guard case .success(let placemark) = result else {
                     self.postStatusView?.alertAddressConversionFailed()
-                    self.locationManager.stopUpdatingLocation()
                     return
                 }
                 guard let cPlacemark = placemark, let cAddress = cPlacemark.address else {
                     self.postStatusView?.alertAddressConversionFailed()
-                    self.locationManager.stopUpdatingLocation()
                     return
                 }
                 self.placemark = placemark
@@ -121,7 +118,6 @@ class PostStatusPresenter {
                 self.setCells()
                 self.postStatusView?.changeToPostMode()
                 self.postStatusView?.reloadCollectionView()
-                self.locationManager.stopUpdatingLocation()
             }
         }
     }
