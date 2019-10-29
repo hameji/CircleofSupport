@@ -67,6 +67,7 @@ class PostStatusPresenter {
             }
             guard let location = locations.first else {
                 print(" ... location is nil")
+                self.postStatusView?.alertInvalidGPS()
                 return
             }
             
