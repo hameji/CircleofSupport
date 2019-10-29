@@ -12,6 +12,7 @@ class MapViewPresenter {
     
     // MARK: - vars & lets
     private let userDefaultsManager = UserDefaultsManager()
+    private let lifelineFirestoreDao = LifelineFirestoreDao()
 
     let locationManager = LocationManager()
     weak var mapView: MapViewDelegate?
@@ -23,12 +24,23 @@ class MapViewPresenter {
     
     func initializer() {
         initUserDefaults()
+        downloadData()
     }
     
+    func downloadData() {
+        let date = Date(timeIntervalSince1970: 0.0)  // userDefaultsManager.getLastUpdate()
+        lifelineFirestoreDao.fetch(withlastDLDate: date, limit: 10) { result in
+            guard case .success(let data) = result else {
+                return
+            }
+            self.mapView?.setAnnotations(data: data)
+        }
+    }
+
     func initUserDefaults() {
         if userDefaultsManager.getInstallDay() == Date(timeIntervalSince1970: 0.0) {
             userDefaultsManager.set(installDay: Date())
-            userDefaultsManager.set(mapDelta: 0.2)
+            userDefaultsManager.set(mapDelta: 0.02)
         }
     }
     

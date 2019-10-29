@@ -24,6 +24,7 @@ class MapViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         self.mapViewPresenter.mapView = self
+        self.mapViewPresenter.viewDidLoad()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -56,14 +57,22 @@ extension MapViewController: MapViewDelegate {
     }
     
     func setMapCenter(placemark: Placemark, delta: Double) {
-        print("delta:", delta)
         self.mapView.showsUserLocation = true
         var region:MKCoordinateRegion = mapView.region
         region.center = CLLocationCoordinate2D(latitude: placemark.location!.coordinate.latitude,
         longitude: placemark.location!.coordinate.longitude)
-        // todo: ここuserdefaultsからうまく設定できない。
-        region.span.latitudeDelta = 0.02
-        region.span.longitudeDelta = 0.02
+        region.span.latitudeDelta = delta
+        region.span.longitudeDelta = delta
         self.mapView.setRegion(region,animated:true)
     }
+    
+    func setAnnotations(data: [Lifeline]) {
+        print("data(2)", data)
+        let annotations: [MKPointAnnotation] = data.map { let annotation = MKPointAnnotation()
+            annotation.coordinate = $0.coordinate
+            return annotation
+        }
+        self.mapView.addAnnotations(annotations)
+    }
+
 }
