@@ -46,27 +46,23 @@ class MapViewPresenter {
     
     func startGPS() {
         locationManager.startUpdatingLocation { result in
+            self.locationManager.stopUpdatingLocation()
             guard case .success(let locations) = result else {
                 print(" ... failed to get location")
-                self.locationManager.stopUpdatingLocation()
                 return
             }
             guard let location = locations.first else {
                 print(" ... location is nil(invalid)")
-                self.locationManager.stopUpdatingLocation()
                 return
             }
             self.locationManager.gpsToAddress(location: location) { result in
                 guard case .success(let placemark) = result else {
-                    self.locationManager.stopUpdatingLocation()
                     return
                 }
                 guard let cPlacemark = placemark, let cAddress = cPlacemark.address else {
-                    self.locationManager.stopUpdatingLocation()
                     return
                 }
                 self.mapView?.setAddressCoordinate(placemark: cPlacemark)
-                self.locationManager.stopUpdatingLocation()
             }
         }
     }
