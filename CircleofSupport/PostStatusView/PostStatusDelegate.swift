@@ -7,5 +7,5 @@
 //
 
 protocol PostStatusDelegate : class {
-
+    func reloadCollectionView()
 }

@@ -20,6 +20,7 @@ class PostStatusViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         self.postStatusPresenter.postStatusView = self
+        self.postStatusPresenter.viewDidLoad()
     }
 
     @IBAction func postButtonPressed(_ sender: Any) {
@@ -71,12 +72,17 @@ extension PostStatusViewController: UICollectionViewDataSource {
 }
 
 extension PostStatusViewController: UICollectionViewDelegate {
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print("selected:", indexPath)
+        self.postStatusPresenter.didSelectItemAt(indexPath: indexPath)
+    }
 }
 
 
 
 // MARK: - TopViewDelegate
 extension PostStatusViewController: PostStatusDelegate {
-
+    func reloadCollectionView() {
+        self.collectionView.reloadData()
+    }
 }
