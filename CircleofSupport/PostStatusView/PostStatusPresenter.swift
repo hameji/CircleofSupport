@@ -13,6 +13,7 @@ class PostStatusPresenter {
     let locationManager = LocationManager()
     private let authentication = Authentication()
     private let lifelineFirestoreDao = LifelineFirestoreDao()
+    private let userDefaultsManager = UserDefaultsManager()
     
     private var cells:[PostStatusPresentCell] = []
     var placemark: Placemark? = nil
@@ -37,6 +38,9 @@ class PostStatusPresenter {
     // MARK: - Program Lifecycle
     func viewDidLoad() {
         setCells()
+        if userDefaultsManager.getLastUpdate() != Date(timeIntervalSince1970: 0.0) {
+            lastPost = userDefaultsManager.getLastUpdate()
+        }
     }
     
     func viewWillAppear() {
@@ -73,6 +77,7 @@ class PostStatusPresenter {
                 self.postStatusView?.alertUpdateFailed()
                 return
             }
+            self.userDefaultsManager.set(lastUpdate: cPlacemark.location!.timestamp)
             self.postStatusView?.dismissView()
         }
     }
@@ -113,7 +118,7 @@ class PostStatusPresenter {
                     self.postStatusView?.alertAddressConversionFailed()
                     return
                 }
-                self.placemark = placemark
+                self.placemark = cPlacemark
                 self.address = cAddress
                 self.setCells()
                 self.postStatusView?.changeToPostMode()
