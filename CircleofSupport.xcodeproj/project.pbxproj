@@ -566,6 +566,7 @@
 				636D3AFF235F665000AB0A1C /* Document.swift in Sources */,
 				636D3B02235F7CA200AB0A1C /* PostStatusViewController.swift in Sources */,
 				635FAB7A235785230039B341 /* SceneDelegate.swift in Sources */,
+				63DAD35F236865940027B165 /* Lifeline.swift in Sources */,
 				635FABB223579A050039B341 /* TopViewPresenter.swift in Sources */,
 				63DAD34B236804450027B165 /* PostStatusDateData.swift in Sources */,
 				636D3AFD235F662100AB0A1C /* FirestoreManager.swift in Sources */,
