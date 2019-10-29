@@ -42,6 +42,8 @@
 		63DAD3572368167C0027B165 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DAD3562368167C0027B165 /* Location.swift */; };
 		63DAD3592368181F0027B165 /* GpsAuthorization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DAD3582368181F0027B165 /* GpsAuthorization.swift */; };
 		63DAD35B236842ED0027B165 /* Placemark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DAD35A236842ED0027B165 /* Placemark.swift */; };
+		63DAD35D2368624E0027B165 /* LifelineFirestoreDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DAD35C2368624E0027B165 /* LifelineFirestoreDao.swift */; };
+		63DAD35F236865940027B165 /* Lifeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DAD35E236865940027B165 /* Lifeline.swift */; };
 		83F279D8932727634C4AFF19 /* Pods_CircleofSupport_CircleofSupportUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F08BBBE5C84AC5C299F1AF06 /* Pods_CircleofSupport_CircleofSupportUITests.framework */; };
 		8BD965B858F02897B5A300F7 /* Pods_CircleofSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7D49BAE345F969C1C228D1D /* Pods_CircleofSupport.framework */; };
 /* End PBXBuildFile section */
@@ -108,6 +110,8 @@
 		63DAD3562368167C0027B165 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		63DAD3582368181F0027B165 /* GpsAuthorization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GpsAuthorization.swift; sourceTree = "<group>"; };
 		63DAD35A236842ED0027B165 /* Placemark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Placemark.swift; sourceTree = "<group>"; };
+		63DAD35C2368624E0027B165 /* LifelineFirestoreDao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LifelineFirestoreDao.swift; sourceTree = "<group>"; };
+		63DAD35E236865940027B165 /* Lifeline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lifeline.swift; sourceTree = "<group>"; };
 		679C159C24759657EF5A2D8B /* Pods_CircleofSupportTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CircleofSupportTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		70B5DD837BD5A10C6449A180 /* Pods-CircleofSupport.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CircleofSupport.release.xcconfig"; path = "Target Support Files/Pods-CircleofSupport/Pods-CircleofSupport.release.xcconfig"; sourceTree = "<group>"; };
 		8CB9006B2AD72BDA6B1F1E2A /* Pods-CircleofSupport-CircleofSupportUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CircleofSupport-CircleofSupportUITests.release.xcconfig"; path = "Target Support Files/Pods-CircleofSupport-CircleofSupportUITests/Pods-CircleofSupport-CircleofSupportUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -180,6 +184,8 @@
 				63DAD3582368181F0027B165 /* GpsAuthorization.swift */,
 				63DAD3562368167C0027B165 /* Location.swift */,
 				636D3AFC235F662100AB0A1C /* FirestoreManager.swift */,
+				63DAD35C2368624E0027B165 /* LifelineFirestoreDao.swift */,
+				63DAD35E236865940027B165 /* Lifeline.swift */,
 				636D3AFE235F665000AB0A1C /* Document.swift */,
 			);
 			path = Model;
@@ -554,6 +560,7 @@
 				636D3B212360193B00AB0A1C /* PostStatusPresentCell.swift in Sources */,
 				63137D432357A03A007FB666 /* MapViewController.swift in Sources */,
 				63DAD351236804DB0027B165 /* PostStatusSelectedData.swift in Sources */,
+				63DAD35D2368624E0027B165 /* LifelineFirestoreDao.swift in Sources */,
 				63137D5223586200007FB666 /* Authentication.swift in Sources */,
 				63137D472357A873007FB666 /* MapViewPresenter.swift in Sources */,
 				63137D452357A04B007FB666 /* AskForHelpViewController.swift in Sources */,
