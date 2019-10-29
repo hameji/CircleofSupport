@@ -157,5 +157,20 @@ extension PostStatusViewController: PostStatusDelegate {
         self.actionMode = 1
         self.changeButtonName()
     }
+    
+    func alertUnLoggedIn() {
+        let alert = UIAlertController(title: "現在未ログインです。\nログインして下さい", message: nil, preferredStyle: .alert)
+        let yesAction = UIAlertAction(title: "はい", style: .default, handler: { Void in
+                // ここにログインを実装する
+        })
+        alert.addAction(yesAction)
+        self.present(alert, animated: true, completion: nil)
+    }
 
+    func alertUpdateFailed() {
+        let alert = UIAlertController(title: "データのアップロードに失敗しました。\n時間を置いて再度送信ください。", message: nil, preferredStyle: .alert)
+        let yesAction = UIAlertAction(title: "はい", style: .cancel, handler: nil)
+        alert.addAction(yesAction)
+        self.present(alert, animated: true, completion: nil)
+    }
 }

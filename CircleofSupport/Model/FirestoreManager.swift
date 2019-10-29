@@ -27,6 +27,24 @@ class FirestoreManager {
             completion(.success(result))
         }
     }
+
+    func getNewData(collectionName: String, date: Date, limit: Int, completion: @escaping (Result<[Document], Error>) -> ()) {
+        var ref: Query
+        if limit == 0 {
+            ref = self.firestore.collection(collectionName).whereField("RegisterDate", isGreaterThanOrEqualTo: date)
+        } else {
+            ref = self.firestore.collection(collectionName).whereField("RegisterDate", isGreaterThanOrEqualTo: date).limit(to: limit)
+        }
+        ref.getDocuments() {(querySnapshot, err) in
+            guard let querySnapshot = querySnapshot else {
+                completion(.failure(err!))
+                return
+            }
+            
+            let result = querySnapshot.documents.map { Document(documentID: $0.documentID, data: $0.data()) }
+            completion(.success(result))
+        }
+    }
     
     func addData(collectionName: String, data: [String:Any], completion: @escaping (Result<String, Error>) -> ()) {
         self.firestore.collection(collectionName).addDocument(data: data) { err in

@@ -11,7 +11,12 @@ import UIKit
 class PostStatusPresenter {
     
     let locationManager = LocationManager()
+    private let authentication = Authentication()
+    private let lifelineFirestoreDao = LifelineFirestoreDao()
+    
     private var cells:[PostStatusPresentCell] = []
+    var placemark: Placemark? = nil
+    var place: String = ""
     var lastPost: Date? =  nil
     var address: String? = nil
     var lightSelected: Bool = true
@@ -58,7 +63,21 @@ class PostStatusPresenter {
     }
     
     func postStatus() {
-        
+        guard let user = authentication.getCurrentUser() else {
+            self.postStatusView?.alertUnLoggedIn()
+            return
+        }
+        guard let cPlacemark = placemark else {
+            self.postStatusView?.alertAddressConversionFailed()
+            return
+        }
+        lifelineFirestoreDao.store(user.uid, placemark: cPlacemark, place: place, light: lightSelected, gass: gassSelected, water: waterSelected) { result in
+            guard case .success( _) = result else {
+                self.postStatusView?.alertUpdateFailed()
+                return
+            }
+            self.postStatusView?.dismissView()
+        }
     }
     
     func checkGPSStatus() {
@@ -90,16 +109,17 @@ class PostStatusPresenter {
                 return
             }
             self.locationManager.gpsToAddress(location: location) { result in
-                guard case .success(let location) = result else {
+                guard case .success(let placemark) = result else {
                     self.postStatusView?.alertAddressConversionFailed()
                     self.locationManager.stopUpdatingLocation()
                     return
                 }
-                guard let cLocation = location, let cAddress = cLocation.address else {
+                guard let cPlacemark = placemark, let cAddress = cPlacemark.address else {
                     self.postStatusView?.alertAddressConversionFailed()
                     self.locationManager.stopUpdatingLocation()
                     return
                 }
+                self.placemark = placemark
                 self.address = cAddress
                 self.setCells()
                 self.postStatusView?.changeToPostMode()
