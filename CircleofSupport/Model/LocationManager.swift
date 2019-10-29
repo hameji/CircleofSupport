@@ -8,6 +8,7 @@
 
 import Foundation
 import CoreLocation
+import MapKit
 
 class LocationManager: NSObject {
     
@@ -74,5 +75,37 @@ extension LocationManager: CLLocationManagerDelegate {
         
     }
     
-    
+}
+
+extension LocationManager {
+    func gpsToAddress(location: Location, completion: @escaping (Result<Placemark?, Error>) -> ()) {
+        let location = CLLocation(latitude: location.latitude, longitude: location.longitude)
+        CLGeocoder().reverseGeocodeLocation(location) { placemarks, error in
+            guard error == nil else {
+                completion(.failure(error!))
+                return
+            }
+            guard let placemark = placemarks?.first else {
+                completion(.success(nil))
+                return
+            }
+            let cPlacemark = Placemark(location: placemark.location,
+                                       name: placemark.name,
+                                       isoCountryCode: placemark.isoCountryCode,
+                                       country: placemark.country,
+                                       postalCode: placemark.postalCode,
+                                       administrativeArea: placemark.administrativeArea,
+                                       subAdministrativeArea: placemark.subAdministrativeArea,
+                                       locality: placemark.locality,
+                                       subLocality: placemark.subLocality,
+                                       thoroughfare: placemark.thoroughfare,
+                                       subThoroughtfare: placemark.subThoroughfare,
+                                       region: placemark.region,
+                                       timeZone: placemark.timeZone,
+                                       inlandWater: placemark.inlandWater,
+                                       ocean: placemark.ocean,
+                                       areasOfInterest: placemark.areasOfInterest)
+            completion(.success(cPlacemark))
+        }
+    }
 }
