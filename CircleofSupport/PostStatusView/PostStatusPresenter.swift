@@ -45,6 +45,22 @@ class PostStatusPresenter {
         locationManager.stopUpdatingLocation()
     }
     
+    func dismissButtonPressed() {
+        self.postStatusView?.dismissView()
+    }
+    
+    func actionButtonPressed(mode: Int) {
+        switch mode {
+        case 0: startGPS()
+        case 1: postStatus()
+        default: break
+        }
+    }
+    
+    func postStatus() {
+        
+    }
+    
     func checkGPSStatus() {
         let status = locationManager.checkAuthorization()
         switch status {

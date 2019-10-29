@@ -33,18 +33,14 @@ class PostStatusViewController: UIViewController {
         self.postStatusPresenter.viewWillDisappear()
     }
     
+    @IBAction func dismissButtonPressed(_ sender: UIBarButtonItem) {
+        self.postStatusPresenter.dismissButtonPressed()
+    }
+    
     @IBAction func actionButtonPressed(_ sender: Any) {
-        if actionMode == 0 {
-            self.postStatusPresenter.startGPS()
-        } else if actionMode == 1 {
-            // データをアップロード
-        }
+        self.postStatusPresenter.actionButtonPressed(mode: actionMode)
     }
-    
-    private func dismissView() {
-        self.dismiss(animated: true, completion: nil)
-    }
-    
+        
     private func changeButtonName() {
         switch actionMode {
         case 0:
@@ -114,6 +110,10 @@ extension PostStatusViewController: PostStatusDelegate {
         self.collectionView.reloadData()
     }
     
+    func dismissView() {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     func alertGPSdisabled() {
         let alert = UIAlertController(title: "GPS機能がOFFになっています。\nこのアプリを利用するにはONにして下さい。", message: nil, preferredStyle: .alert)
         let dismissAction = UIAlertAction(title: "はい", style: .default, handler: { Void in
@@ -155,5 +155,7 @@ extension PostStatusViewController: PostStatusDelegate {
     
     func changeToPostMode() {
         self.actionMode = 1
+        self.changeButtonName()
     }
+
 }
