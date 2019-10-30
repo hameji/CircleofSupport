@@ -51,47 +51,7 @@ extension MapViewController: MKMapViewDelegate {
 
         let identifier = "Annotation"
         var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier)
-        
-        guard let _ = annotationView else {
-            print("annotationView is", annotationView, ".  Make new annotationView.")
-            annotationView = makeNewMKPointView(id: identifier, annotation: annotation)
-            return annotationView
-        }
-        
-        guard var cAnnotation = annotationView?.annotation else {
-            print("annotationView.annotation is:", annotationView?.annotation)
-            return makeNewMKPointView(id: identifier, annotation: annotation)
-        }
-            
-        let customAnnotation = cAnnotation as! CustomAnnotation
-        if let data = customAnnotation.data {
-            if data.light, data.gass, data.water {
-                if (annotationView as! MKPinAnnotationView).pinTintColor != UIColor.green {
-                    return makeNewMKPointView(id: identifier, annotation: annotation)
-                } else {
-                    annotationView!.annotation = annotation
-                    return annotationView
-                }
-            } else if !data.light, !data.gass, !data.water {
-                if (annotationView as! MKPinAnnotationView).pinTintColor != UIColor.red {
-                    return makeNewMKPointView(id: identifier, annotation: annotation)
-                } else {
-                    annotationView!.annotation = annotation
-                    return annotationView
-                }
-            } else if !data.light || !data.gass || !data.water {
-                if (annotationView as! MKPinAnnotationView).pinTintColor != UIColor.yellow {
-                    return makeNewMKPointView(id: identifier, annotation: annotation)
-                } else {
-                    annotationView!.annotation = annotation
-                    return annotationView
-                }
-            } else {
-                annotationView!.annotation = annotation
-                return annotationView
-            }
-        }
-        cAnnotation = annotation
+        annotationView = makeNewMKPointView(id: identifier, annotation: annotation)
         return annotationView
     }
     
