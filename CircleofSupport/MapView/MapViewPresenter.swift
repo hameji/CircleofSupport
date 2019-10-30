@@ -25,6 +25,7 @@ class MapViewPresenter {
     func initializer() {
         initUserDefaults()
         downloadData()
+        setTitle()
     }
     
     func downloadData() {
@@ -41,7 +42,32 @@ class MapViewPresenter {
         if userDefaultsManager.getInstallDay() == Date(timeIntervalSince1970: 0.0) {
             userDefaultsManager.set(installDay: Date())
             userDefaultsManager.set(mapDelta: 0.02)
+            userDefaultsManager.set(titleType: 0)
         }
+    }
+    
+    func setTitle() {
+        var title = ""
+        let today = Date()
+        let dateformat = DateFormatter()
+        let calendar = Calendar(identifier: .gregorian)
+        let titleType = userDefaultsManager.getTitleType()
+        switch titleType {
+        case 0: // 日
+            dateformat.dateFormat = "yyyy年MM月dd日"
+            title = dateformat.string(from: today)
+        case 1: // 週
+            dateformat.dateFormat = "yyyy年MM月dd日"
+            let lastWeek = calendar.date(byAdding: .day, value: -7, to: calendar.startOfDay(for: today))!
+            title = dateformat.string(from: lastWeek) + "~" + dateformat.string(from: today)        case 2: // 月
+            dateformat.dateFormat = "yyyy年MM月"
+            title = dateformat.string(from: today)
+        case 3: // 年
+            dateformat.dateFormat = "yyyy年"
+            title = dateformat.string(from: today)
+        default: break
+        }
+        self.mapView?.setTitle(title: title)
     }
     
     func viewWillAppear() {
