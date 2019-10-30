@@ -75,4 +75,8 @@ extension MapViewController: MapViewDelegate {
         self.mapView.addAnnotations(annotations)
     }
 
+    func setTitle(title: String) {
+        self.title = title
+    }
+
 }
