@@ -45,6 +45,73 @@ class MapViewController: UIViewController {
     
 }
 
+extension MapViewController: MKMapViewDelegate {
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        guard !(annotation is MKUserLocation) else { return nil }
+
+        let identifier = "Annotation"
+        var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier)
+        
+        guard let _ = annotationView else {
+            print("annotationView is", annotationView, ".  Make new annotationView.")
+            annotationView = makeNewMKPointView(id: identifier, annotation: annotation)
+            return annotationView
+        }
+        
+        guard var cAnnotation = annotationView?.annotation else {
+            print("annotationView.annotation is:", annotationView?.annotation)
+            return makeNewMKPointView(id: identifier, annotation: annotation)
+        }
+            
+        let customAnnotation = cAnnotation as! CustomAnnotation
+        if let data = customAnnotation.data {
+            if data.light, data.gass, data.water {
+                if (annotationView as! MKPinAnnotationView).pinTintColor != UIColor.green {
+                    return makeNewMKPointView(id: identifier, annotation: annotation)
+                } else {
+                    annotationView!.annotation = annotation
+                    return annotationView
+                }
+            } else if !data.light, !data.gass, !data.water {
+                if (annotationView as! MKPinAnnotationView).pinTintColor != UIColor.red {
+                    return makeNewMKPointView(id: identifier, annotation: annotation)
+                } else {
+                    annotationView!.annotation = annotation
+                    return annotationView
+                }
+            } else if !data.light || !data.gass || !data.water {
+                if (annotationView as! MKPinAnnotationView).pinTintColor != UIColor.yellow {
+                    return makeNewMKPointView(id: identifier, annotation: annotation)
+                } else {
+                    annotationView!.annotation = annotation
+                    return annotationView
+                }
+            } else {
+                annotationView!.annotation = annotation
+                return annotationView
+            }
+        }
+        cAnnotation = annotation
+        return annotationView
+    }
+    
+    func makeNewMKPointView(id: String, annotation: MKAnnotation) -> MKAnnotationView {
+        let annotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: id)
+        annotationView.canShowCallout = true
+        let customAnnotation = annotationView.annotation as! CustomAnnotation
+        if let data = customAnnotation.data {
+            if data.light, data.gass, data.water {
+                annotationView.pinTintColor = UIColor.green
+            } else if !data.light, !data.gass, !data.water {
+                annotationView.pinTintColor = UIColor.red
+            } else if !data.light || !data.gass || !data.water {
+                annotationView.pinTintColor = UIColor.yellow
+            }
+        }
+        return annotationView
+    }
+}
+
 extension MapViewController: MapViewDelegate {
     func performPostSegue() {
         self.performSegue(withIdentifier: MapViewController.seguePostStatus, sender: nil)
@@ -69,8 +136,12 @@ extension MapViewController: MapViewDelegate {
     func setAnnotations(data: [Lifeline]) {
         let df = DateFormatter()
         df.dateFormat = "yyyy年MM月dd日 HH:mm"
-        let annotations: [MKPointAnnotation] = data.map { let annotation = MKPointAnnotation()
+        df.locale = Locale(identifier: "en_US_POSIX")
+        let annotations: [CustomAnnotation] = data.map {
+            let annotation = CustomAnnotation()
             annotation.title = df.string(from: $0.registerDate)
+            annotation.data = $0
+            annotation.subtitle = $0.totalStatus
             annotation.coordinate = $0.coordinate
             return annotation
         }
