@@ -67,8 +67,10 @@ extension MapViewController: MapViewDelegate {
     }
     
     func setAnnotations(data: [Lifeline]) {
-        print("data(2)", data)
+        let df = DateFormatter()
+        df.dateFormat = "yyyy年MM月dd日 HH:mm"
         let annotations: [MKPointAnnotation] = data.map { let annotation = MKPointAnnotation()
+            annotation.title = df.string(from: $0.registerDate)
             annotation.coordinate = $0.coordinate
             return annotation
         }
