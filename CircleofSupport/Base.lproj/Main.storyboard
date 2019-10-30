@@ -480,11 +480,11 @@
             </objects>
             <point key="canvasLocation" x="1084" y="82"/>
         </scene>
-        <!--Map-->
+        <!--マップ-->
         <scene sceneID="bey-r8-HLV">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Poh-Ya-hdA" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Map" id="BIg-0B-Tfa"/>
+                    <tabBarItem key="tabBarItem" title="マップ" id="BIg-0B-Tfa"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="WKh-jz-AFH">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
