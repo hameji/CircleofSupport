@@ -15,8 +15,13 @@ class UserDefaultsManager {
     private let keyLastUpdate = "lastUpdate"
     private let keyInstallDay = "installDay"
     private let keyMapDelta = "mapDelta"
+    private let keyTitleType = "titleType"
 
     // MARK: -- get
+    func getTitleType() -> Int {
+        return ud.integer(forKey: keyTitleType)
+    }
+
     func getMapDelta() -> Double {
         return ud.double(forKey: keyMapDelta)
     }
@@ -32,8 +37,11 @@ class UserDefaultsManager {
     }
     
     // MARK: -- set
+    func set(titleType: Int) {
+        ud.set(titleType, forKey: keyTitleType)
+    }
+
     func set(mapDelta: Double) {
-        print("mapdata", mapDelta)
         ud.set(mapDelta, forKey: keyMapDelta)
     }
     
