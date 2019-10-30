@@ -17,15 +17,19 @@ class MapViewPresenter {
     let locationManager = LocationManager()
     weak var mapView: MapViewDelegate?
 
-    // MARK: - Program Lifecycle
-    func viewDidLoad() {
-        initializer()
-    }
-    
+    // MARK: - initializer
     func initializer() {
         initUserDefaults()
         downloadData()
         setTitle()
+    }
+    
+    func initUserDefaults() {
+        if userDefaultsManager.getInstallDay() == Date(timeIntervalSince1970: 0.0) {
+            userDefaultsManager.set(installDay: Date())
+            userDefaultsManager.set(mapDelta: 0.02)
+            userDefaultsManager.set(titleType: 0)
+        }
     }
     
     func downloadData() {
@@ -38,14 +42,20 @@ class MapViewPresenter {
         }
     }
 
-    func initUserDefaults() {
-        if userDefaultsManager.getInstallDay() == Date(timeIntervalSince1970: 0.0) {
-            userDefaultsManager.set(installDay: Date())
-            userDefaultsManager.set(mapDelta: 0.02)
-            userDefaultsManager.set(titleType: 0)
-        }
+    // MARK: - Program Lifecycle
+    func viewDidLoad() {
+        initializer()
     }
     
+    func viewWillAppear() {
+        checkGPSStatus()
+    }
+    
+    func viewWillDisappear() {
+        locationManager.stopUpdatingLocation()
+    }
+
+    // MARK: - Navigation Func
     func setTitle() {
         var title = ""
         let today = Date()
@@ -69,19 +79,12 @@ class MapViewPresenter {
         }
         self.mapView?.setTitle(title: title)
     }
-    
-    func viewWillAppear() {
-        checkGPSStatus()
-    }
-    
-    func viewWillDisappear() {
-        locationManager.stopUpdatingLocation()
-    }
 
     func postButtonPressed() {
         self.mapView?.performPostSegue()
     }
 
+    // MARK: - LocationManager Func
     func checkGPSStatus() {
         let status = locationManager.checkAuthorization()
         switch status {

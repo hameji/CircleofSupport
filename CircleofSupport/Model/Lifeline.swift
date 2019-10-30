@@ -27,4 +27,40 @@ struct Lifeline {
             return CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
             }
     }
+
+    var lightStatus: String {
+        get {
+            if light {
+                return "OK"
+            } else {
+                return "不通"
+            }
+        }
+    }
+
+    var gassStatus: String {
+        get {
+            if gass {
+                return "OK"
+            } else {
+                return "不通"
+            }
+        }
+    }
+
+    var waterStatus: String {
+        get {
+            if water {
+                return "OK"
+            } else {
+                return "不通"
+            }
+        }
+    }
+
+    var totalStatus: String {
+        get {
+            return "電気:" + lightStatus + ", ガス:" + gassStatus + ", 水道:" + waterStatus
+        }
+    }
 }
