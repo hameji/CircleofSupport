@@ -11,5 +11,5 @@ protocol MapViewDelegate : class {
     func setAddressCoordinate(placemark: Placemark)
     func setMapCenter(placemark: Placemark, delta: Double)
     func setAnnotations(data: [Lifeline])
-    func setNavigationInfo(date: String)
+    func setNavigationInfo(date: String, place: String)
 }

@@ -21,7 +21,6 @@ class MapViewPresenter {
     func initializer() {
         initUserDefaults()
         downloadData()
-        setTitle()
     }
     
     func initUserDefaults() {
@@ -56,29 +55,31 @@ class MapViewPresenter {
     }
 
     // MARK: - Navigation Func
-    func setTitle() {
+    func setNavigationInfo(prefectureCity: String?) {
+        guard let breifAddress = prefectureCity else {
+            return
+        }
         var date = ""
-        let today = Date()
         let dateformat = DateFormatter()
         let calendar = Calendar(identifier: .gregorian)
         let titleType = userDefaultsManager.getTitleType()
         switch titleType {
         case 0: // 日
-            dateformat.dateFormat = "yyyy年MM月dd日"
-            date = dateformat.string(from: today)
+            dateformat.dateFormat = "yyyy/MM/dd"
+            date = dateformat.string(from: Date())
         case 1: // 週
-            dateformat.dateFormat = "yyyy年MM月dd日"
-            let lastWeek = calendar.date(byAdding: .day, value: -7, to: calendar.startOfDay(for: today))!
-            date = dateformat.string(from: lastWeek) + "~" + dateformat.string(from: today)
+            dateformat.dateFormat = "yyyy/MM/dd"
+            let lastWeek = calendar.date(byAdding: .day, value: -7, to: calendar.startOfDay(for: Date()))!
+            date = dateformat.string(from: lastWeek) + "~" + dateformat.string(from: Date())
         case 2: // 月
-            dateformat.dateFormat = "yyyy年MM月"
-            date = dateformat.string(from: today)
+            dateformat.dateFormat = "yyyy/MM"
+            date = dateformat.string(from: Date())
         case 3: // 年
-            dateformat.dateFormat = "yyyy年"
-            date = dateformat.string(from: today)
+            dateformat.dateFormat = "yyyy"
+            date = dateformat.string(from: Date())
         default: break
         }
-        self.mapView?.setNavigationInfo(date: date)
+        self.mapView?.setNavigationInfo(date: date, place: breifAddress)
     }
 
     func postButtonPressed() {
@@ -120,6 +121,7 @@ class MapViewPresenter {
                 }
                 let mapDelta = self.userDefaultsManager.getMapDelta()
                 self.mapView?.setMapCenter(placemark: cPlacemark, delta: mapDelta)
+                self.setNavigationInfo(prefectureCity: cPlacemark.breifAddress)
                 self.mapView?.setAddressCoordinate(placemark: cPlacemark)
             }
         }

@@ -112,8 +112,9 @@ extension MapViewController: MapViewDelegate {
         self.mapView.addAnnotations(annotations)
     }
 
-    func setNavigationInfo(date: String) {
+    func setNavigationInfo(date: String, place: String) {
         self.navigationDate.text = date
+        self.navigationPlace.text = place
     }
 
 }
