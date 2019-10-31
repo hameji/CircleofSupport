@@ -57,7 +57,7 @@ class MapViewPresenter {
 
     // MARK: - Navigation Func
     func setTitle() {
-        var title = ""
+        var date = ""
         let today = Date()
         let dateformat = DateFormatter()
         let calendar = Calendar(identifier: .gregorian)
@@ -65,19 +65,20 @@ class MapViewPresenter {
         switch titleType {
         case 0: // 日
             dateformat.dateFormat = "yyyy年MM月dd日"
-            title = dateformat.string(from: today)
+            date = dateformat.string(from: today)
         case 1: // 週
             dateformat.dateFormat = "yyyy年MM月dd日"
             let lastWeek = calendar.date(byAdding: .day, value: -7, to: calendar.startOfDay(for: today))!
-            title = dateformat.string(from: lastWeek) + "~" + dateformat.string(from: today)        case 2: // 月
+            date = dateformat.string(from: lastWeek) + "~" + dateformat.string(from: today)
+        case 2: // 月
             dateformat.dateFormat = "yyyy年MM月"
-            title = dateformat.string(from: today)
+            date = dateformat.string(from: today)
         case 3: // 年
             dateformat.dateFormat = "yyyy年"
-            title = dateformat.string(from: today)
+            date = dateformat.string(from: today)
         default: break
         }
-        self.mapView?.setTitle(title: title)
+        self.mapView?.setNavigationInfo(date: date)
     }
 
     func postButtonPressed() {

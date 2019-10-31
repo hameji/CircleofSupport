@@ -112,8 +112,8 @@ extension MapViewController: MapViewDelegate {
         self.mapView.addAnnotations(annotations)
     }
 
-    func setTitle(title: String) {
-        self.tabBarItem.title = title
+    func setNavigationInfo(date: String) {
+        self.navigationDate.text = date
     }
 
 }
