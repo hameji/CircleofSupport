@@ -43,12 +43,24 @@ class MapViewController: UIViewController {
     }
 
     func setTextField() {
-        self.dummyTextField.delegate = self
         self.dummyTextField.inputView = pickerView
         let toolbar = UIToolbar(frame: CGRect(x: 0, y: 0, width: self.view.bounds.width, height: 40))
+        let cancelButton = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(cancelButtonPressed))
+        let spacer = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(doneButtonPressed))
+        toolbar.setItems([cancelButton, spacer, doneButton], animated: false)
         self.dummyTextField.inputAccessoryView = toolbar
     }
     
+    @objc func cancelButtonPressed() {
+        self.dummyTextField.resignFirstResponder()
+    }
+
+    @objc func doneButtonPressed() {
+        self.dummyTextField.resignFirstResponder()
+    }
+
+    // MARK: - IBOutelet functions
     @IBAction func searchButtonPressed(_ sender: UIBarButtonItem) {
         self.dummyTextField.becomeFirstResponder()
     }
@@ -133,5 +145,3 @@ extension MapViewController: MapViewDelegate {
 
 }
 
-extension MapViewController: UITextFieldDelegate {
-}
