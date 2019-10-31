@@ -42,14 +42,17 @@ class MapViewController: UIViewController {
         self.mapViewPresenter.viewWillDisappear()
     }
 
+    // MARK: - TextField setup
     func setTextField() {
-        self.dummyTextField.inputView = pickerView
-        let toolbar = UIToolbar(frame: CGRect(x: 0, y: 0, width: self.view.bounds.width, height: 40))
+        let toolbar = UIToolbar(frame: CGRect(x: 0, y: 0, width: self.view.bounds.width, height: 44))
         let cancelButton = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(cancelButtonPressed))
         let spacer = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
         let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(doneButtonPressed))
         toolbar.setItems([cancelButton, spacer, doneButton], animated: false)
         self.dummyTextField.inputAccessoryView = toolbar
+        self.pickerView.delegate = self
+        self.pickerView.dataSource = self
+        self.dummyTextField.inputView = pickerView
     }
     
     @objc func cancelButtonPressed() {
@@ -145,3 +148,19 @@ extension MapViewController: MapViewDelegate {
 
 }
 
+extension MapViewController: UIPickerViewDelegate {
+}
+
+extension MapViewController: UIPickerViewDataSource {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return mapViewPresenter.pickerViewnumberOfComponents()
+    }
+
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return mapViewPresenter.pickerViewnumberOfRowsInComponent(component: component)
+    }
+
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return ""
+    }
+}

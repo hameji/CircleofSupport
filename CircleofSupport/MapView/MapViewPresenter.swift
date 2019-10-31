@@ -11,6 +11,7 @@ import UIKit
 class MapViewPresenter {
     
     // MARK: - vars & lets
+    var mapPickerViewPlaceSegment = 0  // 0: city, 1: prefecture
     private let userDefaultsManager = UserDefaultsManager()
     private let lifelineFirestoreDao = LifelineFirestoreDao()
 
@@ -126,5 +127,20 @@ class MapViewPresenter {
             }
         }
     }
+    
+    func pickerViewnumberOfComponents() -> Int {
+        return 2  // date, address
+    }
 
+    func pickerViewnumberOfRowsInComponent(component: Int) -> Int {
+        if component == 0 {  // dateType
+            return 4
+        } else {  // addressType
+            if mapPickerViewPlaceSegment == 0 {
+                return 1  // prefectureCities.count
+            } else { //
+                return 1  // prefectureCities.count
+            }
+        }
+    }
 }
