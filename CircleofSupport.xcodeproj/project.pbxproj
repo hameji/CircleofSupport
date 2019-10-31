@@ -36,6 +36,7 @@
 		636D3B2723601A4F00AB0A1C /* PostStatusLightCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636D3B2623601A4F00AB0A1C /* PostStatusLightCell.swift */; };
 		636D3B2923601A5F00AB0A1C /* PostStatusGassCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636D3B2823601A5F00AB0A1C /* PostStatusGassCell.swift */; };
 		636D3B2B23601A6F00AB0A1C /* PostStatusWaterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636D3B2A23601A6F00AB0A1C /* PostStatusWaterCell.swift */; };
+		63C993ED236B2D6F0079DD27 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C993EC236B2D6F0079DD27 /* MainTabBarController.swift */; };
 		63DAD34B236804450027B165 /* PostStatusDateData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DAD34A236804450027B165 /* PostStatusDateData.swift */; };
 		63DAD351236804DB0027B165 /* PostStatusSelectedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DAD350236804DB0027B165 /* PostStatusSelectedData.swift */; };
 		63DAD3552368164D0027B165 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DAD3542368164D0027B165 /* LocationManager.swift */; };
@@ -108,6 +109,7 @@
 		636D3B2623601A4F00AB0A1C /* PostStatusLightCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PostStatusLightCell.swift; path = "CircleofSupport/PostStatusView/Custom Cell/PostStatusLightCell.swift"; sourceTree = SOURCE_ROOT; };
 		636D3B2823601A5F00AB0A1C /* PostStatusGassCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PostStatusGassCell.swift; path = "CircleofSupport/PostStatusView/Custom Cell/PostStatusGassCell.swift"; sourceTree = SOURCE_ROOT; };
 		636D3B2A23601A6F00AB0A1C /* PostStatusWaterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PostStatusWaterCell.swift; path = "CircleofSupport/PostStatusView/Custom Cell/PostStatusWaterCell.swift"; sourceTree = SOURCE_ROOT; };
+		63C993EC236B2D6F0079DD27 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		63DAD34A236804450027B165 /* PostStatusDateData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostStatusDateData.swift; sourceTree = "<group>"; };
 		63DAD350236804DB0027B165 /* PostStatusSelectedData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostStatusSelectedData.swift; sourceTree = "<group>"; };
 		63DAD3542368164D0027B165 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
@@ -229,6 +231,7 @@
 			children = (
 				635FAB77235785230039B341 /* AppDelegate.swift */,
 				635FAB79235785230039B341 /* SceneDelegate.swift */,
+				63C993EC236B2D6F0079DD27 /* MainTabBarController.swift */,
 				63137D50235861EB007FB666 /* Model */,
 				635FABB523579A1C0039B341 /* TopView */,
 				63137D4023579FFB007FB666 /* MapView */,
@@ -585,6 +588,7 @@
 				63137D5223586200007FB666 /* Authentication.swift in Sources */,
 				63137D472357A873007FB666 /* MapViewPresenter.swift in Sources */,
 				63DAD36D236967A30027B165 /* CustomAnnotation.swift in Sources */,
+				63C993ED236B2D6F0079DD27 /* MainTabBarController.swift in Sources */,
 				63137D452357A04B007FB666 /* AskForHelpViewController.swift in Sources */,
 				636D3B06235F7CBD00AB0A1C /* PostStatusDelegate.swift in Sources */,
 				635FAB78235785230039B341 /* AppDelegate.swift in Sources */,
