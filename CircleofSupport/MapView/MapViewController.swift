@@ -11,7 +11,6 @@ import MapKit
 
 class MapViewController: UIViewController {
 
-    @IBOutlet weak var navigationInfoView: UIView!
     @IBOutlet weak var navigationDate: UILabel!
     @IBOutlet weak var navigationPlace: UILabel!
     @IBOutlet weak var categorySegment: UISegmentedControl!
@@ -19,6 +18,9 @@ class MapViewController: UIViewController {
     @IBOutlet weak var address: UILabel!
     @IBOutlet weak var latitude: UILabel!
     @IBOutlet weak var longitude: UILabel!
+    @IBOutlet weak var dummyTextField: UITextField!
+    var pickerView: UIPickerView = UIPickerView()
+    
     private let mapViewPresenter = MapViewPresenter()
     
     private static let seguePostStatus = "postStatus"
@@ -28,6 +30,7 @@ class MapViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         self.mapViewPresenter.mapView = self
+        setTextField()
         self.mapViewPresenter.viewDidLoad()
     }
     
@@ -39,6 +42,17 @@ class MapViewController: UIViewController {
         self.mapViewPresenter.viewWillDisappear()
     }
 
+    func setTextField() {
+        self.dummyTextField.delegate = self
+        self.dummyTextField.inputView = pickerView
+        let toolbar = UIToolbar(frame: CGRect(x: 0, y: 0, width: self.view.bounds.width, height: 40))
+        self.dummyTextField.inputAccessoryView = toolbar
+    }
+    
+    @IBAction func searchButtonPressed(_ sender: UIBarButtonItem) {
+        self.dummyTextField.becomeFirstResponder()
+    }
+    
     @IBAction func postButtonPressed(_ sender: UIBarButtonItem) {
         self.mapViewPresenter.postButtonPressed()
     }
@@ -117,4 +131,7 @@ extension MapViewController: MapViewDelegate {
         self.navigationPlace.text = place
     }
 
+}
+
+extension MapViewController: UITextFieldDelegate {
 }

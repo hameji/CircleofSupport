@@ -162,6 +162,12 @@
                                     <constraint firstItem="hrc-kM-VGz" firstAttribute="top" secondItem="LLD-rT-EDp" secondAttribute="bottom" constant="10" id="xXs-Ub-NpJ"/>
                                 </constraints>
                             </view>
+                            <textField opaque="NO" alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nJB-IM-Z5g">
+                                <rect key="frame" x="158" y="404" width="97" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -179,38 +185,40 @@
                         <viewLayoutGuide key="safeArea" id="a57-GF-bno"/>
                     </view>
                     <navigationItem key="navigationItem" id="lee-Ck-f49">
-                        <barButtonItem key="leftBarButtonItem" style="plain" id="PCg-Mo-73k">
-                            <view key="customView" contentMode="scaleToFill" id="qkd-hY-J90">
-                                <rect key="frame" x="20" y="7" width="92" height="42"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="finder" translatesAutoresizingMaskIntoConstraints="NO" id="FLy-8L-hSS">
-                                        <rect key="frame" x="0.0" y="11" width="20" height="20"/>
-                                    </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date," textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1NZ-rr-vyD">
-                                        <rect key="frame" x="28" y="10.5" width="41" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Place" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kGw-M6-lZM">
-                                        <rect key="frame" x="77" y="10.5" width="42" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <constraints>
-                                    <constraint firstItem="kGw-M6-lZM" firstAttribute="centerY" secondItem="qkd-hY-J90" secondAttribute="centerY" id="CjU-tf-Jjk"/>
-                                    <constraint firstItem="FLy-8L-hSS" firstAttribute="centerY" secondItem="qkd-hY-J90" secondAttribute="centerY" id="FkE-TH-eMN"/>
-                                    <constraint firstItem="FLy-8L-hSS" firstAttribute="leading" secondItem="qkd-hY-J90" secondAttribute="leading" id="Xj5-kv-qzc"/>
-                                    <constraint firstItem="1NZ-rr-vyD" firstAttribute="leading" secondItem="FLy-8L-hSS" secondAttribute="trailing" constant="8" id="bcA-eN-6CJ"/>
-                                    <constraint firstItem="1NZ-rr-vyD" firstAttribute="centerY" secondItem="qkd-hY-J90" secondAttribute="centerY" id="mZS-ct-oMt"/>
-                                    <constraint firstItem="kGw-M6-lZM" firstAttribute="leading" secondItem="1NZ-rr-vyD" secondAttribute="trailing" constant="8" id="tAS-aI-OYZ"/>
-                                </constraints>
-                            </view>
-                        </barButtonItem>
+                        <leftBarButtonItems>
+                            <barButtonItem title="Item" image="finder" id="ZD6-fm-6R2">
+                                <connections>
+                                    <action selector="searchButtonPressed:" destination="I0V-dk-XJz" id="3da-0X-QcY"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem style="plain" id="PCg-Mo-73k">
+                                <view key="customView" contentMode="scaleToFill" id="qkd-hY-J90">
+                                    <rect key="frame" x="59" y="7" width="92" height="42"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date," textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1NZ-rr-vyD">
+                                            <rect key="frame" x="8" y="10.5" width="41" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Place" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kGw-M6-lZM">
+                                            <rect key="frame" x="57" y="10.5" width="42" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    <constraints>
+                                        <constraint firstItem="kGw-M6-lZM" firstAttribute="centerY" secondItem="qkd-hY-J90" secondAttribute="centerY" id="CjU-tf-Jjk"/>
+                                        <constraint firstItem="1NZ-rr-vyD" firstAttribute="leading" secondItem="qkd-hY-J90" secondAttribute="leading" constant="8" id="YdT-Zt-04R"/>
+                                        <constraint firstItem="1NZ-rr-vyD" firstAttribute="centerY" secondItem="qkd-hY-J90" secondAttribute="centerY" id="mZS-ct-oMt"/>
+                                        <constraint firstItem="kGw-M6-lZM" firstAttribute="leading" secondItem="1NZ-rr-vyD" secondAttribute="trailing" constant="8" id="tAS-aI-OYZ"/>
+                                    </constraints>
+                                </view>
+                            </barButtonItem>
+                        </leftBarButtonItems>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="2D3-hS-tZ7">
                             <connections>
                                 <action selector="postButtonPressed:" destination="I0V-dk-XJz" id="PF2-SP-iWM"/>
@@ -220,11 +228,11 @@
                     <connections>
                         <outlet property="address" destination="3Pe-V6-y8q" id="8Sa-c9-yYO"/>
                         <outlet property="categorySegment" destination="hOJ-Sy-F83" id="lD7-ku-BIt"/>
+                        <outlet property="dummyTextField" destination="nJB-IM-Z5g" id="XXd-eW-aSG"/>
                         <outlet property="latitude" destination="coO-fG-LBe" id="4h6-8h-QSF"/>
                         <outlet property="longitude" destination="q7n-HJ-jmf" id="x8x-dd-HkI"/>
                         <outlet property="mapView" destination="RGz-gH-3tD" id="gfZ-Bp-TWr"/>
                         <outlet property="navigationDate" destination="1NZ-rr-vyD" id="LjJ-xa-sbm"/>
-                        <outlet property="navigationInfoView" destination="qkd-hY-J90" id="SO9-SR-8hd"/>
                         <outlet property="navigationPlace" destination="kGw-M6-lZM" id="WYB-jd-vmr"/>
                         <segue destination="wRI-d1-W3k" kind="presentation" identifier="postStatus" id="vz3-iF-bkV"/>
                     </connections>
