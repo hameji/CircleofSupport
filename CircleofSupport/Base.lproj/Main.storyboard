@@ -219,9 +219,13 @@
                     </navigationItem>
                     <connections>
                         <outlet property="address" destination="3Pe-V6-y8q" id="8Sa-c9-yYO"/>
+                        <outlet property="categorySegment" destination="hOJ-Sy-F83" id="lD7-ku-BIt"/>
                         <outlet property="latitude" destination="coO-fG-LBe" id="4h6-8h-QSF"/>
                         <outlet property="longitude" destination="q7n-HJ-jmf" id="x8x-dd-HkI"/>
                         <outlet property="mapView" destination="RGz-gH-3tD" id="gfZ-Bp-TWr"/>
+                        <outlet property="navigationDate" destination="1NZ-rr-vyD" id="LjJ-xa-sbm"/>
+                        <outlet property="navigationInfoView" destination="qkd-hY-J90" id="SO9-SR-8hd"/>
+                        <outlet property="navigationPlace" destination="kGw-M6-lZM" id="WYB-jd-vmr"/>
                         <segue destination="wRI-d1-W3k" kind="presentation" identifier="postStatus" id="vz3-iF-bkV"/>
                     </connections>
                 </viewController>
