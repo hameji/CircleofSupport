@@ -19,7 +19,7 @@ class MainTabBarController: UITabBarController {
             item.title = nil
             item.imageInsets = UIEdgeInsets(top: 5, left: 0, bottom: -5, right: 0)
         }
-    }    
+    }
 
     /*
     // MARK: - Navigation
