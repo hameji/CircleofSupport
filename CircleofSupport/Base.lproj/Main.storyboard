@@ -60,7 +60,7 @@
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="81.696428571428569"/>
         </scene>
-        <!--AskHelp-->
+        <!--Ask For Help View Controller-->
         <scene sceneID="gUg-nQ-mTv">
             <objects>
                 <viewController id="ySy-uj-xij" customClass="AskForHelpViewController" customModule="CircleofSupport" customModuleProvider="target" sceneMemberID="viewController">
@@ -70,7 +70,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="df0-zi-tXP"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="AskHelp" id="dA4-cm-G6o"/>
+                    <tabBarItem key="tabBarItem" title="" id="dA4-cm-G6o"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xiq-iI-fMQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -461,10 +461,10 @@
             </objects>
             <point key="canvasLocation" x="4018.8405797101454" y="-396.42857142857139"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Main Tab Bar Controller-->
         <scene sceneID="WMI-47-ZU7">
             <objects>
-                <tabBarController modalPresentationStyle="fullScreen" id="yEA-Vy-ePc" sceneMemberID="viewController">
+                <tabBarController modalPresentationStyle="fullScreen" id="yEA-Vy-ePc" customClass="MainTabBarController" customModule="CircleofSupport" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="g1F-Bt-zPo"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="0yG-jz-kFT">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
@@ -480,11 +480,11 @@
             </objects>
             <point key="canvasLocation" x="1084" y="82"/>
         </scene>
-        <!--マップ-->
+        <!--Navigation Controller-->
         <scene sceneID="bey-r8-HLV">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Poh-Ya-hdA" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="マップ" id="BIg-0B-Tfa"/>
+                    <tabBarItem key="tabBarItem" title="" image="map" id="BIg-0B-Tfa"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="WKh-jz-AFH">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
@@ -504,6 +504,7 @@
         <image name="gassOff" width="200" height="200"/>
         <image name="lightOff" width="200" height="200"/>
         <image name="logo" width="200" height="200"/>
+        <image name="map" width="25" height="25"/>
         <image name="waterOff" width="200" height="200"/>
     </resources>
 </document>
