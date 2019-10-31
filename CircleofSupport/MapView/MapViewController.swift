@@ -109,7 +109,7 @@ extension MapViewController: MapViewDelegate {
     }
 
     func setTitle(title: String) {
-        self.title = title
+        self.tabBarItem.title = title
     }
 
 }
