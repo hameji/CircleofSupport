@@ -17,10 +17,9 @@ class MainTabBarController: UITabBarController {
         guard let items = self.tabBar.items else { return }
         for item in items {
             item.title = nil
-            item.imageInsets = UIEdgeInsets(top: 9, left: 0, bottom: -9, right: 0)
+            item.imageInsets = UIEdgeInsets(top: 5, left: 0, bottom: -5, right: 0)
         }
-    }
-    
+    }    
 
     /*
     // MARK: - Navigation
