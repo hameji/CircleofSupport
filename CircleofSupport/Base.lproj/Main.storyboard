@@ -191,9 +191,9 @@
                                     <action selector="searchButtonPressed:" destination="I0V-dk-XJz" id="3da-0X-QcY"/>
                                 </connections>
                             </barButtonItem>
-                            <barButtonItem style="plain" id="PCg-Mo-73k">
+                            <barButtonItem id="PCg-Mo-73k">
                                 <view key="customView" contentMode="scaleToFill" id="qkd-hY-J90">
-                                    <rect key="frame" x="59" y="7" width="92" height="42"/>
+                                    <rect key="frame" x="79" y="7" width="92" height="42"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date," textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1NZ-rr-vyD">
