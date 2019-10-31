@@ -38,5 +38,15 @@ struct Placemark {
             return prefecture + city + town + houseNumber
         }
     }
+    
+    var breifAddress: String? {
+        get {
+            guard let prefecture = administrativeArea,
+                  let city = locality else {
+                return nil
+            }
+            return prefecture + city
+        }
+    }
 
 }

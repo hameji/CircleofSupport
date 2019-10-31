@@ -11,6 +11,10 @@ import MapKit
 
 class MapViewController: UIViewController {
 
+    @IBOutlet weak var navigationInfoView: UIView!
+    @IBOutlet weak var navigationDate: UILabel!
+    @IBOutlet weak var navigationPlace: UILabel!
+    @IBOutlet weak var categorySegment: UISegmentedControl!
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var address: UILabel!
     @IBOutlet weak var latitude: UILabel!
@@ -108,8 +112,9 @@ extension MapViewController: MapViewDelegate {
         self.mapView.addAnnotations(annotations)
     }
 
-    func setTitle(title: String) {
-        self.tabBarItem.title = title
+    func setNavigationInfo(date: String, place: String) {
+        self.navigationDate.text = date
+        self.navigationPlace.text = place
     }
 
 }
