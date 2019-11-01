@@ -12,4 +12,8 @@ protocol MapViewDelegate : class {
     func setMapCenter(placemark: Placemark, delta: Double)
     func setAnnotations(data: [Lifeline])
     func setNavigationInfo(date: String, place: String)
+    func reloadPickerAddressComponent()
+    func respondDummyTextField()
+    func resignDummyTextField()
+    func inputOn(bool: Bool)
 }

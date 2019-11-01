@@ -13,6 +13,7 @@ class MapViewController: UIViewController {
 
     @IBOutlet weak var navigationDate: UILabel!
     @IBOutlet weak var navigationPlace: UILabel!
+    @IBOutlet weak var postButton: UIBarButtonItem!
     @IBOutlet weak var categorySegment: UISegmentedControl!
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var address: UILabel!
@@ -21,28 +22,70 @@ class MapViewController: UIViewController {
     @IBOutlet weak var dummyTextField: UITextField!
     var pickerView: UIPickerView = UIPickerView()
     
+    var postRange =  MKCircle(center: CLLocationCoordinate2D(latitude: 0.0, longitude: 0.0), radius: 10)
     private let mapViewPresenter = MapViewPresenter()
     
     private static let seguePostStatus = "postStatus"
     
     // MARK: - Program Lifecycle
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        self.mapViewPresenter.mapView = self
+    func initialize() {
+        setMapView()
         setTextField()
-        self.mapViewPresenter.viewDidLoad()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        self.mapViewPresenter.viewWillAppear()
+    func setMapView() {
+        let longPress = UILongPressGestureRecognizer(target: self, action: #selector(longPressed))
+        self.mapView.addGestureRecognizer(longPress)
     }
+    
+    @objc func longPressed(sender: UILongPressGestureRecognizer) {
+        guard let userMapLocation = mapView.userLocation.location else {
+            return
+        }
 
-    override func viewWillDisappear(_ animated: Bool) {
-        self.mapViewPresenter.viewWillDisappear()
+        if sender.state == .began {
+            let circle = CLLocationDistance(1000)  // todo: 距離設定合わせる
+            postRange = MKCircle(center: userMapLocation.coordinate, radius: circle)
+            self.mapView.addOverlay(postRange)
+        }
+        
+        print("longtapped")
+        guard sender.state == .ended else { return }
+        self.mapView.removeOverlay(postRange)
+        let tappedPoint = sender.location(in: view)
+        let tappedCoordinate = mapView.convert(tappedPoint, toCoordinateFrom: mapView)
+        let tappedLocation = CLLocation(latitude: tappedCoordinate.latitude, longitude: tappedCoordinate.longitude)
+        let distance = userMapLocation.distance(from: tappedLocation)
+        print(distance)
+        
+        guard distance < 1000 else {  // todo: 距離設定
+            return
+        }
+        var title = ""
+        switch self.categorySegment.selectedSegmentIndex {
+        case 0: title = "この地点の\n道路情報を投稿しますか？"
+        case 1: title = "この地点の\nライフライン情報を投稿しますか？"
+        case 2: title = "この地点の\n被災情報を投稿しますか？"
+        case 3: title = "この地点の\n支援情報を投稿しますか？"
+        default: break
+        }
+        let alert = UIAlertController(title: title, message: nil, preferredStyle: .alert)
+        let noAction = UIAlertAction(title: "いいえ", style: .cancel, handler: nil)
+        let yesAction = UIAlertAction(title: "はい", style: .default, handler: { (action: UIAlertAction!) -> Void in
+            switch self.categorySegment.selectedSegmentIndex {
+            case 0: break
+            case 1:
+                self.performSegue(withIdentifier: MapViewController.seguePostStatus, sender: nil)
+            case 2: break
+            case 3: break
+            default: break
+            }
+        })
+        alert.addAction(noAction)
+        alert.addAction(yesAction)
+        self.present(alert, animated: true, completion: nil)
     }
-
-    // MARK: - TextField setup
+    
     func setTextField() {
         let toolbar = UIToolbar(frame: CGRect(x: 0, y: 0, width: self.view.bounds.width, height: 44))
         let cancelButton = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(cancelButtonPressed))
@@ -54,18 +97,42 @@ class MapViewController: UIViewController {
         self.pickerView.dataSource = self
         self.dummyTextField.inputView = pickerView
     }
+
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view.
+        initialize()
+        self.mapViewPresenter.mapView = self
+        self.mapViewPresenter.viewDidLoad()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.mapViewPresenter.viewWillAppear()
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        self.mapViewPresenter.viewWillDisappear()
+    }
+    
+    // MARK: - TextField setup
     
     @objc func cancelButtonPressed() {
-        self.dummyTextField.resignFirstResponder()
+        self.mapViewPresenter.cancelButtonPressed()
     }
 
     @objc func doneButtonPressed() {
-        self.dummyTextField.resignFirstResponder()
+        let prefectureRow = self.pickerView.selectedRow(inComponent: 1)
+        self.mapViewPresenter.doneButtonPressed(prefectureRow: prefectureRow)
     }
 
     // MARK: - IBOutelet functions
     @IBAction func searchButtonPressed(_ sender: UIBarButtonItem) {
+        self.mapViewPresenter.searchButtonPressed()
+
+        inputOn(bool: false)
         self.dummyTextField.becomeFirstResponder()
+        self.mapViewPresenter.searchButtonPressed()
     }
     
     @IBAction func postButtonPressed(_ sender: UIBarButtonItem) {
@@ -74,6 +141,7 @@ class MapViewController: UIViewController {
     
     
     @IBAction func segmentChanged(_ sender: UISegmentedControl) {
+        self.mapViewPresenter.segmentChanged(to: sender.selectedSegmentIndex)
     }
     
 }
@@ -102,6 +170,14 @@ extension MapViewController: MKMapViewDelegate {
             }
         }
         return annotationView
+    }
+    
+    func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
+        let circle = MKCircleRenderer(overlay: overlay)
+        circle.strokeColor = UIColor.red
+        circle.fillColor = UIColor(red: 0.5, green: 0.0, blue: 0.0, alpha: 0.5)
+        circle.lineWidth = 1.0
+        return circle
     }
 }
 
@@ -145,10 +221,34 @@ extension MapViewController: MapViewDelegate {
         self.navigationDate.text = date
         self.navigationPlace.text = place
     }
+    
+    func reloadPickerAddressComponent() {
+        self.pickerView.reloadComponent(1)
+        self.pickerView.selectRow(0, inComponent: 1, animated: false)
+        self.dummyTextField.reloadInputViews()
+    }
+    
+    func resignDummyTextField() {
+        self.dummyTextField.resignFirstResponder()
+    }
+    
+    func inputOn(bool: Bool) {
+        self.postButton.isEnabled = bool
+        self.categorySegment.isUserInteractionEnabled = bool
+        self.mapView.isUserInteractionEnabled = bool
+    }
+    
+    func respondDummyTextField() {
+        self.dummyTextField.becomeFirstResponder()
+    }
 
 }
 
+// MARK: - UIPicker functions
 extension MapViewController: UIPickerViewDelegate {
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        mapViewPresenter.pickerViewdidSelectRow(row: row, component: component)
+    }
 }
 
 extension MapViewController: UIPickerViewDataSource {
@@ -161,6 +261,6 @@ extension MapViewController: UIPickerViewDataSource {
     }
 
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return ""
+        return mapViewPresenter.pickerViewtitleForRow(component: component, row: row)
     }
 }

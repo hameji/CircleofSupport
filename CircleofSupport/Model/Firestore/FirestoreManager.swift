@@ -13,7 +13,7 @@ class FirestoreManager {
     
     private lazy var firestore = Firestore.firestore()
     
-    // MARK: -- CRUD ( Create/Read/Update/Delete )
+    // MARK: -- Get Data(Total Data)
     func getData(collectionName: String, completion: @escaping (Result<[Document], Error>) -> ()) {
         self.firestore.collection(collectionName).getDocuments() {(querySnapshot, err) in
             
@@ -28,6 +28,8 @@ class FirestoreManager {
         }
     }
 
+    // MARK: -- Get Data(Limited Data)
+    // mapdata
     func getNewData(collectionName: String, date: Date, limit: Int, completion: @escaping (Result<[Document], Error>) -> ()) {
         var ref: Query
         if limit == 0 {
@@ -46,6 +48,19 @@ class FirestoreManager {
         }
     }
     
+    // Limit Field
+    func getlimitedField(limit: Query, completion: @escaping (Result<[Document], Error>) -> ()) {
+        limit.getDocuments() {(querySnapshot, err) in
+            guard let querySnapshot = querySnapshot else {
+                completion(.failure(err!))
+                return
+            }
+            let result = querySnapshot.documents.map { Document(documentID: $0.documentID, data: $0.data()) }
+            completion(.success(result))
+        }
+    }
+
+    // MARK: -- Set Data
     func addData(collectionName: String, data: [String:Any], completion: @escaping (Result<String, Error>) -> ()) {
         self.firestore.collection(collectionName).addDocument(data: data) { err in
             if let err = err {
