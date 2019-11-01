@@ -10,8 +10,11 @@ import UIKit
 
 class RssContentViewController: UIViewController {
 
+    var url: String!
+    
     // MARK: - Program Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(url)
     }
 }

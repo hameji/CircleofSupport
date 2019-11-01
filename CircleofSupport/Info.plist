@@ -2,6 +2,19 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+		<key>NSAllowsArbitraryLoadsInWebContentUsageDescription</key>
+		<dict>
+			<key>NSATSExceptionServiceType</key>
+			<dict>
+				<key>NSThirdPartyRSS</key>
+				<true/>
+			</dict>
+		</dict>
+	</dict>
 	<key>NSLocationUsageDescription</key>
 	<string>このアプリを正しく利用するためにはGPS機能をONに設定する必要があります。</string>
 	<key>NSLocationWhenInUseUsageDescription</key>

@@ -16,20 +16,21 @@ class RssFirestoreDao {
     private let rssRef = "Rss"
     
     private let keyRssID = "rssID"
+    private let keyCategory = "Category"
     private let keyAuthority = "Authority"
     private let keyUrl = "Url"
     private let keyError = "Error"
     private let keyVerified = "Verified"
     
     // MARK: -- Functions
-    func fetchPrefectureUrl(prefecture: String, completion: @escaping (Result<String?, Error>) -> ()) {
-        let query = self.firestore.collection(self.rssRef).whereField(self.keyAuthority, isEqualTo: prefecture)
+    func fetchRssUrl(category: String, authority: String, completion: @escaping (Result<String?, Error>) -> ()) {
+        let query = self.firestore.collection(self.rssRef).whereField(self.keyAuthority, isEqualTo: authority).whereField(self.keyCategory, isEqualTo: category)
         firestoreManager.getlimitedField(limit: query) { result in
             guard case .success(let document) = result else {
                 completion(.failure(result as! Error))
                 return
             }
-            let url = document.map { $0.data[self.keyAuthority] as! String }.first
+            let url = document.map { $0.data[self.keyUrl] as! String }.first
             completion(.success(url))
         }
     }

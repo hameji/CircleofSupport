@@ -6,6 +6,9 @@
 //  Copyright © 2019 Hajime Taniguchi. All rights reserved.
 //
 
-protocol RssTitleDelegate : class {
+import Foundation
 
+protocol RssTitleDelegate : class {
+    func reloadTableView()
+    func segueToDetail(indexPath: IndexPath)
 }
