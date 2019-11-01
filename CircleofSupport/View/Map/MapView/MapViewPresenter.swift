@@ -11,6 +11,10 @@ import UIKit
 class MapViewPresenter {
     
     // MARK: - vars & lets
+    var addressType: AddressType = .medium
+    let datePeriod = ["今日", "今週", "今月", "今年"]
+    var cities: [String] = []
+    var address:[String] = []
     private let userDefaultsManager = UserDefaultsManager()
     private let lifelineFirestoreDao = LifelineFirestoreDao()
 
@@ -21,6 +25,7 @@ class MapViewPresenter {
     func initializer() {
         initUserDefaults()
         downloadData()
+        setAddressArray()
     }
     
     func initUserDefaults() {
@@ -38,6 +43,16 @@ class MapViewPresenter {
                 return
             }
             self.mapView?.setAnnotations(data: data)
+        }
+    }
+    
+    func setAddressArray() {
+        if addressType == .medium {
+            cities = AddressData.akita
+            address = cities
+            address.append("他の都道府県")
+        } else if addressType == .short {
+            address = AddressData.prefecture
         }
     }
 
@@ -126,5 +141,77 @@ class MapViewPresenter {
             }
         }
     }
+    
+    func pickerViewdidSelectRow(row: Int, component: Int) {
+        print("addressType:", addressType, ", row:", row, ", component:", component)
+        if addressType == .medium, component == 1, row == address.count - 1 {
+            addressType = .short
+            setAddressArray()
+            self.mapView?.reloadPickerAddressComponent()
+        }
+    }
+    
+    func pickerViewnumberOfComponents() -> Int {
+        return 2  // date, address
+    }
 
+    func pickerViewnumberOfRowsInComponent(component: Int) -> Int {
+        if component == 0 {  // dateType
+            return datePeriod.count
+        } else {  // addressType
+            return address.count
+        }
+    }
+    
+    func pickerViewtitleForRow(component: Int, row: Int) -> String {
+        switch component {
+        case 0:
+            return datePeriod[row]
+        case 1:
+            return address[row]
+        default:
+            return ""
+        }
+    }
+
+    
+    func segmentChanged(to: Int) {
+        switch to {
+        case 0:
+            break
+        case 1:
+            break
+        case 2:
+            break
+        case 3:
+            break
+        default: break
+        }
+        
+    }
+
+    func searchButtonPressed() {
+        self.mapView?.inputOn(bool: false)
+        self.mapView?.respondDummyTextField()
+    }
+
+    func cancelButtonPressed() {
+        self.mapView?.resignDummyTextField()
+        self.mapView?.inputOn(bool: true)
+    }
+    
+    
+    func doneButtonPressed(prefectureRow: Int) {
+        if addressType == .short {
+            addressType = .medium
+            let totalAdress = AddressData.returnAdressArray()
+            address = totalAdress[prefectureRow]
+            address.append("他の都道府県")
+            self.mapView?.reloadPickerAddressComponent()
+        } else {
+            self.mapView?.resignDummyTextField()
+            self.mapView?.inputOn(bool: true)
+        }
+    }
+    
 }

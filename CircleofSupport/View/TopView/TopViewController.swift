@@ -17,6 +17,8 @@ class TopViewController: UIViewController {
     private let topViewPresenter = TopViewPresenter()
     private static let segueMainView = "toMain"
 
+    private let firestoreManager = FirestoreManager()
+
     // MARK: - Program Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,3 +48,26 @@ extension TopViewController: TopViewDelegate {
     }
 }
 
+//extension TopViewController {
+//    func addTotalRss() {
+//        for i in 0 ..< AddressData.prefecture.count {
+//            for j in 0 ..< AddressData.returnAdressArray()[i].count {
+//                addRssFeed(total: AddressData.returnAdressArray()[i].count, current: j + i, category: AddressData.prefecture[i], authority: AddressData.returnAdressArray()[i][j])
+//            }
+//        }
+//    }
+//    
+//    func addRssFeed(total: Int, current: Int, category: String, authority: String) {
+//        let data0: [String:Any] = ["Category": category, "Authority" : authority, "Url" : "http://www.", "Error" : true, "Verified" : false]
+//        firestoreManager.addData(collectionName: "Rss", data: data0) { result in
+//            print("finished", current, "/", total, "[", category, "]", authority, result)
+//        }
+//    }
+//
+//    func addRssFeed(category: String, authority: String, url: String) {
+//        let data0: [String:Any] = ["Category": category, "Authority" : authority, "Url" : url, "Error" : false, "Verified" : true]
+//        firestoreManager.addData(collectionName: "Rss", data: data0) { result in
+//        }
+//    }
+//
+//}

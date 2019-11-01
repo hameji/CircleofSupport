@@ -36,7 +36,18 @@
 		636D3B2723601A4F00AB0A1C /* PostStatusLightCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636D3B2623601A4F00AB0A1C /* PostStatusLightCell.swift */; };
 		636D3B2923601A5F00AB0A1C /* PostStatusGassCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636D3B2823601A5F00AB0A1C /* PostStatusGassCell.swift */; };
 		636D3B2B23601A6F00AB0A1C /* PostStatusWaterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636D3B2A23601A6F00AB0A1C /* PostStatusWaterCell.swift */; };
-		63C993ED236B2D6F0079DD27 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C993EC236B2D6F0079DD27 /* MainTabBarController.swift */; };
+		63988336236C7C9A00D34096 /* RssTitleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63988335236C7C9A00D34096 /* RssTitleViewController.swift */; };
+		63988341236C7F8600D34096 /* RssTitlePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63988340236C7F8600D34096 /* RssTitlePresenter.swift */; };
+		63988343236C7F9600D34096 /* RssTitleDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63988342236C7F9600D34096 /* RssTitleDelegate.swift */; };
+		63988345236C7FB100D34096 /* RssContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63988344236C7FB100D34096 /* RssContentViewController.swift */; };
+		63988347236C7FC000D34096 /* RssContentPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63988346236C7FC000D34096 /* RssContentPresenter.swift */; };
+		63988349236C7FCE00D34096 /* RssContentDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63988348236C7FCE00D34096 /* RssContentDelegate.swift */; };
+		6398834B236C841C00D34096 /* RssFirestoreDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6398834A236C841C00D34096 /* RssFirestoreDao.swift */; };
+		6398834D236C859B00D34096 /* Rss.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6398834C236C859B00D34096 /* Rss.swift */; };
+		6398834F236CA77C00D34096 /* FeedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6398834E236CA77C00D34096 /* FeedItem.swift */; };
+		63988351236CB48C00D34096 /* RssTitleCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63988350236CB48C00D34096 /* RssTitleCustomCell.swift */; };
+		63C993EF236B611D0079DD27 /* AddressType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C993EE236B611D0079DD27 /* AddressType.swift */; };
+		63C993F2236B6EE00079DD27 /* AddressData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C993F1236B6EE00079DD27 /* AddressData.swift */; };
 		63DAD34B236804450027B165 /* PostStatusDateData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DAD34A236804450027B165 /* PostStatusDateData.swift */; };
 		63DAD351236804DB0027B165 /* PostStatusSelectedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DAD350236804DB0027B165 /* PostStatusSelectedData.swift */; };
 		63DAD3552368164D0027B165 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DAD3542368164D0027B165 /* LocationManager.swift */; };
@@ -104,12 +115,23 @@
 		636D3B05235F7CBD00AB0A1C /* PostStatusDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostStatusDelegate.swift; sourceTree = "<group>"; };
 		636D3B1E236018C700AB0A1C /* PostStatusAddressData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostStatusAddressData.swift; sourceTree = "<group>"; };
 		636D3B202360193B00AB0A1C /* PostStatusPresentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostStatusPresentCell.swift; sourceTree = "<group>"; };
-		636D3B2223601A2F00AB0A1C /* PostStatusDateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PostStatusDateCell.swift; path = "CircleofSupport/PostStatusView/Custom Cell/PostStatusDateCell.swift"; sourceTree = SOURCE_ROOT; };
-		636D3B2423601A3E00AB0A1C /* PostStatusAddressCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PostStatusAddressCell.swift; path = "CircleofSupport/PostStatusView/Custom Cell/PostStatusAddressCell.swift"; sourceTree = SOURCE_ROOT; };
-		636D3B2623601A4F00AB0A1C /* PostStatusLightCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PostStatusLightCell.swift; path = "CircleofSupport/PostStatusView/Custom Cell/PostStatusLightCell.swift"; sourceTree = SOURCE_ROOT; };
-		636D3B2823601A5F00AB0A1C /* PostStatusGassCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PostStatusGassCell.swift; path = "CircleofSupport/PostStatusView/Custom Cell/PostStatusGassCell.swift"; sourceTree = SOURCE_ROOT; };
-		636D3B2A23601A6F00AB0A1C /* PostStatusWaterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PostStatusWaterCell.swift; path = "CircleofSupport/PostStatusView/Custom Cell/PostStatusWaterCell.swift"; sourceTree = SOURCE_ROOT; };
-		63C993EC236B2D6F0079DD27 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		636D3B2223601A2F00AB0A1C /* PostStatusDateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PostStatusDateCell.swift; path = "CircleofSupport/View/Map/PostStatusView/Custom Cell/PostStatusDateCell.swift"; sourceTree = SOURCE_ROOT; };
+		636D3B2423601A3E00AB0A1C /* PostStatusAddressCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PostStatusAddressCell.swift; path = "CircleofSupport/View/Map/PostStatusView/Custom Cell/PostStatusAddressCell.swift"; sourceTree = SOURCE_ROOT; };
+		636D3B2623601A4F00AB0A1C /* PostStatusLightCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PostStatusLightCell.swift; path = "CircleofSupport/View/Map/PostStatusView/Custom Cell/PostStatusLightCell.swift"; sourceTree = SOURCE_ROOT; };
+		636D3B2823601A5F00AB0A1C /* PostStatusGassCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PostStatusGassCell.swift; path = "CircleofSupport/View/Map/PostStatusView/Custom Cell/PostStatusGassCell.swift"; sourceTree = SOURCE_ROOT; };
+		636D3B2A23601A6F00AB0A1C /* PostStatusWaterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PostStatusWaterCell.swift; path = "CircleofSupport/View/Map/PostStatusView/Custom Cell/PostStatusWaterCell.swift"; sourceTree = SOURCE_ROOT; };
+		63988335236C7C9A00D34096 /* RssTitleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RssTitleViewController.swift; sourceTree = "<group>"; };
+		63988340236C7F8600D34096 /* RssTitlePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RssTitlePresenter.swift; sourceTree = "<group>"; };
+		63988342236C7F9600D34096 /* RssTitleDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RssTitleDelegate.swift; sourceTree = "<group>"; };
+		63988344236C7FB100D34096 /* RssContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RssContentViewController.swift; sourceTree = "<group>"; };
+		63988346236C7FC000D34096 /* RssContentPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RssContentPresenter.swift; sourceTree = "<group>"; };
+		63988348236C7FCE00D34096 /* RssContentDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RssContentDelegate.swift; sourceTree = "<group>"; };
+		6398834A236C841C00D34096 /* RssFirestoreDao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RssFirestoreDao.swift; sourceTree = "<group>"; };
+		6398834C236C859B00D34096 /* Rss.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rss.swift; sourceTree = "<group>"; };
+		6398834E236CA77C00D34096 /* FeedItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedItem.swift; sourceTree = "<group>"; };
+		63988350236CB48C00D34096 /* RssTitleCustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RssTitleCustomCell.swift; sourceTree = "<group>"; };
+		63C993EE236B611D0079DD27 /* AddressType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressType.swift; sourceTree = "<group>"; };
+		63C993F1236B6EE00079DD27 /* AddressData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressData.swift; sourceTree = "<group>"; };
 		63DAD34A236804450027B165 /* PostStatusDateData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostStatusDateData.swift; sourceTree = "<group>"; };
 		63DAD350236804DB0027B165 /* PostStatusSelectedData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostStatusSelectedData.swift; sourceTree = "<group>"; };
 		63DAD3542368164D0027B165 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
@@ -118,7 +140,7 @@
 		63DAD35A236842ED0027B165 /* Placemark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Placemark.swift; sourceTree = "<group>"; };
 		63DAD35C2368624E0027B165 /* LifelineFirestoreDao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LifelineFirestoreDao.swift; sourceTree = "<group>"; };
 		63DAD35E236865940027B165 /* Lifeline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lifeline.swift; sourceTree = "<group>"; };
-		63DAD3642368812D0027B165 /* PostStatusAddressDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PostStatusAddressDelegate.swift; path = "CircleofSupport/PostStatusView/Cell Delegate/PostStatusAddressDelegate.swift"; sourceTree = SOURCE_ROOT; };
+		63DAD3642368812D0027B165 /* PostStatusAddressDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PostStatusAddressDelegate.swift; path = "CircleofSupport/View/Map/PostStatusView/Cell Delegate/PostStatusAddressDelegate.swift"; sourceTree = SOURCE_ROOT; };
 		63DAD3682368A4C00027B165 /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
 		63DAD36A2369512D0027B165 /* TitleType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleType.swift; sourceTree = "<group>"; };
 		63DAD36C236967A20027B165 /* CustomAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAnnotation.swift; sourceTree = "<group>"; };
@@ -188,18 +210,11 @@
 		63137D50235861EB007FB666 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				63137D5123586200007FB666 /* Authentication.swift */,
-				63DAD3542368164D0027B165 /* LocationManager.swift */,
+				6398833F236C7F6200D34096 /* UserDefaults */,
+				6398833E236C7F2500D34096 /* Map */,
+				6398833D236C7EF500D34096 /* Location */,
+				6398833C236C7EAB00D34096 /* Firestore */,
 				63DAD36A2369512D0027B165 /* TitleType.swift */,
-				63DAD35A236842ED0027B165 /* Placemark.swift */,
-				63DAD3582368181F0027B165 /* GpsAuthorization.swift */,
-				63DAD3562368167C0027B165 /* Location.swift */,
-				636D3AFC235F662100AB0A1C /* FirestoreManager.swift */,
-				636D3AFE235F665000AB0A1C /* Document.swift */,
-				63DAD35C2368624E0027B165 /* LifelineFirestoreDao.swift */,
-				63DAD35E236865940027B165 /* Lifeline.swift */,
-				63DAD3682368A4C00027B165 /* UserDefaultsManager.swift */,
-				63DAD36C236967A20027B165 /* CustomAnnotation.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -231,11 +246,9 @@
 			children = (
 				635FAB77235785230039B341 /* AppDelegate.swift */,
 				635FAB79235785230039B341 /* SceneDelegate.swift */,
-				63C993EC236B2D6F0079DD27 /* MainTabBarController.swift */,
+				63C993F0236B6ED20079DD27 /* Data */,
 				63137D50235861EB007FB666 /* Model */,
-				635FABB523579A1C0039B341 /* TopView */,
-				63137D4023579FFB007FB666 /* MapView */,
-				636D3B00235F7C8000AB0A1C /* PostStatusView */,
+				63988337236C7CAF00D34096 /* View */,
 				63137D412357A013007FB666 /* AFRView */,
 				635FAB82235785250039B341 /* LaunchScreen.storyboard */,
 				635FAB7D235785230039B341 /* Main.storyboard */,
@@ -308,6 +321,106 @@
 				63DAD350236804DB0027B165 /* PostStatusSelectedData.swift */,
 			);
 			path = "Cell Data";
+			sourceTree = "<group>";
+		};
+		63988337236C7CAF00D34096 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				635FABB523579A1C0039B341 /* TopView */,
+				63988339236C7CE800D34096 /* Rss */,
+				63988338236C7CD100D34096 /* Map */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		63988338236C7CD100D34096 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				63137D4023579FFB007FB666 /* MapView */,
+				636D3B00235F7C8000AB0A1C /* PostStatusView */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
+		63988339236C7CE800D34096 /* Rss */ = {
+			isa = PBXGroup;
+			children = (
+				6398833A236C7E5000D34096 /* RssTitleView */,
+				6398833B236C7E6B00D34096 /* RssContent */,
+			);
+			path = Rss;
+			sourceTree = "<group>";
+		};
+		6398833A236C7E5000D34096 /* RssTitleView */ = {
+			isa = PBXGroup;
+			children = (
+				63988335236C7C9A00D34096 /* RssTitleViewController.swift */,
+				63988340236C7F8600D34096 /* RssTitlePresenter.swift */,
+				63988342236C7F9600D34096 /* RssTitleDelegate.swift */,
+				63988350236CB48C00D34096 /* RssTitleCustomCell.swift */,
+			);
+			path = RssTitleView;
+			sourceTree = "<group>";
+		};
+		6398833B236C7E6B00D34096 /* RssContent */ = {
+			isa = PBXGroup;
+			children = (
+				63988344236C7FB100D34096 /* RssContentViewController.swift */,
+				63988346236C7FC000D34096 /* RssContentPresenter.swift */,
+				63988348236C7FCE00D34096 /* RssContentDelegate.swift */,
+			);
+			path = RssContent;
+			sourceTree = "<group>";
+		};
+		6398833C236C7EAB00D34096 /* Firestore */ = {
+			isa = PBXGroup;
+			children = (
+				63137D5123586200007FB666 /* Authentication.swift */,
+				636D3AFE235F665000AB0A1C /* Document.swift */,
+				636D3AFC235F662100AB0A1C /* FirestoreManager.swift */,
+				6398834C236C859B00D34096 /* Rss.swift */,
+				6398834A236C841C00D34096 /* RssFirestoreDao.swift */,
+				63DAD35C2368624E0027B165 /* LifelineFirestoreDao.swift */,
+				6398834E236CA77C00D34096 /* FeedItem.swift */,
+			);
+			path = Firestore;
+			sourceTree = "<group>";
+		};
+		6398833D236C7EF500D34096 /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				63DAD3542368164D0027B165 /* LocationManager.swift */,
+				63DAD3582368181F0027B165 /* GpsAuthorization.swift */,
+			);
+			path = Location;
+			sourceTree = "<group>";
+		};
+		6398833E236C7F2500D34096 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				63DAD3562368167C0027B165 /* Location.swift */,
+				63DAD35A236842ED0027B165 /* Placemark.swift */,
+				63DAD36C236967A20027B165 /* CustomAnnotation.swift */,
+				63DAD35E236865940027B165 /* Lifeline.swift */,
+				63C993EE236B611D0079DD27 /* AddressType.swift */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
+		6398833F236C7F6200D34096 /* UserDefaults */ = {
+			isa = PBXGroup;
+			children = (
+				63DAD3682368A4C00027B165 /* UserDefaultsManager.swift */,
+			);
+			path = UserDefaults;
+			sourceTree = "<group>";
+		};
+		63C993F0236B6ED20079DD27 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				63C993F1236B6EE00079DD27 /* AddressData.swift */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 		63DAD366236886B90027B165 /* Cell Delegate */ = {
@@ -575,12 +688,17 @@
 				63137D492357A884007FB666 /* MapViewDelegate.swift in Sources */,
 				63DAD35B236842ED0027B165 /* Placemark.swift in Sources */,
 				63DAD3552368164D0027B165 /* LocationManager.swift in Sources */,
+				6398834D236C859B00D34096 /* Rss.swift in Sources */,
 				636D3B2723601A4F00AB0A1C /* PostStatusLightCell.swift in Sources */,
 				636D3B2523601A3E00AB0A1C /* PostStatusAddressCell.swift in Sources */,
 				63DAD3692368A4C00027B165 /* UserDefaultsManager.swift in Sources */,
 				635FAB7C235785230039B341 /* TopViewController.swift in Sources */,
+				63988341236C7F8600D34096 /* RssTitlePresenter.swift in Sources */,
+				63988349236C7FCE00D34096 /* RssContentDelegate.swift in Sources */,
+				63C993EF236B611D0079DD27 /* AddressType.swift in Sources */,
 				63DAD3572368167C0027B165 /* Location.swift in Sources */,
 				636D3B2B23601A6F00AB0A1C /* PostStatusWaterCell.swift in Sources */,
+				6398834B236C841C00D34096 /* RssFirestoreDao.swift in Sources */,
 				636D3B212360193B00AB0A1C /* PostStatusPresentCell.swift in Sources */,
 				63137D432357A03A007FB666 /* MapViewController.swift in Sources */,
 				63DAD351236804DB0027B165 /* PostStatusSelectedData.swift in Sources */,
@@ -588,7 +706,8 @@
 				63137D5223586200007FB666 /* Authentication.swift in Sources */,
 				63137D472357A873007FB666 /* MapViewPresenter.swift in Sources */,
 				63DAD36D236967A30027B165 /* CustomAnnotation.swift in Sources */,
-				63C993ED236B2D6F0079DD27 /* MainTabBarController.swift in Sources */,
+				63988345236C7FB100D34096 /* RssContentViewController.swift in Sources */,
+				6398834F236CA77C00D34096 /* FeedItem.swift in Sources */,
 				63137D452357A04B007FB666 /* AskForHelpViewController.swift in Sources */,
 				636D3B06235F7CBD00AB0A1C /* PostStatusDelegate.swift in Sources */,
 				635FAB78235785230039B341 /* AppDelegate.swift in Sources */,
@@ -597,15 +716,20 @@
 				636D3B2923601A5F00AB0A1C /* PostStatusGassCell.swift in Sources */,
 				636D3B04235F7CAF00AB0A1C /* PostStatusPresenter.swift in Sources */,
 				63DAD3652368812D0027B165 /* PostStatusAddressDelegate.swift in Sources */,
+				63988351236CB48C00D34096 /* RssTitleCustomCell.swift in Sources */,
 				636D3AFF235F665000AB0A1C /* Document.swift in Sources */,
 				636D3B02235F7CA200AB0A1C /* PostStatusViewController.swift in Sources */,
+				63988347236C7FC000D34096 /* RssContentPresenter.swift in Sources */,
 				63DAD36B2369512D0027B165 /* TitleType.swift in Sources */,
 				635FAB7A235785230039B341 /* SceneDelegate.swift in Sources */,
 				63DAD35F236865940027B165 /* Lifeline.swift in Sources */,
+				63988336236C7C9A00D34096 /* RssTitleViewController.swift in Sources */,
 				635FABB223579A050039B341 /* TopViewPresenter.swift in Sources */,
 				63DAD34B236804450027B165 /* PostStatusDateData.swift in Sources */,
 				636D3AFD235F662100AB0A1C /* FirestoreManager.swift in Sources */,
 				636D3B2323601A2F00AB0A1C /* PostStatusDateCell.swift in Sources */,
+				63C993F2236B6EE00079DD27 /* AddressData.swift in Sources */,
+				63988343236C7F9600D34096 /* RssTitleDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
