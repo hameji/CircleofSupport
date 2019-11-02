@@ -7,16 +7,18 @@
 //
 
 import UIKit
+import SVProgressHUD
 
-class RssTitleViewController: UIViewController {
+class RssViewController: UIViewController {
     
     // MARK: - vars & lets
     @IBOutlet weak var categorySegment: UISegmentedControl!
     @IBOutlet weak var tableView: UITableView!
     private let rssTitlePresenter = RssTitlePresenter()
     
-    private static let segueToRssDetail = "toRssDetail"
-    
+    private static let segueToPdfViewer = "toPdfViewer"
+    private static let segueToWebView = "toWebView"
+
     // MARK: - Program Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,10 +35,10 @@ class RssTitleViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == RssTitleViewController.segueToRssDetail {
+        if segue.identifier == RssViewController.segueToPdfViewer {
             if sender is RssTitleCustomCell {
                 let cell = sender as! RssTitleCustomCell
-                let rssDetail = segue.destination as? RssContentViewController
+                let rssDetail = segue.destination as? PdfViewController
                 rssDetail?.url = cell.url
             }
         }
@@ -70,6 +72,14 @@ extension RssTitleViewController: RssTitleDelegate {
     }
     
     func segueToDetail(indexPath: IndexPath) {
-        self.performSegue(withIdentifier: RssTitleViewController.segueToRssDetail, sender: self.tableView.cellForRow(at: indexPath))
+        self.performSegue(withIdentifier: RssTitleViewController.segueToPdfViewer, sender: self.tableView.cellForRow(at: indexPath))
+    }
+    
+    func showHUD() {
+        print("HUDを表示する")
+    }
+    
+    func hideHUD() {
+        print("HUD隠す")
     }
 }

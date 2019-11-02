@@ -10,14 +10,13 @@ import UIKit
 
 class RssTitleCustomCell: UITableViewCell {
     
+    
     @IBOutlet weak var date: UILabel!
     @IBOutlet weak var title: UILabel!
-    var url: String!
     
     func bind(feedItem: FeedItem) {
         print(feedItem.title)
         self.date.text = feedItem.date
         self.title.text = feedItem.title
-        self.url = feedItem.url
     }
 }

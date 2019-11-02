@@ -26,8 +26,8 @@ class RssTitlePresenter: NSObject {
     let DATE_ELEMENT_NAME = "pubDate"
 
     // MARK: - Program lifecycle
-    func viewDidLoad(segment: Int) {
-        changedSegment(segment: 0)
+    func viewDidLoad() {
+        downloadGovernmentData()
     }
     
     func viewWillAppear(segment: Int) {
@@ -35,16 +35,15 @@ class RssTitlePresenter: NSObject {
     }
     
     // MARK: - RssFirestoreDao
-    func downloadRssURL(category: String, authority: String) {
+    func downloadGovernmentData() {
         // todo: startHUD
-        rssFirestoreDao.fetchRssUrl(category: category, authority: authority) { result in
+        rssFirestoreDao.fetchRssUrl(category: "日本", authority: "内閣府") { result in
             // todo: stopHUD
             guard case .success(let data) = result else {
                 print(result as! Error)
                 return
             }
             guard let url = data else {
-                print(" ... url is invalid")
                 return
             }
             self.currentFeedUrl = url
@@ -96,6 +95,7 @@ class RssTitlePresenter: NSObject {
                     return
                 }
                 self.placemark = cPlacemark
+                
             }
         }
 
@@ -103,34 +103,9 @@ class RssTitlePresenter: NSObject {
 
     // MARK: - Segment Func
     func changedSegment(segment: Int) {
-        var category = ""
-        var authority = ""
         switch segment {
-        case 0:
-            category = "日本"
-            authority = "内閣府"
-        case 1:
-            category = "気象庁"
-            authority = "新着情報"
-        case 2:
-            guard let prefecture = self.placemark.administrativeArea else {
-                return
-            }
-            category = prefecture
-            category = ""
-        case 3:
-            guard let prefecture = self.placemark.administrativeArea, let city = self.placemark.locality else {
-                return
-            }
-            category = prefecture
-            category = city
         default: break
         }
-        downloadRssURL(category:  category, authority: authority)
-    }
-    
-    func didSelectRowAt(indexPath: IndexPath) {
-        self.rssTitleView?.segueToDetail(indexPath: indexPath)
     }
     
     // MARK: - TableView Func
@@ -172,7 +147,7 @@ extension RssTitlePresenter: XMLParserDelegate {
                 if let d = r_date {
                     // ロケールを日本語にして曜日を取得
                     dateFormatter.locale = NSLocale(localeIdentifier: "ja_JP") as Locale
-                    dateFormatter.dateFormat = "yyyy年MM月dd日(E)"
+                    dateFormatter.dateFormat = "MM月dd日(E)"
                     lastItem.date = dateFormatter.string(from: d)
                 } else {
                     print("型が一致しません。")

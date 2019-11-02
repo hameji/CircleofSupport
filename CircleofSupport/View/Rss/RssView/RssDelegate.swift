@@ -11,4 +11,6 @@ import Foundation
 protocol RssTitleDelegate : class {
     func reloadTableView()
     func segueToDetail(indexPath: IndexPath)
+    func showHUD()
+    func hideHUD()
 }

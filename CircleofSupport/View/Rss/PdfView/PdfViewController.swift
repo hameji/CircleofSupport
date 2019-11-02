@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RssContentViewController: UIViewController {
+class PdfViewController: UIViewController {
 
     var url: String!
     
