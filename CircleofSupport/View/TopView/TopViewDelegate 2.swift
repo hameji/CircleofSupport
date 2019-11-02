@@ -9,6 +9,4 @@
 protocol TopViewDelegate : class {
     func segueToMain()
     func alertLoginFailed()
-    func startIndicator()
-    func stopIndicator()
 }

@@ -8,14 +8,13 @@
 
 import UIKit
 
-class RssTitlePresenter: NSObject {
-
+class RssPresenter: NSObject {
+    
     // MARK: - vars & lets
     private let locationManager = LocationManager()
     private let rssFirestoreDao = RssFirestoreDao()
-    weak var rssTitleView: RssTitleDelegate?
+    weak var rssView: RssDelegate?
     var placemark: Placemark!
-    var currentFeedUrl: String = ""
     var feedItems: [FeedItem] = []
     var elementName: String!
     var parser: XMLParser!
@@ -36,24 +35,29 @@ class RssTitlePresenter: NSObject {
     
     // MARK: - RssFirestoreDao
     func downloadRssURL(category: String, authority: String) {
-        self.rssTitleView?.showHUD()
+        self.rssView?.showHUD()
         rssFirestoreDao.fetchRssUrl(category: category, authority: authority) { result in
-            self.rssTitleView?.hideHUD()
+            self.rssView?.hideHUD()
             guard case .success(let data) = result else {
                 print(result as! Error)
                 return
             }
+            self.feedItems = []
             guard let url = data else {
                 print(" ... url is invalid")
+                self.rssView?.reloadTableView()                
                 return
             }
-            self.currentFeedUrl = url
-            self.startParser()
+            if url.isEmpty {
+                // self.
+            } else {
+                self.startParser(url: url)
+            }
         }
     }
     
-    func startParser() {
-        guard let feedURL = URL(string: self.currentFeedUrl) else {
+    func startParser(url: String) {
+        guard let feedURL = URL(string: url) else {
             // alertURL ivalid
             return
         }
@@ -119,7 +123,7 @@ class RssTitlePresenter: NSObject {
                 return
             }
             category = prefecture
-            category = ""
+            category = prefecture
         case 3:
             guard let prefecture = self.placemark.administrativeArea, let city = self.placemark.locality else {
                 return
@@ -131,11 +135,12 @@ class RssTitlePresenter: NSObject {
         downloadRssURL(category:  category, authority: authority)
     }
     
+    // MARK: - TableView Delegate
     func didSelectRowAt(indexPath: IndexPath) {
-        self.rssTitleView?.segueToDetail(indexPath: indexPath)
+        self.rssView?.segueToPDFView(indexPath: indexPath)
     }
-    
-    // MARK: - TableView Func
+
+    // MARK: - TableView Data Source
     func numberOfRowsInSection(section: Int) -> Int {
         return self.feedItems.count
     }
@@ -147,7 +152,7 @@ class RssTitlePresenter: NSObject {
 }
 
 // MARK: - XMLParserDelegate
-extension RssTitlePresenter: XMLParserDelegate {
+extension RssPresenter: XMLParserDelegate {
     func parser(_ parser: XMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String] = [:]) {
         self.elementName = nil
         if elementName == ITEM_ELEMENT_NAME {
@@ -191,6 +196,6 @@ extension RssTitlePresenter: XMLParserDelegate {
     }
     
     func parserDidEndDocument(_ parser: XMLParser) {
-        self.rssTitleView?.reloadTableView()
+        self.rssView?.reloadTableView()
     }
 }

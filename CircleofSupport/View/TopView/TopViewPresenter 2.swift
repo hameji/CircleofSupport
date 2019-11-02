@@ -19,9 +19,7 @@ class TopViewPresenter {
     }
 
     private func initializer() {
-        self.topView?.startIndicator()
         authentication.loginAnonymously() { result in
-            self.topView?.stopIndicator()
             guard case .success( _) = result else {
                 print("login failed")
                 self.topView?.alertLoginFailed()

@@ -11,8 +11,6 @@ import UIKit
 class TopViewController: UIViewController {
 
     // MARK: - vars & lets
-    
-    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var actionButton: UIButton!
     
@@ -47,14 +45,6 @@ extension TopViewController: TopViewDelegate {
         })
         alert.addAction(yesAction)
         self.present(alert, animated: true, completion: nil)
-    }
-    
-    func startIndicator() {
-        self.activityIndicator.startAnimating()
-    }
-    
-    func stopIndicator() {
-        self.activityIndicator.stopAnimating()
     }
 }
 

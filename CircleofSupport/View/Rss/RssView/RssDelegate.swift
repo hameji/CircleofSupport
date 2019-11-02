@@ -8,9 +8,10 @@
 
 import Foundation
 
-protocol RssTitleDelegate : class {
+protocol RssDelegate : class {
     func reloadTableView()
-    func segueToDetail(indexPath: IndexPath)
+    func segueToWebView(indexPath: IndexPath)
+    func segueToPDFView(indexPath: IndexPath)
     func showHUD()
     func hideHUD()
 }

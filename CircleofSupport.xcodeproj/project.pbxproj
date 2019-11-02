@@ -36,12 +36,12 @@
 		636D3B2723601A4F00AB0A1C /* PostStatusLightCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636D3B2623601A4F00AB0A1C /* PostStatusLightCell.swift */; };
 		636D3B2923601A5F00AB0A1C /* PostStatusGassCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636D3B2823601A5F00AB0A1C /* PostStatusGassCell.swift */; };
 		636D3B2B23601A6F00AB0A1C /* PostStatusWaterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636D3B2A23601A6F00AB0A1C /* PostStatusWaterCell.swift */; };
-		63988336236C7C9A00D34096 /* RssTitleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63988335236C7C9A00D34096 /* RssTitleViewController.swift */; };
-		63988341236C7F8600D34096 /* RssTitlePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63988340236C7F8600D34096 /* RssTitlePresenter.swift */; };
-		63988343236C7F9600D34096 /* RssTitleDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63988342236C7F9600D34096 /* RssTitleDelegate.swift */; };
-		63988345236C7FB100D34096 /* RssContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63988344236C7FB100D34096 /* RssContentViewController.swift */; };
-		63988347236C7FC000D34096 /* RssContentPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63988346236C7FC000D34096 /* RssContentPresenter.swift */; };
-		63988349236C7FCE00D34096 /* RssContentDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63988348236C7FCE00D34096 /* RssContentDelegate.swift */; };
+		63988336236C7C9A00D34096 /* RssViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63988335236C7C9A00D34096 /* RssViewController.swift */; };
+		63988341236C7F8600D34096 /* RssPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63988340236C7F8600D34096 /* RssPresenter.swift */; };
+		63988343236C7F9600D34096 /* RssDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63988342236C7F9600D34096 /* RssDelegate.swift */; };
+		63988345236C7FB100D34096 /* PdfViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63988344236C7FB100D34096 /* PdfViewController.swift */; };
+		63988347236C7FC000D34096 /* PdfPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63988346236C7FC000D34096 /* PdfPresenter.swift */; };
+		63988349236C7FCE00D34096 /* PdfDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63988348236C7FCE00D34096 /* PdfDelegate.swift */; };
 		6398834B236C841C00D34096 /* RssFirestoreDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6398834A236C841C00D34096 /* RssFirestoreDao.swift */; };
 		6398834D236C859B00D34096 /* Rss.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6398834C236C859B00D34096 /* Rss.swift */; };
 		6398834F236CA77C00D34096 /* FeedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6398834E236CA77C00D34096 /* FeedItem.swift */; };
@@ -60,6 +60,9 @@
 		63DAD3692368A4C00027B165 /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DAD3682368A4C00027B165 /* UserDefaultsManager.swift */; };
 		63DAD36B2369512D0027B165 /* TitleType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DAD36A2369512D0027B165 /* TitleType.swift */; };
 		63DAD36D236967A30027B165 /* CustomAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DAD36C236967A20027B165 /* CustomAnnotation.swift */; };
+		63F0D346236DC40300AF5935 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F0D345236DC40300AF5935 /* WebViewController.swift */; };
+		63F0D349236DC4DA00AF5935 /* WebPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F0D348236DC4D900AF5935 /* WebPresenter.swift */; };
+		63F0D34B236DC4E600AF5935 /* WebDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F0D34A236DC4E600AF5935 /* WebDelegate.swift */; };
 		83F279D8932727634C4AFF19 /* Pods_CircleofSupport_CircleofSupportUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F08BBBE5C84AC5C299F1AF06 /* Pods_CircleofSupport_CircleofSupportUITests.framework */; };
 		8BD965B858F02897B5A300F7 /* Pods_CircleofSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7D49BAE345F969C1C228D1D /* Pods_CircleofSupport.framework */; };
 /* End PBXBuildFile section */
@@ -120,12 +123,12 @@
 		636D3B2623601A4F00AB0A1C /* PostStatusLightCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PostStatusLightCell.swift; path = "CircleofSupport/View/Map/PostStatusView/Custom Cell/PostStatusLightCell.swift"; sourceTree = SOURCE_ROOT; };
 		636D3B2823601A5F00AB0A1C /* PostStatusGassCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PostStatusGassCell.swift; path = "CircleofSupport/View/Map/PostStatusView/Custom Cell/PostStatusGassCell.swift"; sourceTree = SOURCE_ROOT; };
 		636D3B2A23601A6F00AB0A1C /* PostStatusWaterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PostStatusWaterCell.swift; path = "CircleofSupport/View/Map/PostStatusView/Custom Cell/PostStatusWaterCell.swift"; sourceTree = SOURCE_ROOT; };
-		63988335236C7C9A00D34096 /* RssTitleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RssTitleViewController.swift; sourceTree = "<group>"; };
-		63988340236C7F8600D34096 /* RssTitlePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RssTitlePresenter.swift; sourceTree = "<group>"; };
-		63988342236C7F9600D34096 /* RssTitleDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RssTitleDelegate.swift; sourceTree = "<group>"; };
-		63988344236C7FB100D34096 /* RssContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RssContentViewController.swift; sourceTree = "<group>"; };
-		63988346236C7FC000D34096 /* RssContentPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RssContentPresenter.swift; sourceTree = "<group>"; };
-		63988348236C7FCE00D34096 /* RssContentDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RssContentDelegate.swift; sourceTree = "<group>"; };
+		63988335236C7C9A00D34096 /* RssViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RssViewController.swift; sourceTree = "<group>"; };
+		63988340236C7F8600D34096 /* RssPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RssPresenter.swift; sourceTree = "<group>"; };
+		63988342236C7F9600D34096 /* RssDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RssDelegate.swift; sourceTree = "<group>"; };
+		63988344236C7FB100D34096 /* PdfViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PdfViewController.swift; sourceTree = "<group>"; };
+		63988346236C7FC000D34096 /* PdfPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PdfPresenter.swift; sourceTree = "<group>"; };
+		63988348236C7FCE00D34096 /* PdfDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PdfDelegate.swift; sourceTree = "<group>"; };
 		6398834A236C841C00D34096 /* RssFirestoreDao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RssFirestoreDao.swift; sourceTree = "<group>"; };
 		6398834C236C859B00D34096 /* Rss.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rss.swift; sourceTree = "<group>"; };
 		6398834E236CA77C00D34096 /* FeedItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedItem.swift; sourceTree = "<group>"; };
@@ -144,6 +147,9 @@
 		63DAD3682368A4C00027B165 /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
 		63DAD36A2369512D0027B165 /* TitleType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleType.swift; sourceTree = "<group>"; };
 		63DAD36C236967A20027B165 /* CustomAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAnnotation.swift; sourceTree = "<group>"; };
+		63F0D345236DC40300AF5935 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		63F0D348236DC4D900AF5935 /* WebPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebPresenter.swift; sourceTree = "<group>"; };
+		63F0D34A236DC4E600AF5935 /* WebDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebDelegate.swift; sourceTree = "<group>"; };
 		679C159C24759657EF5A2D8B /* Pods_CircleofSupportTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CircleofSupportTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		70B5DD837BD5A10C6449A180 /* Pods-CircleofSupport.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CircleofSupport.release.xcconfig"; path = "Target Support Files/Pods-CircleofSupport/Pods-CircleofSupport.release.xcconfig"; sourceTree = "<group>"; };
 		8CB9006B2AD72BDA6B1F1E2A /* Pods-CircleofSupport-CircleofSupportUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CircleofSupport-CircleofSupportUITests.release.xcconfig"; path = "Target Support Files/Pods-CircleofSupport-CircleofSupportUITests/Pods-CircleofSupport-CircleofSupportUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -328,7 +334,10 @@
 			children = (
 				635FABB523579A1C0039B341 /* TopView */,
 				63988339236C7CE800D34096 /* Rss */,
+				63F0D342236DBC9800AF5935 /* SNS */,
 				63988338236C7CD100D34096 /* Map */,
+				63F0D343236DBCAD00AF5935 /* ConfermSafety */,
+				63F0D344236DBD1D00AF5935 /* Settings */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -345,31 +354,32 @@
 		63988339236C7CE800D34096 /* Rss */ = {
 			isa = PBXGroup;
 			children = (
-				6398833A236C7E5000D34096 /* RssTitleView */,
-				6398833B236C7E6B00D34096 /* RssContent */,
+				6398833A236C7E5000D34096 /* RssView */,
+				63F0D347236DC41A00AF5935 /* WebView */,
+				6398833B236C7E6B00D34096 /* PdfView */,
 			);
 			path = Rss;
 			sourceTree = "<group>";
 		};
-		6398833A236C7E5000D34096 /* RssTitleView */ = {
+		6398833A236C7E5000D34096 /* RssView */ = {
 			isa = PBXGroup;
 			children = (
-				63988335236C7C9A00D34096 /* RssTitleViewController.swift */,
-				63988340236C7F8600D34096 /* RssTitlePresenter.swift */,
-				63988342236C7F9600D34096 /* RssTitleDelegate.swift */,
+				63988335236C7C9A00D34096 /* RssViewController.swift */,
+				63988340236C7F8600D34096 /* RssPresenter.swift */,
+				63988342236C7F9600D34096 /* RssDelegate.swift */,
 				63988350236CB48C00D34096 /* RssTitleCustomCell.swift */,
 			);
-			path = RssTitleView;
+			path = RssView;
 			sourceTree = "<group>";
 		};
-		6398833B236C7E6B00D34096 /* RssContent */ = {
+		6398833B236C7E6B00D34096 /* PdfView */ = {
 			isa = PBXGroup;
 			children = (
-				63988344236C7FB100D34096 /* RssContentViewController.swift */,
-				63988346236C7FC000D34096 /* RssContentPresenter.swift */,
-				63988348236C7FCE00D34096 /* RssContentDelegate.swift */,
+				63988344236C7FB100D34096 /* PdfViewController.swift */,
+				63988346236C7FC000D34096 /* PdfPresenter.swift */,
+				63988348236C7FCE00D34096 /* PdfDelegate.swift */,
 			);
-			path = RssContent;
+			path = PdfView;
 			sourceTree = "<group>";
 		};
 		6398833C236C7EAB00D34096 /* Firestore */ = {
@@ -429,6 +439,37 @@
 				63DAD3642368812D0027B165 /* PostStatusAddressDelegate.swift */,
 			);
 			path = "Cell Delegate";
+			sourceTree = "<group>";
+		};
+		63F0D342236DBC9800AF5935 /* SNS */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SNS;
+			sourceTree = "<group>";
+		};
+		63F0D343236DBCAD00AF5935 /* ConfermSafety */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ConfermSafety;
+			sourceTree = "<group>";
+		};
+		63F0D344236DBD1D00AF5935 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		63F0D347236DC41A00AF5935 /* WebView */ = {
+			isa = PBXGroup;
+			children = (
+				63F0D345236DC40300AF5935 /* WebViewController.swift */,
+				63F0D348236DC4D900AF5935 /* WebPresenter.swift */,
+				63F0D34A236DC4E600AF5935 /* WebDelegate.swift */,
+			);
+			path = WebView;
 			sourceTree = "<group>";
 		};
 		6B8CBA1367D1075EFD8ED915 /* Pods */ = {
@@ -685,7 +726,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				636D3B1F236018C700AB0A1C /* PostStatusAddressData.swift in Sources */,
+				63F0D346236DC40300AF5935 /* WebViewController.swift in Sources */,
 				63137D492357A884007FB666 /* MapViewDelegate.swift in Sources */,
+				63F0D349236DC4DA00AF5935 /* WebPresenter.swift in Sources */,
 				63DAD35B236842ED0027B165 /* Placemark.swift in Sources */,
 				63DAD3552368164D0027B165 /* LocationManager.swift in Sources */,
 				6398834D236C859B00D34096 /* Rss.swift in Sources */,
@@ -693,8 +736,8 @@
 				636D3B2523601A3E00AB0A1C /* PostStatusAddressCell.swift in Sources */,
 				63DAD3692368A4C00027B165 /* UserDefaultsManager.swift in Sources */,
 				635FAB7C235785230039B341 /* TopViewController.swift in Sources */,
-				63988341236C7F8600D34096 /* RssTitlePresenter.swift in Sources */,
-				63988349236C7FCE00D34096 /* RssContentDelegate.swift in Sources */,
+				63988341236C7F8600D34096 /* RssPresenter.swift in Sources */,
+				63988349236C7FCE00D34096 /* PdfDelegate.swift in Sources */,
 				63C993EF236B611D0079DD27 /* AddressType.swift in Sources */,
 				63DAD3572368167C0027B165 /* Location.swift in Sources */,
 				636D3B2B23601A6F00AB0A1C /* PostStatusWaterCell.swift in Sources */,
@@ -706,7 +749,7 @@
 				63137D5223586200007FB666 /* Authentication.swift in Sources */,
 				63137D472357A873007FB666 /* MapViewPresenter.swift in Sources */,
 				63DAD36D236967A30027B165 /* CustomAnnotation.swift in Sources */,
-				63988345236C7FB100D34096 /* RssContentViewController.swift in Sources */,
+				63988345236C7FB100D34096 /* PdfViewController.swift in Sources */,
 				6398834F236CA77C00D34096 /* FeedItem.swift in Sources */,
 				63137D452357A04B007FB666 /* AskForHelpViewController.swift in Sources */,
 				636D3B06235F7CBD00AB0A1C /* PostStatusDelegate.swift in Sources */,
@@ -719,17 +762,18 @@
 				63988351236CB48C00D34096 /* RssTitleCustomCell.swift in Sources */,
 				636D3AFF235F665000AB0A1C /* Document.swift in Sources */,
 				636D3B02235F7CA200AB0A1C /* PostStatusViewController.swift in Sources */,
-				63988347236C7FC000D34096 /* RssContentPresenter.swift in Sources */,
+				63F0D34B236DC4E600AF5935 /* WebDelegate.swift in Sources */,
+				63988347236C7FC000D34096 /* PdfPresenter.swift in Sources */,
 				63DAD36B2369512D0027B165 /* TitleType.swift in Sources */,
 				635FAB7A235785230039B341 /* SceneDelegate.swift in Sources */,
 				63DAD35F236865940027B165 /* Lifeline.swift in Sources */,
-				63988336236C7C9A00D34096 /* RssTitleViewController.swift in Sources */,
+				63988336236C7C9A00D34096 /* RssViewController.swift in Sources */,
 				635FABB223579A050039B341 /* TopViewPresenter.swift in Sources */,
 				63DAD34B236804450027B165 /* PostStatusDateData.swift in Sources */,
 				636D3AFD235F662100AB0A1C /* FirestoreManager.swift in Sources */,
 				636D3B2323601A2F00AB0A1C /* PostStatusDateCell.swift in Sources */,
 				63C993F2236B6EE00079DD27 /* AddressData.swift in Sources */,
-				63988343236C7F9600D34096 /* RssTitleDelegate.swift in Sources */,
+				63988343236C7F9600D34096 /* RssDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

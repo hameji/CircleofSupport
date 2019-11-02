@@ -14,7 +14,7 @@ class RssViewController: UIViewController {
     // MARK: - vars & lets
     @IBOutlet weak var categorySegment: UISegmentedControl!
     @IBOutlet weak var tableView: UITableView!
-    private let rssTitlePresenter = RssTitlePresenter()
+    private let rssPresenter = RssPresenter()
     
     private static let segueToPdfViewer = "toPdfViewer"
     private static let segueToWebView = "toWebView"
@@ -22,16 +22,16 @@ class RssViewController: UIViewController {
     // MARK: - Program Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.rssTitlePresenter.rssTitleView = self
-        self.rssTitlePresenter.viewDidLoad(segment: categorySegment.selectedSegmentIndex)
+        self.rssPresenter.rssView = self
+        self.rssPresenter.viewDidLoad(segment: categorySegment.selectedSegmentIndex)
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        self.rssTitlePresenter.viewWillAppear(segment: categorySegment.selectedSegmentIndex)
+        self.rssPresenter.viewWillAppear(segment: categorySegment.selectedSegmentIndex)
     }
     
     @IBAction func changedSegment(_ sender: UISegmentedControl) {
-        self.rssTitlePresenter.changedSegment(segment: sender.selectedSegmentIndex)
+        self.rssPresenter.changedSegment(segment: sender.selectedSegmentIndex)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -46,33 +46,37 @@ class RssViewController: UIViewController {
     
 }
 
-extension RssTitleViewController: UITableViewDelegate {
+extension RssViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.rssTitlePresenter.didSelectRowAt(indexPath: indexPath)
+        self.rssPresenter.didSelectRowAt(indexPath: indexPath)
     }
 }
 
-extension RssTitleViewController: UITableViewDataSource {
+extension RssViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        self.rssTitlePresenter.numberOfRowsInSection(section: section)
+        self.rssPresenter.numberOfRowsInSection(section: section)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.tableView.dequeueReusableCell(withIdentifier: "itemCell") as! RssTitleCustomCell
-        let item = self.rssTitlePresenter.cellForRowAt(indexPath: indexPath)
+        let item = self.rssPresenter.cellForRowAt(indexPath: indexPath)
         cell.bind(feedItem: item)
         return cell
     }
     
 }
 
-extension RssTitleViewController: RssTitleDelegate {
+extension RssViewController: RssDelegate {
     func reloadTableView() {
         self.tableView.reloadData()
     }
-    
-    func segueToDetail(indexPath: IndexPath) {
-        self.performSegue(withIdentifier: RssTitleViewController.segueToPdfViewer, sender: self.tableView.cellForRow(at: indexPath))
+
+    func segueToWebView(indexPath: IndexPath) {
+        self.performSegue(withIdentifier: RssViewController.segueToWebView, sender: self.tableView.cellForRow(at: indexPath))
+    }
+
+    func segueToPDFView(indexPath: IndexPath) {
+        self.performSegue(withIdentifier: RssViewController.segueToPdfViewer, sender: self.tableView.cellForRow(at: indexPath))
     }
     
     func showHUD() {
