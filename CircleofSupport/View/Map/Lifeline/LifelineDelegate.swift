@@ -6,7 +6,7 @@
 //  Copyright © 2019 Hajime Taniguchi. All rights reserved.
 //
 
-protocol PostStatusDelegate : class {
+protocol LifelineDelegate : class {
     func reloadCollectionView()
     func dismissView()
     func alertGPSdisabled()

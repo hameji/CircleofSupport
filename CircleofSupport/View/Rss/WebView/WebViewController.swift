@@ -16,6 +16,6 @@ class WebViewController: UIViewController {
     // MARK: - Program Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(url)
+        print(url as! String)
     }
 }

@@ -9,36 +9,36 @@
 
 import UIKit
 
-class PostStatusViewController: UIViewController {
+class LifelineViewController: UIViewController {
     
     @IBOutlet weak var actionButton: UIBarButtonItem!
     @IBOutlet weak var collectionView: UICollectionView!
     var actionMode = 0  // 0: post, 1: gpsStart
     
-    private let postStatusPresenter = PostStatusPresenter()
+    private let lifelinePresenter = LifelinePresenter()
     
     // MARK: - Program Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        self.postStatusPresenter.postStatusView = self
-        self.postStatusPresenter.viewDidLoad()
+        self.lifelinePresenter.lifelineView = self
+        self.lifelinePresenter.viewDidLoad()
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        self.postStatusPresenter.viewWillAppear()
+        self.lifelinePresenter.viewWillAppear()
     }
 
     override func viewWillDisappear(_ animated: Bool) {
-        self.postStatusPresenter.viewWillDisappear()
+        self.lifelinePresenter.viewWillDisappear()
     }
     
     @IBAction func dismissButtonPressed(_ sender: UIBarButtonItem) {
-        self.postStatusPresenter.dismissButtonPressed()
+        self.lifelinePresenter.dismissButtonPressed()
     }
     
     @IBAction func actionButtonPressed(_ sender: Any) {
-        self.postStatusPresenter.actionButtonPressed(mode: actionMode)
+        self.lifelinePresenter.actionButtonPressed(mode: actionMode)
     }
         
     private func changeButtonName() {
@@ -53,21 +53,21 @@ class PostStatusViewController: UIViewController {
 }
 
 // MARK: - UICollectionViewDelegateFlowLayout
-extension PostStatusViewController: UICollectionViewDelegateFlowLayout {
+extension LifelineViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return postStatusPresenter.sizeForItemAt(viewWidth: self.view.bounds.width, indexPath: indexPath)
+        return lifelinePresenter.sizeForItemAt(viewWidth: self.view.bounds.width, indexPath: indexPath)
     }
     
 }
 
 
-extension PostStatusViewController: UICollectionViewDataSource {
+extension LifelineViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.postStatusPresenter.numberOfItemsInSection()
+        return self.lifelinePresenter.numberOfItemsInSection()
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cellType = self.postStatusPresenter.cellForItemAt(indexPath: indexPath)
+        let cellType = self.lifelinePresenter.cellForItemAt(indexPath: indexPath)
         switch cellType {
         case .dateCell(let data):
             let dateCell = collectionView.dequeueReusableCell(withReuseIdentifier: "dateCell", for: indexPath) as! PostStatusDateCell
@@ -95,17 +95,17 @@ extension PostStatusViewController: UICollectionViewDataSource {
     
 }
 
-extension PostStatusViewController: UICollectionViewDelegate {
+extension LifelineViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print("selected:", indexPath)
-        self.postStatusPresenter.didSelectItemAt(indexPath: indexPath)
+        self.lifelinePresenter.didSelectItemAt(indexPath: indexPath)
     }
 }
 
 
 
 // MARK: - TopViewDelegate
-extension PostStatusViewController: PostStatusDelegate {
+extension LifelineViewController: LifelineDelegate {
     func reloadCollectionView() {
         self.collectionView.reloadData()
     }
@@ -175,8 +175,8 @@ extension PostStatusViewController: PostStatusDelegate {
     }
 }
 
-extension PostStatusViewController: PostStatusAddressDelegate {
+extension LifelineViewController: PostStatusAddressDelegate {
     func segmentChanged(index: Int) {
-        self.postStatusPresenter.segmentChanged(index: index)
+        self.lifelinePresenter.segmentChanged(index: index)
     }
 }

@@ -7,7 +7,10 @@
 //
 
 protocol MapViewDelegate : class {
-    func performPostSegue()
+    func performRoadSegue()
+    func performLifelineSegue()
+    func performDamageSegue()
+    func performGiveReceiveSegue()
     func setAddressCoordinate(placemark: Placemark)
     func setMapCenter(placemark: Placemark, delta: Double)
     func setAnnotations(data: [Lifeline])

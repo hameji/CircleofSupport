@@ -97,8 +97,14 @@ class MapViewPresenter {
         self.mapView?.setNavigationInfo(date: date, place: breifAddress)
     }
 
-    func postButtonPressed() {
-        self.mapView?.performPostSegue()
+    func postButtonPressed(segment: Int) {
+        switch segment {
+        case 0: self.mapView?.performRoadSegue()
+        case 1: self.mapView?.performLifelineSegue()
+        case 2: self.mapView?.performDamageSegue()
+        case 3: self.mapView?.performGiveReceiveSegue()
+        default: break
+        }
     }
 
     // MARK: - LocationManager Func
@@ -142,6 +148,7 @@ class MapViewPresenter {
         }
     }
     
+    // MARK: - PickerView Func
     func pickerViewdidSelectRow(row: Int, component: Int) {
         print("addressType:", addressType, ", row:", row, ", component:", component)
         if addressType == .medium, component == 1, row == address.count - 1 {
@@ -174,22 +181,28 @@ class MapViewPresenter {
         }
     }
 
-    
+    // MARK: - SegmentedControl Func
     func segmentChanged(to: Int) {
+        // todo: ここでデータの取得、pinを立てる
         switch to {
         case 0:
+            print("1")
             break
         case 1:
+            print("2")
             break
         case 2:
+            print("3")
             break
         case 3:
+            print("4")
             break
         default: break
         }
         
     }
 
+    // MARK: - NavigationButton Func
     func searchButtonPressed() {
         self.mapView?.inputOn(bool: false)
         self.mapView?.respondDummyTextField()

@@ -25,8 +25,11 @@ class MapViewController: UIViewController {
     var postRange =  MKCircle(center: CLLocationCoordinate2D(latitude: 0.0, longitude: 0.0), radius: 10)
     private let mapViewPresenter = MapViewPresenter()
     
-    private static let seguePostStatus = "postStatus"
-    
+    private static let segueRoadView = "toRoadView"
+    private static let segueLifelineView = "toLifelineView"
+    private static let segueDamageView = "toDamageView"
+    private static let segueGiveReceiveView = "toGiveReceiveView"
+
     // MARK: - Program Lifecycle
     func initialize() {
         setMapView()
@@ -73,11 +76,14 @@ class MapViewController: UIViewController {
         let noAction = UIAlertAction(title: "いいえ", style: .cancel, handler: nil)
         let yesAction = UIAlertAction(title: "はい", style: .default, handler: { (action: UIAlertAction!) -> Void in
             switch self.categorySegment.selectedSegmentIndex {
-            case 0: break
+            case 0:
+                self.performSegue(withIdentifier: MapViewController.segueRoadView, sender: nil)
             case 1:
-                self.performSegue(withIdentifier: MapViewController.seguePostStatus, sender: nil)
-            case 2: break
-            case 3: break
+                self.performSegue(withIdentifier: MapViewController.segueLifelineView, sender: nil)
+            case 2:
+                self.performSegue(withIdentifier: MapViewController.segueDamageView, sender: nil)
+            case 3:
+                self.performSegue(withIdentifier: MapViewController.segueGiveReceiveView, sender: nil)
             default: break
             }
         })
@@ -136,7 +142,7 @@ class MapViewController: UIViewController {
     }
     
     @IBAction func postButtonPressed(_ sender: UIBarButtonItem) {
-        self.mapViewPresenter.postButtonPressed()
+        self.mapViewPresenter.postButtonPressed(segment: self.categorySegment.selectedSegmentIndex)
     }
     
     
@@ -182,10 +188,6 @@ extension MapViewController: MKMapViewDelegate {
 }
 
 extension MapViewController: MapViewDelegate {
-    func performPostSegue() {
-        self.performSegue(withIdentifier: MapViewController.seguePostStatus, sender: nil)
-    }
-
     func setAddressCoordinate(placemark: Placemark) {
         self.address.text = placemark.address
         self.latitude.text = String(format: "%.7f", placemark.location!.coordinate.latitude)
@@ -262,5 +264,21 @@ extension MapViewController: UIPickerViewDataSource {
 
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return mapViewPresenter.pickerViewtitleForRow(component: component, row: row)
+    }
+    
+    func performRoadSegue() {
+        self.performSegue(withIdentifier: MapViewController.segueRoadView, sender: nil)
+    }
+    
+    func performLifelineSegue() {
+        self.performSegue(withIdentifier: MapViewController.segueLifelineView, sender: nil)
+    }
+    
+    func performDamageSegue() {
+        self.performSegue(withIdentifier: MapViewController.segueDamageView, sender: nil)
+    }
+    
+    func performGiveReceiveSegue() {
+        self.performSegue(withIdentifier: MapViewController.segueGiveReceiveView, sender: nil)
     }
 }

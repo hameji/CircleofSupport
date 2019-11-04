@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PostStatusPresenter {
+class LifelinePresenter {
     
     let locationManager = LocationManager()
     private let authentication = Authentication()
@@ -25,7 +25,7 @@ class PostStatusPresenter {
     var waterSelected: Bool = true
     
     // MARK: - vars & lets
-    weak var postStatusView: PostStatusDelegate?
+    weak var lifelineView: LifelineDelegate?
 
     func setCells() {
         self.cells = [.dateCell(PostStatusDateData(date: lastPost)),
@@ -52,7 +52,7 @@ class PostStatusPresenter {
     }
     
     func dismissButtonPressed() {
-        self.postStatusView?.dismissView()
+        self.lifelineView?.dismissView()
     }
     
     func actionButtonPressed(mode: Int) {
@@ -65,20 +65,20 @@ class PostStatusPresenter {
     
     func postStatus() {
         guard let user = authentication.getCurrentUser() else {
-            self.postStatusView?.alertUnLoggedIn()
+            self.lifelineView?.alertUnLoggedIn()
             return
         }
         guard let cPlacemark = placemark else {
-            self.postStatusView?.alertAddressConversionFailed()
+            self.lifelineView?.alertAddressConversionFailed()
             return
         }
         lifelineFirestoreDao.store(user.uid, placemark: cPlacemark, place: place, light: lightSelected, gass: gassSelected, water: waterSelected) { result in
             guard case .success( _) = result else {
-                self.postStatusView?.alertUpdateFailed()
+                self.lifelineView?.alertUpdateFailed()
                 return
             }
             self.userDefaultsManager.set(lastUpdate: cPlacemark.location!.timestamp)
-            self.postStatusView?.dismissView()
+            self.lifelineView?.dismissView()
         }
     }
     
@@ -90,7 +90,7 @@ class PostStatusPresenter {
         case .whenInUse:
             startGPS()
         case .denied, .restricted:
-            self.postStatusView?.alertGPSdisabled()
+            self.lifelineView?.alertGPSdisabled()
         case .notDetermined:
             locationManager.askAuthorization()
         }
@@ -101,28 +101,28 @@ class PostStatusPresenter {
             self.locationManager.stopUpdatingLocation()
             guard case .success(let locations) = result else {
                 print(" ... failed to get location")
-                self.postStatusView?.alertGPSfailed()
+                self.lifelineView?.alertGPSfailed()
                 return
             }
             guard let location = locations.first else {
                 print(" ... location is nil(invalid)")
-                self.postStatusView?.alertInvalidGPS()
+                self.lifelineView?.alertInvalidGPS()
                 return
             }
             self.locationManager.gpsToAddress(location: location) { result in
                 guard case .success(let placemark) = result else {
-                    self.postStatusView?.alertAddressConversionFailed()
+                    self.lifelineView?.alertAddressConversionFailed()
                     return
                 }
                 guard let cPlacemark = placemark, let cAddress = cPlacemark.address else {
-                    self.postStatusView?.alertAddressConversionFailed()
+                    self.lifelineView?.alertAddressConversionFailed()
                     return
                 }
                 self.placemark = cPlacemark
                 self.address = cAddress
                 self.setCells()
-                self.postStatusView?.changeToPostMode()
-                self.postStatusView?.reloadCollectionView()
+                self.lifelineView?.changeToPostMode()
+                self.lifelineView?.reloadCollectionView()
             }
         }
     }
@@ -173,7 +173,7 @@ class PostStatusPresenter {
         default: break
         }
         setCells()
-        self.postStatusView?.reloadCollectionView()
+        self.lifelineView?.reloadCollectionView()
     }
     
     func segmentChanged(index: Int) {
