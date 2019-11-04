@@ -13,6 +13,4 @@ class WebPresenter {
     // MARK: - vars & lets
     weak var webView: WebDelegate?
     
-    func viewDidLoad() {
-    }
 }

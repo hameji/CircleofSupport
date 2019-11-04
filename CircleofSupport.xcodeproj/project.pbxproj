@@ -13,6 +13,9 @@
 		63137D472357A873007FB666 /* MapViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63137D462357A873007FB666 /* MapViewPresenter.swift */; };
 		63137D492357A884007FB666 /* MapViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63137D482357A884007FB666 /* MapViewDelegate.swift */; };
 		63137D5223586200007FB666 /* Authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63137D5123586200007FB666 /* Authentication.swift */; };
+		63575004236EEE6C006E7FB3 /* RssCellType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63575003236EEE6C006E7FB3 /* RssCellType.swift */; };
+		63575007236EF684006E7FB3 /* RssAlertCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63575006236EF684006E7FB3 /* RssAlertCell.swift */; };
+		63575009236F0246006E7FB3 /* RssAgencyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63575008236F0246006E7FB3 /* RssAgencyCell.swift */; };
 		635FAB78235785230039B341 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635FAB77235785230039B341 /* AppDelegate.swift */; };
 		635FAB7A235785230039B341 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635FAB79235785230039B341 /* SceneDelegate.swift */; };
 		635FAB7C235785230039B341 /* TopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635FAB7B235785230039B341 /* TopViewController.swift */; };
@@ -45,7 +48,10 @@
 		6398834B236C841C00D34096 /* RssFirestoreDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6398834A236C841C00D34096 /* RssFirestoreDao.swift */; };
 		6398834D236C859B00D34096 /* Rss.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6398834C236C859B00D34096 /* Rss.swift */; };
 		6398834F236CA77C00D34096 /* FeedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6398834E236CA77C00D34096 /* FeedItem.swift */; };
-		63988351236CB48C00D34096 /* RssTitleCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63988350236CB48C00D34096 /* RssTitleCustomCell.swift */; };
+		63988351236CB48C00D34096 /* RssFeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63988350236CB48C00D34096 /* RssFeedCell.swift */; };
+		63C9913B237094E20092A1CD /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C9913A237094E20092A1CD /* SettingsViewController.swift */; };
+		63C9913D237094F50092A1CD /* SettingsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C9913C237094F50092A1CD /* SettingsPresenter.swift */; };
+		63C9913F2370950D0092A1CD /* SettingsDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C9913E2370950D0092A1CD /* SettingsDelegate.swift */; };
 		63C993EF236B611D0079DD27 /* AddressType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C993EE236B611D0079DD27 /* AddressType.swift */; };
 		63C993F2236B6EE00079DD27 /* AddressData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C993F1236B6EE00079DD27 /* AddressData.swift */; };
 		63DAD34B236804450027B165 /* PostStatusDateData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DAD34A236804450027B165 /* PostStatusDateData.swift */; };
@@ -94,6 +100,9 @@
 		63137D462357A873007FB666 /* MapViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewPresenter.swift; sourceTree = "<group>"; };
 		63137D482357A884007FB666 /* MapViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewDelegate.swift; sourceTree = "<group>"; };
 		63137D5123586200007FB666 /* Authentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authentication.swift; sourceTree = "<group>"; };
+		63575003236EEE6C006E7FB3 /* RssCellType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RssCellType.swift; sourceTree = "<group>"; };
+		63575006236EF684006E7FB3 /* RssAlertCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RssAlertCell.swift; sourceTree = "<group>"; };
+		63575008236F0246006E7FB3 /* RssAgencyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RssAgencyCell.swift; sourceTree = "<group>"; };
 		635FAB74235785230039B341 /* CircleofSupport.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CircleofSupport.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		635FAB77235785230039B341 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		635FAB79235785230039B341 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -132,7 +141,10 @@
 		6398834A236C841C00D34096 /* RssFirestoreDao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RssFirestoreDao.swift; sourceTree = "<group>"; };
 		6398834C236C859B00D34096 /* Rss.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rss.swift; sourceTree = "<group>"; };
 		6398834E236CA77C00D34096 /* FeedItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedItem.swift; sourceTree = "<group>"; };
-		63988350236CB48C00D34096 /* RssTitleCustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RssTitleCustomCell.swift; sourceTree = "<group>"; };
+		63988350236CB48C00D34096 /* RssFeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RssFeedCell.swift; sourceTree = "<group>"; };
+		63C9913A237094E20092A1CD /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		63C9913C237094F50092A1CD /* SettingsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPresenter.swift; sourceTree = "<group>"; };
+		63C9913E2370950D0092A1CD /* SettingsDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsDelegate.swift; sourceTree = "<group>"; };
 		63C993EE236B611D0079DD27 /* AddressType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressType.swift; sourceTree = "<group>"; };
 		63C993F1236B6EE00079DD27 /* AddressData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressData.swift; sourceTree = "<group>"; };
 		63DAD34A236804450027B165 /* PostStatusDateData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostStatusDateData.swift; sourceTree = "<group>"; };
@@ -223,6 +235,16 @@
 				63DAD36A2369512D0027B165 /* TitleType.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		63575005236EF64A006E7FB3 /* RssCustomCell */ = {
+			isa = PBXGroup;
+			children = (
+				63988350236CB48C00D34096 /* RssFeedCell.swift */,
+				63575006236EF684006E7FB3 /* RssAlertCell.swift */,
+				63575008236F0246006E7FB3 /* RssAgencyCell.swift */,
+			);
+			path = RssCustomCell;
 			sourceTree = "<group>";
 		};
 		635FAB6B235785230039B341 = {
@@ -367,7 +389,8 @@
 				63988335236C7C9A00D34096 /* RssViewController.swift */,
 				63988340236C7F8600D34096 /* RssPresenter.swift */,
 				63988342236C7F9600D34096 /* RssDelegate.swift */,
-				63988350236CB48C00D34096 /* RssTitleCustomCell.swift */,
+				63575003236EEE6C006E7FB3 /* RssCellType.swift */,
+				63575005236EF64A006E7FB3 /* RssCustomCell */,
 			);
 			path = RssView;
 			sourceTree = "<group>";
@@ -458,6 +481,9 @@
 		63F0D344236DBD1D00AF5935 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				63C9913A237094E20092A1CD /* SettingsViewController.swift */,
+				63C9913C237094F50092A1CD /* SettingsPresenter.swift */,
+				63C9913E2370950D0092A1CD /* SettingsDelegate.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -728,6 +754,7 @@
 				636D3B1F236018C700AB0A1C /* PostStatusAddressData.swift in Sources */,
 				63F0D346236DC40300AF5935 /* WebViewController.swift in Sources */,
 				63137D492357A884007FB666 /* MapViewDelegate.swift in Sources */,
+				63575007236EF684006E7FB3 /* RssAlertCell.swift in Sources */,
 				63F0D349236DC4DA00AF5935 /* WebPresenter.swift in Sources */,
 				63DAD35B236842ED0027B165 /* Placemark.swift in Sources */,
 				63DAD3552368164D0027B165 /* LocationManager.swift in Sources */,
@@ -735,6 +762,7 @@
 				636D3B2723601A4F00AB0A1C /* PostStatusLightCell.swift in Sources */,
 				636D3B2523601A3E00AB0A1C /* PostStatusAddressCell.swift in Sources */,
 				63DAD3692368A4C00027B165 /* UserDefaultsManager.swift in Sources */,
+				63575004236EEE6C006E7FB3 /* RssCellType.swift in Sources */,
 				635FAB7C235785230039B341 /* TopViewController.swift in Sources */,
 				63988341236C7F8600D34096 /* RssPresenter.swift in Sources */,
 				63988349236C7FCE00D34096 /* PdfDelegate.swift in Sources */,
@@ -756,15 +784,19 @@
 				635FAB78235785230039B341 /* AppDelegate.swift in Sources */,
 				635FABB423579A150039B341 /* TopViewDelegate.swift in Sources */,
 				63DAD3592368181F0027B165 /* GpsAuthorization.swift in Sources */,
+				63575009236F0246006E7FB3 /* RssAgencyCell.swift in Sources */,
 				636D3B2923601A5F00AB0A1C /* PostStatusGassCell.swift in Sources */,
 				636D3B04235F7CAF00AB0A1C /* PostStatusPresenter.swift in Sources */,
 				63DAD3652368812D0027B165 /* PostStatusAddressDelegate.swift in Sources */,
-				63988351236CB48C00D34096 /* RssTitleCustomCell.swift in Sources */,
+				63988351236CB48C00D34096 /* RssFeedCell.swift in Sources */,
 				636D3AFF235F665000AB0A1C /* Document.swift in Sources */,
 				636D3B02235F7CA200AB0A1C /* PostStatusViewController.swift in Sources */,
 				63F0D34B236DC4E600AF5935 /* WebDelegate.swift in Sources */,
+				63C9913D237094F50092A1CD /* SettingsPresenter.swift in Sources */,
 				63988347236C7FC000D34096 /* PdfPresenter.swift in Sources */,
+				63C9913F2370950D0092A1CD /* SettingsDelegate.swift in Sources */,
 				63DAD36B2369512D0027B165 /* TitleType.swift in Sources */,
+				63C9913B237094E20092A1CD /* SettingsViewController.swift in Sources */,
 				635FAB7A235785230039B341 /* SceneDelegate.swift in Sources */,
 				63DAD35F236865940027B165 /* Lifeline.swift in Sources */,
 				63988336236C7C9A00D34096 /* RssViewController.swift in Sources */,

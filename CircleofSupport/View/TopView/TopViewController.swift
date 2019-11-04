@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class TopViewController: UIViewController {
 
@@ -20,6 +21,8 @@ class TopViewController: UIViewController {
     private static let segueMainView = "toMain"
 
     private let firestoreManager = FirestoreManager()
+    
+    private let rssFirestoreDao = RssFirestoreDao()
 
     // MARK: - Program Lifecycle
     override func viewDidLoad() {
@@ -50,11 +53,13 @@ extension TopViewController: TopViewDelegate {
     }
     
     func startIndicator() {
+        self.activityIndicator.alpha = 1.0
         self.activityIndicator.startAnimating()
     }
     
     func stopIndicator() {
         self.activityIndicator.stopAnimating()
+        self.activityIndicator.alpha = 0.0
     }
 }
 
@@ -62,22 +67,44 @@ extension TopViewController: TopViewDelegate {
 //    func addTotalRss() {
 //        for i in 0 ..< AddressData.prefecture.count {
 //            for j in 0 ..< AddressData.returnAdressArray()[i].count {
-//                addRssFeed(total: AddressData.returnAdressArray()[i].count, current: j + i, category: AddressData.prefecture[i], authority: AddressData.returnAdressArray()[i][j])
+//                addRssFeed(total: AddressData.returnAdressArray()[i].count, current: j+1, category: AddressData.prefecture[i], authority: AddressData.returnAdressArray()[i][j])
 //            }
 //        }
 //    }
-//    
+//
 //    func addRssFeed(total: Int, current: Int, category: String, authority: String) {
-//        let data0: [String:Any] = ["Category": category, "Authority" : authority, "Url" : "http://www.", "Error" : true, "Verified" : false]
-//        firestoreManager.addData(collectionName: "Rss", data: data0) { result in
+//        let dataJson: [String: Any] = [
+//            "Category" : category,
+//            "Authority" : authority,
+//            "Longitude" : 0.0,
+//            "Latitude" : 0.0,
+//            "RegisterDate" : Timestamp(date: Date()),
+//            "UpdateDate" : [
+//                NSUUID().uuidString : [
+//                    "userId" : NSNull(),
+//                    "description" : NSNull(),
+//                    "date" : NSNull()
+//                ]
+//            ],
+//            "Errors" : [
+//                NSUUID().uuidString : [
+//                    "userId" : NSNull(),
+//                    "description" : NSNull(),
+//                    "date" : NSNull()
+//                ]
+//            ],
+//            "Url" : "",
+//            "Tel" : "",
+//            "Verified" : false,
+//            "SNS" : [
+//                "Twitter" : "",
+//                "Facebook" : "",
+//                "Instagram" : ""
+//            ]
+//        ]
+//        print(dataJson)
+//        firestoreManager.addData(collectionName: "Authorities", data: dataJson) { result in
 //            print("finished", current, "/", total, "[", category, "]", authority, result)
 //        }
 //    }
-//
-//    func addRssFeed(category: String, authority: String, url: String) {
-//        let data0: [String:Any] = ["Category": category, "Authority" : authority, "Url" : url, "Error" : false, "Verified" : true]
-//        firestoreManager.addData(collectionName: "Rss", data: data0) { result in
-//        }
-//    }
-//
 //}

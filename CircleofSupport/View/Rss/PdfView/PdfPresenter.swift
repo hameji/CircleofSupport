@@ -13,6 +13,12 @@ class PdfPresenter {
     // MARK: - vars & lets
     weak var pdfView: PdfDelegate?
     
-    func viewDidLoad() {
+    func urlisNil() {
+        self.pdfView?.alertInvalidUrl()
     }
+    
+    func documentisNil() {
+        self.pdfView?.alertInvalidDocument()
+    }
+
 }

@@ -178,7 +178,7 @@ extension MapViewController: MKMapViewDelegate {
         circle.fillColor = UIColor(red: 0.5, green: 0.0, blue: 0.0, alpha: 0.5)
         circle.lineWidth = 1.0
         return circle
-    }
+    }    
 }
 
 extension MapViewController: MapViewDelegate {

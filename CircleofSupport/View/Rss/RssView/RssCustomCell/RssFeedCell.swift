@@ -8,10 +8,13 @@
 
 import UIKit
 
-class RssTitleCustomCell: UITableViewCell {
+class RssFeedCell: UITableViewCell {
     
     @IBOutlet weak var date: UILabel!
+    @IBOutlet weak var item: UILabel!
     @IBOutlet weak var title: UILabel!
+    @IBOutlet weak var content: UILabel!
+
     var url: String!
     
     func bind(feedItem: FeedItem) {

@@ -10,8 +10,10 @@ import Foundation
 
 protocol RssDelegate : class {
     func reloadTableView()
+    func enableShowHP(bool: Bool)
     func segueToWebView(indexPath: IndexPath)
     func segueToPDFView(indexPath: IndexPath)
-    func showHUD()
-    func hideHUD()
+    func startIndicator()
+    func stopIndicator()
+    func changeSegmentName(index: Int, name: String)
 }

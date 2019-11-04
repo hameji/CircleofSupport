@@ -16,6 +16,7 @@ class RssPresenter: NSObject {
     weak var rssView: RssDelegate?
     var placemark: Placemark!
     var feedItems: [FeedItem] = []
+    var authorityUrl: String = ""
     var elementName: String!
     var parser: XMLParser!
 
@@ -26,41 +27,51 @@ class RssPresenter: NSObject {
 
     // MARK: - Program lifecycle
     func viewDidLoad(segment: Int) {
+        checkAuthorityUrl()
         changedSegment(segment: 0)
     }
     
     func viewWillAppear(segment: Int) {
         checkGPSStatus()
     }
+
+    func checkAuthorityUrl() {
+        if authorityUrl.isEmpty {
+            self.rssView?.enableShowHP(bool: false)
+        }
+    }
+
     
     // MARK: - RssFirestoreDao
     func downloadRssURL(category: String, authority: String) {
-        self.rssView?.showHUD()
-        rssFirestoreDao.fetchRssUrl(category: category, authority: authority) { result in
-            self.rssView?.hideHUD()
-            guard case .success(let data) = result else {
+        self.rssView?.startIndicator()
+        rssFirestoreDao.fetchRssfeeds(category: category, authority: authority) { result in
+            self.rssView?.stopIndicator()
+            guard case .success(let rssfeeds) = result else {
                 print(result as! Error)
                 return
             }
             self.feedItems = []
-            guard let url = data else {
-                print(" ... url is invalid")
-                self.rssView?.reloadTableView()                
-                return
+            guard !rssfeeds.isEmpty else {
+                print(" ... urlArray is nil, there is no rssfeed.")
+                    self.rssView?.reloadTableView()
+                    return
             }
-            if url.isEmpty {
-                // self.
-            } else {
-                self.startParser(url: url)
+            for rssfeed in rssfeeds {
+                guard let urlString = rssfeed["Url"] else {
+                    print(" ... rss url is nil")
+                    return
+                }
+                guard let fssUrl = URL(string: urlString) else {
+                    print(" ... rss url is invalid")
+                    return
+                }
+                self.startParser(feedURL: fssUrl)
             }
         }
     }
     
-    func startParser(url: String) {
-        guard let feedURL = URL(string: url) else {
-            // alertURL ivalid
-            return
-        }
+    func startParser(feedURL: URL) {
         self.parser = XMLParser(contentsOf: feedURL)
         self.parser.delegate = self
         self.parser.parse()
@@ -97,39 +108,43 @@ class RssPresenter: NSObject {
                     print(" ... failed to convert coordinate to address")
                     return
                 }
-                guard let cPlacemark = placemark, let _ = cPlacemark.address else {
-                    print(" ... address is nil(rinvalid).")
+                guard let cPlacemark = placemark,
+                    let prefecture = cPlacemark.administrativeArea,
+                    let city = cPlacemark.locality else {
+                    print(" ... address is nil(invalid).")
                     return
                 }
                 self.placemark = cPlacemark
+                self.rssView?.changeSegmentName(index: 2, name: prefecture)
+                self.rssView?.changeSegmentName(index: 3, name: city)
             }
         }
 
     }
 
     // MARK: - Segment Func
+    func showHPButtonPressed(sender: Any) {
+        
+    }
+    
     func changedSegment(segment: Int) {
-        var category = ""
-        var authority = ""
+        var category = "", authority = ""
         switch segment {
         case 0:
-            category = "日本"
-            authority = "内閣府"
+            category = "日本"; authority = "内閣府"
         case 1:
-            category = "気象庁"
-            authority = "新着情報"
+            category = "気象庁"; authority = "新着情報"
         case 2:
             guard let prefecture = self.placemark.administrativeArea else {
                 return
             }
-            category = prefecture
-            category = prefecture
+            category = prefecture; authority = prefecture
         case 3:
-            guard let prefecture = self.placemark.administrativeArea, let city = self.placemark.locality else {
+            guard let prefecture = self.placemark.administrativeArea,
+                  let city = self.placemark.locality else {
                 return
             }
-            category = prefecture
-            category = city
+            category = prefecture; authority = city
         default: break
         }
         downloadRssURL(category:  category, authority: authority)
@@ -142,13 +157,28 @@ class RssPresenter: NSObject {
 
     // MARK: - TableView Data Source
     func numberOfRowsInSection(section: Int) -> Int {
-        return self.feedItems.count
+        if self.feedItems.isEmpty {
+            return 1
+        } else {
+            return self.feedItems.count
+        }
     }
 
-    func cellForRowAt(indexPath: IndexPath) -> FeedItem {
+    func cellForRowAt(indexPath: IndexPath) -> RssCellType {
+        if self.feedItems.isEmpty {
+            return .alert
+        } else {
+            return .feedCell
+        }
+    }
+    
+    func getFeedItemfor(indexPath: IndexPath) -> FeedItem {
         return self.feedItems[indexPath.row]
     }
-
+    
+    func getHPUrlForSegment(segment: Int) -> String {
+        return authorityUrl
+    }
 }
 
 // MARK: - XMLParserDelegate

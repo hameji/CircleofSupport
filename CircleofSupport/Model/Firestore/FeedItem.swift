@@ -10,4 +10,10 @@ class FeedItem {
     var title: String!
     var date: String!
     var url: String!
+    
+    func write(title: String, date: String, url: String) {
+        self.title = title
+        self.date = date
+        self.url = url
+    }
 }

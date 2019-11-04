@@ -7,5 +7,8 @@
 //
 
 protocol PdfDelegate : class {
-
+    func alertInvalidUrl()
+    func alertInvalidDocument()
+    func startIndicator()
+    func stopIndicator()
 }
