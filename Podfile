@@ -6,7 +6,7 @@ target 'CircleofSupport' do
   use_frameworks!
 
   # Pods for CircleofSupport
-  pod 'SVProgressHUD'
+  pod 'TwitterKit'
   pod 'Firebase/Analytics'
   pod 'Firebase/Firestore'
   pod 'Firebase/Auth'

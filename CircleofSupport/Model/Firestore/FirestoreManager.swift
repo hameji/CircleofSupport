@@ -16,7 +16,6 @@ class FirestoreManager {
     // MARK: -- Get Data(Total Data)
     func getData(collectionName: String, completion: @escaping (Result<[Document], Error>) -> ()) {
         self.firestore.collection(collectionName).getDocuments() {(querySnapshot, err) in
-            
             guard let querySnapshot = querySnapshot else {
                 completion(.failure(err!))
                 return
@@ -27,6 +26,33 @@ class FirestoreManager {
             completion(.success(result))
         }
     }
+    
+    func getDocumentData(collectionName: String, document: String, completion: @escaping (Result<Document?, Error>) -> ()) {
+        self.firestore.collection(collectionName).document(document).getDocument() { (querySnapshot, err) in
+            guard let datum = querySnapshot else {
+                completion(.failure(err!))
+                return
+            }
+            guard let datum0 = datum.data() else {
+                completion(.success(nil))
+                return
+            }
+            let document0 = Document(documentID: datum.documentID, data: datum0)
+            completion(.success(document0))
+        }
+    }
+    
+    func getCollectionData(collectionName: String, document: String, collection: String, completion: @escaping (Result<[Document], Error>) -> ()) {
+        self.firestore.collection(collectionName).document(document).collection(collection).getDocuments() { (querySnapshot, err) in
+            guard let querySnapshot = querySnapshot else {
+                completion(.failure(err!))
+                return
+            }            
+            let result = querySnapshot.documents.map { Document(documentID: $0.documentID, data: $0.data()) }
+            completion(.success(result))
+        }
+    }
+
 
     // MARK: -- Get Data(Limited Data)
     // mapdata
@@ -70,5 +96,15 @@ class FirestoreManager {
             completion(.success(" ... added new data to cloud."))
         }
     }
-    
+
+    func addDatawithDocumentName(collectionName: String, documentName: String, data: [String:Any], completion: @escaping (Result<String, Error>) -> ()) {
+            self.firestore.collection(collectionName).document(documentName).setData(data) { err in
+            if let err = err {
+                completion(.failure(err))
+                return
+            }
+            completion(.success(" ... added new data to \(collectionName) / \(documentName)"))
+        }
+    }
+
 }

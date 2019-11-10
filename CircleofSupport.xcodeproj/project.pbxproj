@@ -55,6 +55,14 @@
 		63C991412370AAC40092A1CD /* SNSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C991402370AAC40092A1CD /* SNSViewController.swift */; };
 		63C991432370AB0D0092A1CD /* SNSPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C991422370AB0D0092A1CD /* SNSPresenter.swift */; };
 		63C991452370AB1C0092A1CD /* SNSDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C991442370AB1C0092A1CD /* SNSDelegate.swift */; };
+		63C991482370E5ED0092A1CD /* TwitterUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C991472370E5ED0092A1CD /* TwitterUser.swift */; };
+		63C9914A2370E66B0092A1CD /* Tweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C991492370E66B0092A1CD /* Tweet.swift */; };
+		63C9914D2370E9C60092A1CD /* TweeterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C9914C2370E9C60092A1CD /* TweeterCell.swift */; };
+		63C9914F237122AF0092A1CD /* TwitterAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C9914E237122AF0092A1CD /* TwitterAccount.swift */; };
+		63C991512371230C0092A1CD /* TwitterLoginCommunicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C991502371230C0092A1CD /* TwitterLoginCommunicator.swift */; };
+		63C99153237298490092A1CD /* ConfirmSafetyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C99152237298490092A1CD /* ConfirmSafetyViewController.swift */; };
+		63C991552372985C0092A1CD /* ConfirmSafetyPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C991542372985C0092A1CD /* ConfirmSafetyPresenter.swift */; };
+		63C99157237298690092A1CD /* ConfirmSafetyDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C99156237298690092A1CD /* ConfirmSafetyDelegate.swift */; };
 		63C993EF236B611D0079DD27 /* AddressType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C993EE236B611D0079DD27 /* AddressType.swift */; };
 		63C993F2236B6EE00079DD27 /* AddressData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C993F1236B6EE00079DD27 /* AddressData.swift */; };
 		63DAD34B236804450027B165 /* PostStatusDateData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DAD34A236804450027B165 /* PostStatusDateData.swift */; };
@@ -151,6 +159,14 @@
 		63C991402370AAC40092A1CD /* SNSViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SNSViewController.swift; sourceTree = "<group>"; };
 		63C991422370AB0D0092A1CD /* SNSPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SNSPresenter.swift; sourceTree = "<group>"; };
 		63C991442370AB1C0092A1CD /* SNSDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SNSDelegate.swift; sourceTree = "<group>"; };
+		63C991472370E5ED0092A1CD /* TwitterUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitterUser.swift; sourceTree = "<group>"; };
+		63C991492370E66B0092A1CD /* Tweet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tweet.swift; sourceTree = "<group>"; };
+		63C9914C2370E9C60092A1CD /* TweeterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweeterCell.swift; sourceTree = "<group>"; };
+		63C9914E237122AF0092A1CD /* TwitterAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitterAccount.swift; sourceTree = "<group>"; };
+		63C991502371230C0092A1CD /* TwitterLoginCommunicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitterLoginCommunicator.swift; sourceTree = "<group>"; };
+		63C99152237298490092A1CD /* ConfirmSafetyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmSafetyViewController.swift; sourceTree = "<group>"; };
+		63C991542372985C0092A1CD /* ConfirmSafetyPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmSafetyPresenter.swift; sourceTree = "<group>"; };
+		63C99156237298690092A1CD /* ConfirmSafetyDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmSafetyDelegate.swift; sourceTree = "<group>"; };
 		63C993EE236B611D0079DD27 /* AddressType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressType.swift; sourceTree = "<group>"; };
 		63C993F1236B6EE00079DD27 /* AddressData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressData.swift; sourceTree = "<group>"; };
 		63DAD34A236804450027B165 /* PostStatusDateData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostStatusDateData.swift; sourceTree = "<group>"; };
@@ -234,6 +250,7 @@
 		63137D50235861EB007FB666 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				63C991462370E5D70092A1CD /* SNS */,
 				6398833F236C7F6200D34096 /* UserDefaults */,
 				6398833E236C7F2500D34096 /* Map */,
 				6398833D236C7EF500D34096 /* Location */,
@@ -364,7 +381,7 @@
 				63988339236C7CE800D34096 /* Rss */,
 				63F0D342236DBC9800AF5935 /* SNS */,
 				63988338236C7CD100D34096 /* Map */,
-				63F0D343236DBCAD00AF5935 /* ConfermSafety */,
+				63F0D343236DBCAD00AF5935 /* ConfirmSafety */,
 				63F0D344236DBD1D00AF5935 /* Settings */,
 			);
 			path = View;
@@ -454,6 +471,25 @@
 			path = UserDefaults;
 			sourceTree = "<group>";
 		};
+		63C991462370E5D70092A1CD /* SNS */ = {
+			isa = PBXGroup;
+			children = (
+				63C991472370E5ED0092A1CD /* TwitterUser.swift */,
+				63C991492370E66B0092A1CD /* Tweet.swift */,
+				63C9914E237122AF0092A1CD /* TwitterAccount.swift */,
+				63C991502371230C0092A1CD /* TwitterLoginCommunicator.swift */,
+			);
+			path = SNS;
+			sourceTree = "<group>";
+		};
+		63C9914B2370E9AA0092A1CD /* Custom Cell */ = {
+			isa = PBXGroup;
+			children = (
+				63C9914C2370E9C60092A1CD /* TweeterCell.swift */,
+			);
+			path = "Custom Cell";
+			sourceTree = "<group>";
+		};
 		63C993F0236B6ED20079DD27 /* Data */ = {
 			isa = PBXGroup;
 			children = (
@@ -476,15 +512,19 @@
 				63C991402370AAC40092A1CD /* SNSViewController.swift */,
 				63C991422370AB0D0092A1CD /* SNSPresenter.swift */,
 				63C991442370AB1C0092A1CD /* SNSDelegate.swift */,
+				63C9914B2370E9AA0092A1CD /* Custom Cell */,
 			);
 			path = SNS;
 			sourceTree = "<group>";
 		};
-		63F0D343236DBCAD00AF5935 /* ConfermSafety */ = {
+		63F0D343236DBCAD00AF5935 /* ConfirmSafety */ = {
 			isa = PBXGroup;
 			children = (
+				63C99152237298490092A1CD /* ConfirmSafetyViewController.swift */,
+				63C991542372985C0092A1CD /* ConfirmSafetyPresenter.swift */,
+				63C99156237298690092A1CD /* ConfirmSafetyDelegate.swift */,
 			);
-			path = ConfermSafety;
+			path = ConfirmSafety;
 			sourceTree = "<group>";
 		};
 		63F0D344236DBD1D00AF5935 /* Settings */ = {
@@ -532,6 +572,7 @@
 				635FAB71235785230039B341 /* Frameworks */,
 				635FAB72235785230039B341 /* Resources */,
 				1008D53C45F12D50A2887EF2 /* [CP] Embed Pods Frameworks */,
+				9F25B87DF65A3511AC12A5F7 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -570,6 +611,7 @@
 				635FAB92235785260039B341 /* Frameworks */,
 				635FAB93235785260039B341 /* Resources */,
 				0CF439D94E77C45168EEFED8 /* [CP] Embed Pods Frameworks */,
+				CBEC5904990F8E741E0A25F7 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -731,6 +773,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		9F25B87DF65A3511AC12A5F7 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CircleofSupport/Pods-CircleofSupport-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CircleofSupport/Pods-CircleofSupport-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CircleofSupport/Pods-CircleofSupport-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		A94F16570714FA2DA8F68EA0 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -753,6 +812,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		CBEC5904990F8E741E0A25F7 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CircleofSupport-CircleofSupportUITests/Pods-CircleofSupport-CircleofSupportUITests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CircleofSupport-CircleofSupportUITests/Pods-CircleofSupport-CircleofSupportUITests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CircleofSupport-CircleofSupportUITests/Pods-CircleofSupport-CircleofSupportUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -763,11 +839,13 @@
 				636D3B1F236018C700AB0A1C /* PostStatusAddressData.swift in Sources */,
 				63F0D346236DC40300AF5935 /* WebViewController.swift in Sources */,
 				63137D492357A884007FB666 /* MapViewDelegate.swift in Sources */,
+				63C9914D2370E9C60092A1CD /* TweeterCell.swift in Sources */,
 				63575007236EF684006E7FB3 /* RssAlertCell.swift in Sources */,
 				63F0D349236DC4DA00AF5935 /* WebPresenter.swift in Sources */,
 				63DAD35B236842ED0027B165 /* Placemark.swift in Sources */,
 				63DAD3552368164D0027B165 /* LocationManager.swift in Sources */,
 				6398834D236C859B00D34096 /* Rss.swift in Sources */,
+				63C991552372985C0092A1CD /* ConfirmSafetyPresenter.swift in Sources */,
 				636D3B2723601A4F00AB0A1C /* PostStatusLightCell.swift in Sources */,
 				636D3B2523601A3E00AB0A1C /* PostStatusAddressCell.swift in Sources */,
 				63DAD3692368A4C00027B165 /* UserDefaultsManager.swift in Sources */,
@@ -790,17 +868,22 @@
 				6398834F236CA77C00D34096 /* FeedItem.swift in Sources */,
 				63137D452357A04B007FB666 /* AskForHelpViewController.swift in Sources */,
 				636D3B06235F7CBD00AB0A1C /* LifelineDelegate.swift in Sources */,
+				63C99153237298490092A1CD /* ConfirmSafetyViewController.swift in Sources */,
 				635FAB78235785230039B341 /* AppDelegate.swift in Sources */,
 				635FABB423579A150039B341 /* TopViewDelegate.swift in Sources */,
 				63C991432370AB0D0092A1CD /* SNSPresenter.swift in Sources */,
 				63DAD3592368181F0027B165 /* GpsAuthorization.swift in Sources */,
+				63C991512371230C0092A1CD /* TwitterLoginCommunicator.swift in Sources */,
 				63575009236F0246006E7FB3 /* RssAgencyCell.swift in Sources */,
 				636D3B2923601A5F00AB0A1C /* PostStatusGassCell.swift in Sources */,
 				636D3B04235F7CAF00AB0A1C /* LifelinePresenter.swift in Sources */,
 				63DAD3652368812D0027B165 /* PostStatusAddressDelegate.swift in Sources */,
 				63988351236CB48C00D34096 /* RssFeedCell.swift in Sources */,
 				636D3AFF235F665000AB0A1C /* Document.swift in Sources */,
+				63C991482370E5ED0092A1CD /* TwitterUser.swift in Sources */,
+				63C99157237298690092A1CD /* ConfirmSafetyDelegate.swift in Sources */,
 				636D3B02235F7CA200AB0A1C /* LifelineViewController.swift in Sources */,
+				63C9914F237122AF0092A1CD /* TwitterAccount.swift in Sources */,
 				63F0D34B236DC4E600AF5935 /* WebDelegate.swift in Sources */,
 				63C9913D237094F50092A1CD /* SettingsPresenter.swift in Sources */,
 				63988347236C7FC000D34096 /* PdfPresenter.swift in Sources */,
@@ -810,6 +893,7 @@
 				63C991412370AAC40092A1CD /* SNSViewController.swift in Sources */,
 				63C9913B237094E20092A1CD /* SettingsViewController.swift in Sources */,
 				635FAB7A235785230039B341 /* SceneDelegate.swift in Sources */,
+				63C9914A2370E66B0092A1CD /* Tweet.swift in Sources */,
 				63DAD35F236865940027B165 /* Lifeline.swift in Sources */,
 				63988336236C7C9A00D34096 /* RssViewController.swift in Sources */,
 				635FABB223579A050039B341 /* TopViewPresenter.swift in Sources */,

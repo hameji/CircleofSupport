@@ -6,4 +6,8 @@
 //  Copyright © 2019 Hajime Taniguchi. All rights reserved.
 //
 
-import Foundation
+struct Tweet {
+    let id: String
+    let text: String
+    let user: TwitterUser
+}

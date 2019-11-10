@@ -6,4 +6,9 @@
 //  Copyright © 2019 Hajime Taniguchi. All rights reserved.
 //
 
-import Foundation
+struct TwitterUser {
+    let id: String
+    let displayName: String
+    let name: String
+    let profileImageURL: String
+}

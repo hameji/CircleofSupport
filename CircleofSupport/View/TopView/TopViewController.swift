@@ -28,6 +28,8 @@ class TopViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+//        addRssFeed(total: 0, current: 0, category: "日本", authority: "首相官邸")
+        
         self.topViewPresenter.topView = self
         self.topViewPresenter.viewDidLoad()
     }
@@ -63,48 +65,53 @@ extension TopViewController: TopViewDelegate {
     }
 }
 
-//extension TopViewController {
-//    func addTotalRss() {
-//        for i in 0 ..< AddressData.prefecture.count {
-//            for j in 0 ..< AddressData.returnAdressArray()[i].count {
-//                addRssFeed(total: AddressData.returnAdressArray()[i].count, current: j+1, category: AddressData.prefecture[i], authority: AddressData.returnAdressArray()[i][j])
-//            }
-//        }
-//    }
-//
-//    func addRssFeed(total: Int, current: Int, category: String, authority: String) {
-//        let dataJson: [String: Any] = [
-//            "Category" : category,
-//            "Authority" : authority,
-//            "Longitude" : 0.0,
-//            "Latitude" : 0.0,
-//            "RegisterDate" : Timestamp(date: Date()),
-//            "UpdateDate" : [
-//                NSUUID().uuidString : [
-//                    "userId" : NSNull(),
-//                    "description" : NSNull(),
-//                    "date" : NSNull()
-//                ]
-//            ],
-//            "Errors" : [
-//                NSUUID().uuidString : [
-//                    "userId" : NSNull(),
-//                    "description" : NSNull(),
-//                    "date" : NSNull()
-//                ]
-//            ],
-//            "Url" : "",
-//            "Tel" : "",
-//            "Verified" : false,
-//            "SNS" : [
-//                "Twitter" : "",
-//                "Facebook" : "",
-//                "Instagram" : ""
-//            ]
-//        ]
-//        print(dataJson)
-//        firestoreManager.addData(collectionName: "Authorities", data: dataJson) { result in
-//            print("finished", current, "/", total, "[", category, "]", authority, result)
-//        }
-//    }
-//}
+extension TopViewController {
+    func addTotalRss() {
+        for i in 0 ..< AddressData.prefecture.count {
+            for j in 0 ..< AddressData.returnAdressArray()[i].count {
+                addRssFeed(total: AddressData.returnAdressArray()[i].count, current: j+1, category: AddressData.prefecture[i], authority: AddressData.returnAdressArray()[i][j])
+            }
+        }
+    }
+
+    func addRssFeed(total: Int, current: Int, category: String, authority: String) {
+        let dataJson: [String: Any] = [
+            "Category" : category,
+            "Authority" : authority,
+            "RegisterDate" : Timestamp(date: Date()),
+            "UpdateDate" : [
+                NSUUID().uuidString : [
+                    "userId" : NSNull(),
+                    "description" : NSNull(),
+                    "date" : NSNull()
+                ]
+            ],
+            "Errors" : [
+                NSUUID().uuidString : [
+                    "userId" : NSNull(),
+                    "description" : NSNull(),
+                    "date" : NSNull()
+                ]
+            ],
+            "Url" : "",
+            "Tel" : "",
+            "Verified" : false,
+            "SNS" : [
+                "Twitter" : "",
+                "Facebook" : "",
+                "Instagram" : "",
+                "Youtube" : ""
+            ]
+        ]
+        print(dataJson)
+        let documentName = category + authority
+        firestoreManager.addDatawithDocumentName(collectionName: "Authorities", documentName: documentName, data: dataJson) { result in
+            print("result:", result)
+            guard case .success( _) = result else {
+                print(" _/_/_/_/_/_/_/_/_/_/_/_/ failed _/_/_/_/_/_/_/_/_/_/_/_/_/_/_/")
+                return
+            }
+            print(current, "/", total, "finished ", category, "/", authority)
+        }
+    }
+}

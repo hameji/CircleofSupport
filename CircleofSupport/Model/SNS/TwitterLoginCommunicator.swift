@@ -6,4 +6,15 @@
 //  Copyright © 2019 Hajime Taniguchi. All rights reserved.
 //
 
-import Foundation
+import Social
+import Accounts
+
+struct TwitterLoginCommunicator {
+    func login(handler: @escaping (Bool) -> ()) {
+        if !SLComposeViewController.isAvailable(forServiceType: SLServiceTypeTwitter) {
+            handler(false)
+            return
+        }
+        
+    }
+}

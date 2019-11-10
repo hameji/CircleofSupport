@@ -6,4 +6,8 @@
 //  Copyright © 2019 Hajime Taniguchi. All rights reserved.
 //
 
-import Foundation
+import Accounts
+
+struct TwitterAccount {
+    static var twitterAccount: ACAccount?
+}

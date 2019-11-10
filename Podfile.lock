@@ -117,13 +117,15 @@ PODS:
   - nanopb/decode (0.3.9011)
   - nanopb/encode (0.3.9011)
   - Protobuf (3.10.0)
-  - SVProgressHUD (2.2.5)
+  - TwitterCore (3.2.0)
+  - TwitterKit (3.4.2):
+    - TwitterCore (>= 3.2.0)
 
 DEPENDENCIES:
   - Firebase/Analytics
   - Firebase/Auth
   - Firebase/Firestore
-  - SVProgressHUD
+  - TwitterKit
 
 SPEC REPOS:
   trunk:
@@ -147,7 +149,8 @@ SPEC REPOS:
     - leveldb-library
     - nanopb
     - Protobuf
-    - SVProgressHUD
+    - TwitterCore
+    - TwitterKit
 
 SPEC CHECKSUMS:
   BoringSSL-GRPC: db8764df3204ccea016e1c8dd15d9a9ad63ff318
@@ -170,8 +173,9 @@ SPEC CHECKSUMS:
   leveldb-library: 55d93ee664b4007aac644a782d11da33fba316f7
   nanopb: 18003b5e52dab79db540fe93fe9579f399bd1ccd
   Protobuf: a4dc852ad69c027ca2166ed287b856697814375b
-  SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
+  TwitterCore: 8cbc9ad34d91c63a0035ea05bfbfc0d7ca72a28c
+  TwitterKit: 5e4f41d70b9abdb41df5467f52d7aa2c0fd26ebb
 
-PODFILE CHECKSUM: 3271cf795be07e54b3f32754107cd5654e5f3809
+PODFILE CHECKSUM: 4e0c75eba44fa9936a231c381ce08ea17615576e
 
 COCOAPODS: 1.8.1
